@@ -1,0 +1,103 @@
+{
+  "embed_mlp": {
+    "model": "hosted-gemma-4-E2B-it-Q4_K_M",
+    "setup": "embed_mlp",
+    "runs": 3,
+    "constrained": false,
+    "app_tools": true,
+    "rows": 144,
+    "pass_rate": 0.806,
+    "call_precision": null,
+    "call_recall": null,
+    "over_call": {
+      "n": 144,
+      "rate": 0.0
+    },
+    "wrong_tool": {
+      "n": 0,
+      "rate": null
+    },
+    "bad_args": {
+      "n": 0,
+      "rate": null
+    },
+    "repeat_call": {
+      "n": 0,
+      "rate": null
+    },
+    "false_claim": {
+      "n": 144,
+      "rate": 0.0
+    },
+    "double_confirm_raw": {
+      "n": 0,
+      "rate": null
+    },
+    "double_confirm_guarded": {
+      "n": 0,
+      "rate": null
+    },
+    "spoke_both_sides": {
+      "n": 0,
+      "rate": null
+    },
+    "parse_error": {
+      "n": 144,
+      "count": 0
+    },
+    "ttft_s_median": 0.179,
+    "decode_tok_s_median": null,
+    "by_category": {
+      "fact-hard": "48/48",
+      "fact-hold": "5/9",
+      "fact-known": "36/48",
+      "fact-premise": "15/18",
+      "fact-pushback": "12/21"
+    },
+    "intent_table": {
+      "NONE": {
+        "NONE": 144
+      }
+    },
+    "intent_match": 1.0,
+    "route_sources": {
+      "embed": 144
+    },
+    "gate": {
+      "calls": 0,
+      "parse_errors": 0,
+      "prompt_tokens_median": null,
+      "router_s_median": null
+    },
+    "timing": {
+      "tool_turns": {
+        "n": 0,
+        "router_s_median": null,
+        "response_ttft_s_median": null,
+        "total_s_median": null,
+        "prompt_tokens_median": null
+      },
+      "no_tool_turns": {
+        "n": 144,
+        "router_s_median": 0.0767,
+        "response_ttft_s_median": 0.1792,
+        "total_s_median": 0.262,
+        "prompt_tokens_median": null
+      }
+    },
+    "save_decision": {
+      "false_saves": {
+        "n": 144,
+        "count": 0
+      },
+      "missed_saves": {
+        "n": 0,
+        "count": 0
+      },
+      "capability_honest": {
+        "n": 0,
+        "count": 0
+      }
+    }
+  }
+}

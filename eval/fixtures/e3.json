@@ -1,0 +1,203 @@
+[
+  {
+    "id": "e3-habit-walk",
+    "user": "I walk for thirty minutes every morning after breakfast",
+    "expected": [
+      {
+        "kind": "habit",
+        "match": "walk"
+      }
+    ]
+  },
+  {
+    "id": "e3-goal-bp",
+    "user": "I want to get my blood pressure under one thirty",
+    "expected": [
+      {
+        "kind": "goal",
+        "match": "130|one[- ]thirty|under"
+      }
+    ]
+  },
+  {
+    "id": "e3-reading-digits",
+    "user": "my blood pressure this morning was 132 over 85",
+    "expected": [
+      {
+        "kind": "reading",
+        "match": "132"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-reading",
+    "user": "my pressure was one thirty two over eighty five this morning",
+    "expected": [
+      {
+        "kind": "reading",
+        "match": "132|one[- ]thirty[- ]two"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-habit",
+    "user": "i have been walking the dog every evening for about twenty minutes",
+    "expected": [
+      {
+        "kind": "habit",
+        "match": "walk"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-habit-goal",
+    "user": "i try to skip salt and i want to lose ten pounds by spring",
+    "expected": [
+      {
+        "kind": "habit",
+        "match": "salt"
+      },
+      {
+        "kind": "goal",
+        "match": "lose|pound"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-goal-stairs",
+    "user": "i want to be able to climb the stairs without getting winded",
+    "expected": [
+      {
+        "kind": "goal",
+        "match": "stair"
+      }
+    ]
+  },
+  {
+    "id": "e3-habit-water",
+    "user": "I drink two glasses of water before lunch",
+    "expected": [
+      {
+        "kind": "habit",
+        "match": "water"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-habit-coffee",
+    "user": "i do not drink coffee after noon",
+    "expected": [
+      {
+        "kind": "habit",
+        "match": "coffee"
+      }
+    ]
+  },
+  {
+    "id": "e3-two-readings",
+    "user": "my sugar was 110 this morning and 145 after dinner",
+    "expected": [
+      {
+        "kind": "reading",
+        "match": "110|one[- ]ten"
+      },
+      {
+        "kind": "reading",
+        "match": "145|one[- ]forty[- ]five"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-reading-weight",
+    "user": "i weighed one eighty four pounds today",
+    "expected": [
+      {
+        "kind": "reading",
+        "match": "184|one[- ]eighty[- ]four"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-reading-temp",
+    "user": "my temperature was ninety eight point nine",
+    "expected": [
+      {
+        "kind": "reading",
+        "match": "98\\.9|ninety[- ]eight point nine"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-reading-pulse",
+    "user": "my heart rate was seventy two when i checked",
+    "expected": [
+      {
+        "kind": "reading",
+        "match": "72|seventy[- ]two"
+      }
+    ]
+  },
+  {
+    "id": "e3-all-three",
+    "user": "i did my stretches again this morning my pressure was one thirty eight over ninety and i would like to get down to one twenty",
+    "expected": [
+      {
+        "kind": "habit",
+        "match": "stretch"
+      },
+      {
+        "kind": "reading",
+        "match": "138|one[- ]thirty[- ]eight"
+      },
+      {
+        "kind": "goal",
+        "match": "120|one[- ]twenty"
+      }
+    ]
+  },
+  {
+    "id": "e3-stt-mixed",
+    "user": "i walked thirty minutes this morning and what is lisinopril for and the doctor just put me on metoprolol",
+    "expected": [
+      {
+        "kind": "habit",
+        "match": "walk"
+      }
+    ]
+  },
+  {
+    "id": "e3-small-talk-greeting",
+    "user": "good morning how are you today",
+    "expected": []
+  },
+  {
+    "id": "e3-small-talk-weather",
+    "user": "what a rainy day it is",
+    "expected": []
+  },
+  {
+    "id": "e3-small-talk-thanks",
+    "user": "thanks that was really helpful",
+    "expected": []
+  },
+  {
+    "id": "e3-medical-question-only",
+    "user": "what does lisinopril do",
+    "expected": []
+  },
+  {
+    "id": "e3-prescription-only",
+    "user": "the doctor put me on metformin five hundred milligrams",
+    "expected": []
+  },
+  {
+    "id": "e3-other-person",
+    "user": "my husband walks every single day",
+    "expected": []
+  },
+  {
+    "id": "e3-doctor-advice",
+    "user": "the doctor told me to cut back on salt",
+    "expected": []
+  }
+]

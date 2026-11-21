@@ -1,0 +1,1 @@
+{"model": "all-MiniLM-L6-v2-int8", "scorer": "knn", "thresholds": {"SAVE": 0.013, "ACTION": 0.048}, "head_words": 3, "top_k": 3}

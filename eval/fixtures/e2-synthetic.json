@@ -1,0 +1,122 @@
+[
+  {
+    "id": "e2-lisinopril",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "lisinopril"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nLISINOPRIL 10 MG TABLETS\nTake 1 tablet by mouth once daily\nQty 30  Refills 5"
+  },
+  {
+    "id": "e2-metformin",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "metformin"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nMETFORMIN HCL 500MG TAB\nTAKE ONE TABLET TWICE DAILY WITH MEALS\nQTY 60"
+  },
+  {
+    "id": "e2-atorvastatin",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "atorvastatin"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nAtorvastatin Calcium 20 mg\nTake 1 tablet at bedtime\nQty: 90  Dr. Okafor"
+  },
+  {
+    "id": "e2-levothyroxine",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "levothyroxine"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nLEVOTHYROXINE SODIUM 75 MCG\nTake 1 tablet every morning on an empty stomach\nQty 30"
+  },
+  {
+    "id": "e2-amlodipine",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "amlodipine"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nAMLODIPINE BESYLATE 5 MG\nTake 1 tablet daily\nQty 30 Refills 2\nGeneric for Norvasc"
+  },
+  {
+    "id": "e2-omeprazole",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "omeprazole"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nOMEPRAZOLE DR 20 MG CAPSULES\nTake 1 capsule 30 minutes before breakfast"
+  },
+  {
+    "id": "e2-sertraline",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "sertraline"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nSERTRALINE HCL 50MG TABS\nTAKE 1 TABLET BY MOUTH EVERY DAY\nQTY 30"
+  },
+  {
+    "id": "e2-ocr-noise",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "metoprolol"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nM ETOPR0LOL TARTRATE 25 mg\nTake 1 tab twice a day\nQty 6O  Refi lls: 1"
+  },
+  {
+    "id": "e2-pharmacy-first",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "gabapentin"
+      ],
+      "must_not_match": [
+        "Walgreens"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nWALGREENS PHARMACY #10442\n1200 Main St, Springfield\nRx 7731902\nGABAPENTIN 300 MG CAPSULES\nTake 1 capsule three times daily\nQty 90"
+  },
+  {
+    "id": "e2-patient-first",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "prednisone"
+      ],
+      "must_not_match": [
+        "Smith"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nJOHN SMITH\nPrednisone 10 mg tablets\nTake 2 tablets daily for 5 days\nQty 10\nDr. L. Chen"
+  },
+  {
+    "id": "e2-review-focus",
+    "online": false,
+    "rubric": {
+      "must_match": [
+        "lisinopril"
+      ],
+      "must_not_match": [
+        "Review\\ Focus",
+        "Gonzalez"
+      ]
+    },
+    "user": "Text recognized from my prescription label:\nREVIEW FOCUS PHARMACY\nRx 5530218\nMaria Gonzalez\nLISINOPRIL 20 MG TABLETS\nTake 1 tablet by mouth once daily\nQty 30  Refills 3\nGeneric for Zestril\nWARNING: May cause dizziness. Do not use potassium supplements or salt substitutes without asking your doctor. Avoid pregnancy.\nKeep out of reach of children."
+  }
+]

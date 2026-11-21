@@ -1,0 +1,39 @@
+# Control Plane v2 gates on Google Cloud Build for gemma-voice. Written by
+# control-plane's scripts/repo-setup.sh.
+#
+# Every gate command lives in verification.json. A step names a gate id and runs
+# it through scripts/run-gate.py, and restates no command. The device and ios
+# gates stay on the Mac as card gates: this pipeline runs only the quality gate.
+#
+# The gemma-voice-gates trigger (docs/v2/repo-setup.md in control-plane) runs
+# this on every pull request to main as cp-gates, a service account with no
+# secret access, so a PR that edits this file, ci/Dockerfile or
+# scripts/run-gate.py cannot reach the GitHub token. The last step, reached only
+# when the gate passed, publishes the PR number and tested commit to the
+# cp-gates-passed topic. The shared cp-merge trigger in control-plane merges on
+# that message with the token that never enters this build. The Mac agent never
+# merges: cpa finish waits for the merge to land.
+steps:
+  - id: image
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "gates", "ci"]
+
+  - id: quality
+    name: gates
+    entrypoint: python3
+    args: ["scripts/run-gate.py", "quality"]
+
+  - id: publish
+    name: gcr.io/cloud-builders/gcloud
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        set -eu
+        [ -n "$_PR_NUMBER" ] || { echo "publish: not a pull request build, nothing to merge"; exit 0; }
+        gcloud pubsub topics publish projects/$PROJECT_ID/topics/cp-gates-passed \
+          --attribute "repo=gemma-voice,pr=$_PR_NUMBER,sha=$COMMIT_SHA"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 2700s

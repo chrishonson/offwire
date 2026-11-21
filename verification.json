@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "gates": [
+    {
+      "id": "quality",
+      "placement": ["local"],
+      "commands": [
+        "./gradlew detekt --no-daemon",
+        "./gradlew assembleDebug --no-daemon",
+        "./gradlew testDebugUnitTest --no-daemon",
+        "./gradlew koverVerify --no-daemon"
+      ]
+    },
+    {
+      "id": "device",
+      "placement": ["local"],
+      "requires": ["android-device"],
+      "commands": [
+        "./gradlew connectedDebugAndroidTest -Pandroid.injected.androidTest.leaveApksInstalledAfterRun=true --no-daemon"
+      ]
+    },
+    {
+      "id": "ios",
+      "placement": ["local"],
+      "requires": ["xcode"],
+      "commands": [
+        "./gradlew :core:compileKotlinIosSimulatorArm64 :core:iosSimulatorArm64Test :app-classic:compileKotlinIosSimulatorArm64 :app-classic:iosSimulatorArm64Test --no-daemon",
+        "xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build"
+      ]
+    }
+  ]
+}

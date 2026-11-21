@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ML Kit logs usage events through Google datatransport to the Clearcut ("cct") backend at
+         firebaselogging.googleapis.com. Without a registered backend the uploader deletes each batch instead of
+         sending it, so OCR stays on the device. The scheduler stays, because removing it makes job scheduling throw. -->
+    <application>
+        <service
+            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+            tools:node="remove" />
+    </application>
+</manifest>

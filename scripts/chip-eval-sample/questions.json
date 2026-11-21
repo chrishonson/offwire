@@ -1,0 +1,12 @@
+{
+  "answerable": [
+    {"question": "What is the load center model?"},
+    {"question": "Where was the roof leak stain?"},
+    {"question": "What furnace filter size was noted?"},
+    {"question": "What loose handrail was recorded in the basement?"}
+  ],
+  "unanswerable": [
+    {"question": "What color is the garage door?"},
+    {"question": "When was the chimney last swept?"}
+  ]
+}

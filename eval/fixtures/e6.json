@@ -1,0 +1,408 @@
+[
+  {
+    "id": "e6-rx-lisinopril",
+    "user": "the doctor put me on lisinopril ten milligrams once a day",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-stt-rx-lisinopril",
+    "user": "the doctor put me on lisinopril ten milligrams once a day",
+    "online": true,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-rx-metformin",
+    "user": "my doctor prescribed metformin five hundred milligrams twice a day",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-stt-rx-new",
+    "user": "i got a new prescription for amlodipine today",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-dx-diabetes",
+    "user": "the doctor says i have type two diabetes",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-dx-online",
+    "user": "he diagnosed me with high cholesterol",
+    "online": true,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-allergy-penicillin",
+    "user": "i am allergic to penicillin the doctor wrote it down",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-stt-allergy-remember",
+    "user": "please remember i am allergic to sulfa drugs",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-lab-a1c",
+    "user": "my a1c came back at seven point two",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-stt-lab-cholesterol",
+    "user": "my cholesterol was two ten at the lab",
+    "online": true,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-dose-change",
+    "user": "dr smith changed my dose of atorvastatin to forty",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-instruction-aspirin",
+    "user": "the doctor told me to stop taking aspirin",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-visit-instruction",
+    "user": "the doctor wants to see me again in three months",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-explicit-write",
+    "user": "can you write down that i have high blood pressure",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-stt-explicit-record",
+    "user": "just put it in here i have my pills right here the lisinopril ten milligrams",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-insist-after-redirect",
+    "user": "no just put it in here please it is lisinopril ten milligrams",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bI('ll| will| can| could|'ve| have|'m| am)( now| just| also| already)? (saving|saved|save|recording|recorded|record|adding|added|add|noting|noted|note|storing|stored|store|logging|logged|log|writing|wrote|write|putting|put|keep|keeping|kept|remember|remembering)\\b",
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)"
+      ],
+      "must_call": [
+        "open_record_flow"
+      ],
+      "must_not_call": [
+        "note_personal_fact",
+        "save_question"
+      ]
+    },
+    "history": [
+      {
+        "role": "user",
+        "text": "the doctor put me on lisinopril ten milligrams"
+      },
+      {
+        "role": "assistant",
+        "text": "Prescriptions are added in the library, not from chat. Open the library to add it."
+      }
+    ]
+  },
+  {
+    "id": "e6-mixed-online",
+    "user": "i walked thirty minutes this morning and what is lisinopril for and the doctor just put me on metoprolol",
+    "online": true,
+    "rubric": {
+      "must_not_match": [
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)",
+        "lisinopril (is|helps|works|lowers|blocks)",
+        "is (used|prescribed) (to|for)",
+        "\\bACE\\b"
+      ],
+      "must_call": [
+        "open_record_flow",
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  },
+  {
+    "id": "e6-mixed-offline",
+    "user": "i walked thirty minutes this morning and what is lisinopril for and the doctor just put me on metoprolol",
+    "online": false,
+    "rubric": {
+      "must_not_match": [
+        "\\bnoted\\b",
+        "\\b(has|have|is|are|was|were) (now |already |just )?been (saved|recorded|added|noted|stored|logged)\\b",
+        "\\b(it|that|this) (is|was) (now |already )?(saved|recorded|added|noted|stored|logged)\\b",
+        "(?<!be )(?<!are )(?<!is )\\b(saved|recorded|stored|logged|added) (it|that|this|your|the|to your)\\b",
+        "\\b(can'?t|cannot|unable|not able|don'?t|do not|won'?t|doesn'?t|does not|isn'?t|not)\\b[^.!?,;\\n]{0,30}\\b(in|through|via|to|into|from|with|on) (the |your )?(library|record flow)",
+        "lisinopril (is|helps|works|lowers|blocks)",
+        "is (used|prescribed) (to|for)",
+        "\\bACE\\b"
+      ],
+      "must_call": [
+        "open_record_flow",
+        "note_personal_fact",
+        "save_question"
+      ]
+    }
+  }
+]

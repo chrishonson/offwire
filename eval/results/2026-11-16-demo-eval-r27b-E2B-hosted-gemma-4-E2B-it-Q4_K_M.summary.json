@@ -1,0 +1,15 @@
+{
+  "model": "hosted-gemma-4-E2B-it-Q4_K_M",
+  "runs": 10,
+  "clean_runs": 9,
+  "checks": {
+    "no_early_save": 10,
+    "says_yes": 10,
+    "no_false_claim": 10,
+    "one_save_saturday": 10,
+    "one_confirmation": 10,
+    "recall_saturday": 9,
+    "one_note": 10
+  },
+  "names_idea": 8
+}

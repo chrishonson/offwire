@@ -1,0 +1,25 @@
+Say "Computer" and ask. Offwire answers out loud in a calm, clear voice, and nothing you say ever leaves your phone.
+
+HANDS-FREE
+Open the app and talk. It listens for its name, answers, and keeps listening. Interrupt it mid-sentence and it stops and hears you out. No buttons to hold, no keyboard, nothing to read if you would rather not.
+
+FULLY ON YOUR PHONE
+Speech recognition, the language model and the voice all run on the device. Once the models are downloaded, Offwire works in airplane mode. There is no account, no sign-in, no tracking and no server on the other end.
+
+A VOICE AND A LOOK FROM THE BRIDGE
+Replies come in the measured voice of a starship computer, on a console styled after the classic LCARS displays: black panels, warm orange bars and large, high-contrast type.
+
+MADE FOR EYES THAT TIRE
+Everything on screen is large print with strong contrast, and the whole app follows your phone's font size setting. You can use it without looking at it at all.
+
+A LIBRARY THAT STAYS HOME
+Keep photos and notes in collections on the phone and ask about them by voice. The home inspection and medical record templates give structure without sending a single byte anywhere.
+
+WHAT TO EXPECT
+The assistant is a small model running on a phone. It is quick and private, and it can be wrong. It has no internet and cannot look things up, so treat its answers as a helpful first opinion, not a source of record.
+
+REQUIREMENTS
+Android 12 or newer, about 3 GB of free storage for the models, and a recent phone with 8 GB of memory or more for comfortable speed. Models download once over Wi-Fi.
+
+OPEN SOURCE
+Offwire is MIT licensed. The source, release notes and APKs are on GitHub.

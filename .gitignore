@@ -1,0 +1,60 @@
+*.iml
+.kotlin
+.gradle
+**/build/
+xcuserdata
+!src/**/build/
+local.properties
+.idea
+.DS_Store
+captures
+.externalNativeBuild
+.cxx
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables
+.env
+
+# Agent
+
+.agent_logs/
+.gemini/
+kotlin-js-store/
+local.properties
+.superpowers/
+
+# Spike model files
+spikes/ios-llm/**/*.gguf
+spikes/ios-llm/**/*.task
+spikes/ios-llm/**/*.litertlm
+*.gguf
+*.task
+*.litertlm
+
+
+# Evaluation output
+eval/results/
+eval/private/
+
+# Built release apps, about 1.3 GB per release (docs/RELEASING.md)
+release-artifacts/
+
+# Personal voices: never tracked or shipped in the public build (README, "Console voice")
+*-conditioning.onnx
+!caro-davy-conditioning.onnx
+core/src/androidMain/assets/voices/local/

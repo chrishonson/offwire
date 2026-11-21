@@ -1,0 +1,1 @@
+A hands-free voice assistant that runs entirely on your phone. No account, no cloud.

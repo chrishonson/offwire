@@ -1,0 +1,824 @@
+[
+ {
+  "id": "lt-where-were-we",
+  "category": "brainstorm",
+  "user": "ok im back from the gas station where were we",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "near miss|save|router|note"
+   ]
+  }
+ },
+ {
+  "id": "lt-recap-three",
+  "category": "brainstorm",
+  "user": "give me a quick recap of what we decided so far",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){90}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "dead zone|back road|no signal|airplane"
+   ]
+  }
+ },
+ {
+  "id": "lt-back-after-dinner",
+  "category": "brainstorm",
+  "user": "ok back to the talk what was the opener we picked",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   },
+   {
+    "role": "user",
+    "text": "switching gears what should i make for dinner tonight its me and four kids"
+   },
+   {
+    "role": "model",
+    "text": "Two easy ones: sheet pan chicken fajitas, or baked ziti you can make ahead. Both feed five."
+   },
+   {
+    "role": "user",
+    "text": "fajitas sounds good"
+   },
+   {
+    "role": "model",
+    "text": "Nice. Slice two pounds of chicken with peppers and onions, season, and roast at 425 for about 20 minutes."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "dead zone|back road|no signal|airplane"
+   ]
+  }
+ },
+ {
+  "id": "lt-second-angle",
+  "category": "brainstorm",
+  "user": "remind me what the second angle was",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "save|router|note"
+   ]
+  }
+ },
+ {
+  "id": "lt-dinner-temp",
+  "category": "brainstorm",
+  "user": "wait what temperature did you say",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   },
+   {
+    "role": "user",
+    "text": "switching gears what should i make for dinner tonight its me and four kids"
+   },
+   {
+    "role": "model",
+    "text": "Two easy ones: sheet pan chicken fajitas, or baked ziti you can make ahead. Both feed five."
+   },
+   {
+    "role": "user",
+    "text": "fajitas sounds good"
+   },
+   {
+    "role": "model",
+    "text": "Nice. Slice two pounds of chicken with peppers and onions, season, and roast at 425 for about 20 minutes."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){40}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "425"
+   ]
+  }
+ },
+ {
+  "id": "lt-which-story",
+  "category": "brainstorm",
+  "user": "what story was i going to tell",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   },
+   {
+    "role": "user",
+    "text": "switching gears what should i make for dinner tonight its me and four kids"
+   },
+   {
+    "role": "model",
+    "text": "Two easy ones: sheet pan chicken fajitas, or baked ziti you can make ahead. Both feed five."
+   },
+   {
+    "role": "user",
+    "text": "fajitas sounds good"
+   },
+   {
+    "role": "model",
+    "text": "Nice. Slice two pounds of chicken with peppers and onions, season, and roast at 425 for about 20 minutes."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "dead zone|back road|drove|signal"
+   ]
+  }
+ },
+ {
+  "id": "lt-not-that-one",
+  "category": "brainstorm",
+  "user": "no not the router part the one before it",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "dead zone|back road|no signal|airplane|on.device|privacy|leaves the phone"
+   ]
+  }
+ },
+ {
+  "id": "lt-next-step",
+  "category": "brainstorm",
+  "user": "ok whats left that we havent covered",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "demo"
+   ]
+  }
+ },
+ {
+  "id": "lt-short-recap",
+  "category": "brainstorm",
+  "user": "ok recap the talk plan in one sentence im driving",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   },
+   {
+    "role": "user",
+    "text": "switching gears what should i make for dinner tonight its me and four kids"
+   },
+   {
+    "role": "model",
+    "text": "Two easy ones: sheet pan chicken fajitas, or baked ziti you can make ahead. Both feed five."
+   },
+   {
+    "role": "user",
+    "text": "fajitas sounds good"
+   },
+   {
+    "role": "model",
+    "text": "Nice. Slice two pounds of chicken with peppers and onions, season, and roast at 425 for about 20 minutes."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){40}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "dead zone|back road|no signal|airplane|near miss|router|demo"
+   ]
+  }
+ },
+ {
+  "id": "lt-didnt-save",
+  "category": "brainstorm",
+  "user": "did we save any of that",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?",
+    "(?i)\\b(i|i've|i have) (saved|noted|added)\\b"
+   ],
+   "must_match_any": [
+    "no|not|haven't|didn't|nothing"
+   ]
+  }
+ },
+ {
+  "id": "lt-not-the-demo",
+  "category": "brainstorm",
+  "user": "not the demo the one before that",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "save|router|near miss|note"
+   ]
+  }
+ },
+ {
+  "id": "lt-after-opener",
+  "category": "brainstorm",
+  "user": "go back to the one after the dead zone story",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   },
+   {
+    "role": "user",
+    "text": "switching gears what should i make for dinner tonight its me and four kids"
+   },
+   {
+    "role": "model",
+    "text": "Two easy ones: sheet pan chicken fajitas, or baked ziti you can make ahead. Both feed five."
+   },
+   {
+    "role": "user",
+    "text": "fajitas sounds good"
+   },
+   {
+    "role": "model",
+    "text": "Nice. Slice two pounds of chicken with peppers and onions, season, and roast at 425 for about 20 minutes."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "save|router|near miss|note"
+   ]
+  }
+ },
+ {
+  "id": "lt-first-angle",
+  "category": "brainstorm",
+  "user": "what was the very first angle you gave me",
+  "expect": [],
+  "history": [
+   {
+    "role": "user",
+    "text": "ok lets brainstorm the meetup talk its about running gemma on my phone"
+   },
+   {
+    "role": "model",
+    "text": "Sure. Three angles: why on-device matters, how the app decides when to save a note, and a live demo. Which one do you want to start with?"
+   },
+   {
+    "role": "user",
+    "text": "start with why on device matters"
+   },
+   {
+    "role": "model",
+    "text": "Two reasons stand out: it works with no signal, like on a back road, and nothing you say leaves the phone. You could open with the no-signal story."
+   },
+   {
+    "role": "user",
+    "text": "yeah the back road thing is good i drove through a dead zone last week and it still worked"
+   },
+   {
+    "role": "model",
+    "text": "That's a strong opener. Tell the dead zone story in thirty seconds, then show the phone in airplane mode."
+   },
+   {
+    "role": "user",
+    "text": "ok now the save note part"
+   },
+   {
+    "role": "model",
+    "text": "Keep it simple: a small router listens to each sentence and only hands Gemma the save tool when you ask to save. Show one save and one near miss like 'note to self is a boring name'."
+   },
+   {
+    "role": "user",
+    "text": "i like the near miss idea"
+   },
+   {
+    "role": "model",
+    "text": "Good. The near miss shows the router isn't just matching the word note."
+   }
+  ],
+  "rubric": {
+   "must_not_match": [
+    "^\\s*(?:\\S+\\s+){80}\\S",
+    "(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?[\\s\\S]*?(?:^|(?<=[.!?])\\s+)(?!\\W*(?:or\\s+)?(?:how about|what about|maybe|perhaps|why not|or)\\b)[^.!?]*\\?"
+   ],
+   "must_match_any": [
+    "on.device|no signal|back road|privacy|leaves the phone|dead zone"
+   ]
+  }
+ }
+]

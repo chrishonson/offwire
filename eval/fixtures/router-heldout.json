@@ -1,0 +1,1790 @@
+[
+ {
+  "id": "rh-001-trap_save",
+  "user": "save the date cards are so cute this year",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-002-trap_walk",
+  "user": "I walked home from the bus stop today",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-003-trap_remind_question",
+  "user": "remind me what a hypotenuse is again",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-004-trap_recall",
+  "user": "what was the wifi password I saved",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-005-trap_recall",
+  "user": "what did I save about the plumber",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-006-trap_recall",
+  "user": "do you remember what I told you about Emma's shoe size",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-007-trap_calendar",
+  "user": "my calendar app keeps crashing, that's so annoying",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-008-trap_notes",
+  "user": "the kids say I never take notes at parent teacher conferences",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-009-trap_drive",
+  "user": "driving to soccer is the worst part of my week",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-010-trap_remember",
+  "user": "I always forget to remember birthdays, it's a family curse",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-011-trap_navigate",
+  "user": "navigate is such a weird word when you say it a lot",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-012-trap_timer",
+  "user": "the timer on the oven is beeping again",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-013-unsupported_alarm",
+  "user": "set an alarm for 6 am",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-014-unsupported_alarm",
+  "user": "wake me up at 7:15 tomorrow",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-015-unsupported_text",
+  "user": "text my wife that I'm running late",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-016-unsupported_call",
+  "user": "call grandma",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-017-unsupported_music",
+  "user": "play the frozen soundtrack",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-018-trap_save",
+  "user": "I saved twenty bucks at the grocery store",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-019-trap_whats_on",
+  "user": "what's on TV tonight",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-020-trap_whats_on",
+  "user": "what's on the menu at the school cafeteria",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-021-trap_send",
+  "user": "send me a picture of a golden retriever",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-022-unsupported_email",
+  "user": "email my boss that I'm sick",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-023-trap_minutes",
+  "user": "how many minutes until halftime",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-024-trap_save",
+  "user": "she saved my life with that casserole recipe",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-025-trap_keep",
+  "user": "keep calm and carry on is on a mug in my kitchen",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-026-trap_notes",
+  "user": "my note from the teacher said Liam was chatty again",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-027-trap_recall",
+  "user": "where did I park",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-028-trap_drive",
+  "user": "drive safe is what I always tell my teenager",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-029-trap_remind",
+  "user": "the reminder app on my old phone was way better",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-030-trap_walk",
+  "user": "how long does it take to walk a mile",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-031-trap_calendar",
+  "user": "my schedule is insane this week, I don't even want to look at it",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-032-trap_recall",
+  "user": "can you read me the grocery list I saved yesterday",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-033-trap_recall",
+  "user": "did I write down the pediatrician's number",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-034-trap_directions",
+  "user": "directions on the lasagna box say 45 minutes",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-035-trap_remember",
+  "user": "Ben remembered his lunch today for once",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-036-unsupported_device",
+  "user": "turn on the flashlight",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-037-unsupported_alarm",
+  "user": "set my alarm for five thirty",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-038-trap_remind_rhetorical",
+  "user": "remind me why I agreed to host Thanksgiving",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-039-trap_notes",
+  "user": "I keep notes on my fridge with magnets",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-040-trap_tomorrow",
+  "user": "what's the weather tomorrow",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-041-chat",
+  "user": "hey",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-042-chat",
+  "user": "thank you",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-043-chat",
+  "user": "never mind",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-044-chat",
+  "user": "how do you get permanent marker off a couch",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-045-chat",
+  "user": "what's 15 percent of 84",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-046-chat",
+  "user": "tell me a joke for a seven year old",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-047-chat",
+  "user": "is it normal for a toddler to bite",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-048-chat",
+  "user": "how many ounces in a cup",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-049-chat",
+  "user": "ugh",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-050-chat",
+  "user": "who won the game last night",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-051-chat",
+  "user": "what time is it in London",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-052-chat",
+  "user": "you misunderstood me",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-053-chat",
+  "user": "okay cool",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-054-chat",
+  "user": "how do I get my kid to sleep past 5am",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-055-chat",
+  "user": "what rhymes with orange",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-056-chat",
+  "user": "is Costco open on Veterans Day",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-057-chat",
+  "user": "how long do I boil an egg",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-058-chat",
+  "user": "spell necessary",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-059-chat",
+  "user": "can dogs eat grapes",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-060-chat",
+  "user": "what's the capital of Australia",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-061-chat",
+  "user": "stop",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-062-chat",
+  "user": "good morning",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-063-chat",
+  "user": "convert 350 Fahrenheit to Celsius",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-064-chat",
+  "user": "how do you say thank you in Spanish",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-065-chat",
+  "user": "I'm so tired",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-066-chat",
+  "user": "what's a good dinner for picky eaters",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-067-chat",
+  "user": "uh what was I going to say",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-068-chat",
+  "user": "are you listening",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-069-chat",
+  "user": "how old do you have to be to sit in the front seat",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-070-chat",
+  "user": "cancel that",
+  "category": "no_call",
+  "expect": []
+ },
+ {
+  "id": "rh-071-refer_back",
+  "user": "save that",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {}
+   }
+  ]
+ },
+ {
+  "id": "rh-072-refer_back",
+  "user": "keep that one",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {}
+   }
+  ]
+ },
+ {
+  "id": "rh-073-refer_back",
+  "user": "note that down",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {}
+   }
+  ]
+ },
+ {
+  "id": "rh-074-refer_back",
+  "user": "jot it down",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {}
+   }
+  ]
+ },
+ {
+  "id": "rh-075-refer_back",
+  "user": "remember this for me",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {}
+   }
+  ]
+ },
+ {
+  "id": "rh-076-refer_back",
+  "user": "add it to my notes",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {}
+   }
+  ]
+ },
+ {
+  "id": "rh-077-refer_back",
+  "user": "save what I just said",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {}
+   }
+  ]
+ },
+ {
+  "id": "rh-078-explicit",
+  "user": "save a note that the wifi password is bluemoose42",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "bluemoose42"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-079-command_end",
+  "user": "the garage code is 4471, hang onto that",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "garage"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-080-command_end",
+  "user": "Mia's shoe size is 13 toddler, remember that",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "toddler"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-081-explicit",
+  "user": "add to my notes buy more diapers",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "diapers"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-082-command_end",
+  "user": "pediatrician said give her 5 ml of ibuprofen every six hours, write that down",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "pediatrician"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-083-unusual_verb",
+  "user": "file this away, the plumber's name is Dave and his number is 555 0192",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "plumber"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-084-rambling",
+  "user": "so I'm standing in the cereal aisle and I realize we're out of oat milk again and Jake only drinks the barista one so can you put down oat milk barista edition",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "barista"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-085-unusual_verb",
+  "user": "stash this idea, a chore chart with stickers for the twins",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "stickers"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-086-explicit",
+  "user": "make a note parking spot is level 3 row G",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "parking"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-087-asr_slip",
+  "user": "safe a note that school pictures are on the 14th",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "pictures"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-088-explicit",
+  "user": "note to self call the insurance about the ER bill",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "insurance"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-089-unusual_verb",
+  "user": "log this: Ava's permission slip is in the blue folder",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "permission"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-090-unusual_verb",
+  "user": "put on my list paper towels and batteries",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "batteries"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-091-unusual_verb",
+  "user": "keep track of this, Liam got his flu shot today",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "today"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-092-no_tool_word",
+  "user": "for later, the babysitter charges 18 an hour",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "babysitter"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-093-unusual_verb",
+  "user": "store this, locker combo 12 34 8",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "locker"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-094-command_end",
+  "user": "gift idea for my mom a heated blanket, save it",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "blanket"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-095-explicit",
+  "user": "write down that the landlord is coming Thursday",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "landlord"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-096-explicit",
+  "user": "remember that the dentist moved to Elm Street",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "dentist"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-097-asr_slip",
+  "user": "sale that the soccer fee is 85 dollars",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "dollars"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-098-unusual_verb",
+  "user": "grab this for me, recipe calls for two cups of buttermilk",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "buttermilk"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-099-explicit",
+  "user": "keep this, flight confirmation is QX7P2R",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "confirmation"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-100-command_end",
+  "user": "the kids' library books are due on the 22nd, could you save that somewhere",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "library"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-101-unusual_verb",
+  "user": "bookmark this thought, maybe we do Disney in March instead of spring break",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "instead"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-102-rambling",
+  "user": "okay so the vet said Biscuit needs the chicken free food and she weighs 42 pounds, can you keep a note of all that",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "biscuit"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-103-short",
+  "user": "note: Noah allergic to amoxicillin",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "amoxicillin"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-104-unusual_verb",
+  "user": "capture this, Costco membership renews in January",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "membership"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-105-no_tool_word",
+  "user": "I want to remember that Ella loved the purple slime kit",
+  "category": "save",
+  "expect": [
+   {
+    "name": "save_note",
+    "args": {
+     "text": "purple"
+    }
+   }
+  ]
+ },
+ {
+  "id": "rh-106-remind_explicit",
+  "user": "remind me in 20 minutes to take the chicken out",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b20\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-107-remind_hours",
+  "user": "in an hour tell me to move the car",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b60\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-108-remind_short",
+  "user": "ten minutes, laundry",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b10\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-109-remind_timer_empty",
+  "user": "set a timer for 15 minutes",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b15\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-110-remind_unusual_verb",
+  "user": "give me a nudge in half an hour about the pizza",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b30\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-111-remind_command_end",
+  "user": "pick up Sophie from practice, ping me about that in 45 minutes",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b45\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-112-remind_short",
+  "user": "timer 8 minutes",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b8\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-113-remind_hours",
+  "user": "in two hours remind me to call the pharmacy",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b120\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-114-remind_no_duration",
+  "user": "remind me to switch the laundry",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "laundry"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-115-remind_no_duration",
+  "user": "remind me about the parent teacher conference",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "conference"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-116-remind_asr_slip",
+  "user": "rewind me in 5 minutes to check the oven",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b5\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-117-remind_hours",
+  "user": "the baby needs her medicine in an hour and a half, give me a heads up",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b90\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-118-remind_unusual_verb",
+  "user": "let me know in 25 minutes that the cookies are done",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b25\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-119-remind_explicit",
+  "user": "can you set like a three minute timer for the tea",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b3\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-120-remind_rambling",
+  "user": "ok so I'm gonna lie down for a bit but the boys get off the bus soon so in 40 minutes remind me the bus is coming",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^remind_me$",
+      "arg": "\\b40\\b"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-121-nav_no_tool_word",
+  "user": "take me to Target",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "target"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-122-nav_question_form",
+  "user": "how do I get to Lincoln Elementary",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "elementary"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-123-nav_walk",
+  "user": "walking directions to the park on Main",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "park"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-124-nav_no_tool_word",
+  "user": "get me to the nearest gas station",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "nearest"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-125-nav_walk",
+  "user": "I need to walk to the pharmacy, which way",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "pharmacy"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-126-nav_explicit",
+  "user": "directions to grandma's house",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "grandma"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-127-nav_short",
+  "user": "navigate home",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "home"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-128-nav_command_end",
+  "user": "Children's Hospital, fastest route",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "children"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-129-nav_walk",
+  "user": "on foot to the library please",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "library"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-130-nav_asr_slip",
+  "user": "never gate to Costco",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "costco"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-131-nav_command_end",
+  "user": "we're late for the birthday party at Sky Zone, get us there",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "zone"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-132-nav_unusual_verb",
+  "user": "route me to 412 Oak Street",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "street"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-133-nav_walk",
+  "user": "how far is the walk to the bus stop, show me the way",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "stop"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-134-nav_rambling",
+  "user": "the kids want ice cream so find me the way to Dairy Queen",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^navigate_to$",
+      "arg": "dairy"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-135-cal_explicit",
+  "user": "what's on today",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "today"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-136-cal_no_tool_word",
+  "user": "what do I have tomorrow",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "tomorrow"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-137-cal_afternoon",
+  "user": "am I free this afternoon",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "today"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-138-cal_day",
+  "user": "anything going on Saturday",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "saturday"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-139-cal_no_tool_word",
+  "user": "what's my day look like",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "today"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-140-cal_tonight",
+  "user": "do I have anything tonight",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "today"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-141-cal_day",
+  "user": "check my calendar for Friday",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "friday"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-142-cal_day",
+  "user": "what's on the schedule for next Tuesday",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "tuesday"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-143-cal_short",
+  "user": "busy tomorrow?",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "tomorrow"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-144-cal_rambling",
+  "user": "before I say yes to this playdate, am I booked on Sunday",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "sunday"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-145-cal_explicit",
+  "user": "what's on my calendar",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "today"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-146-cal_asr_slip",
+  "user": "what's on my calender for tomorrow morning",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "tomorrow"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-147-cal_day",
+  "user": "what have I got going on the 18th",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "18th"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-148-cal_unusual_verb",
+  "user": "read me my appointments",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^whats_on$",
+      "arg": "today"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-149-email_explicit",
+  "user": "email me my notes",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-150-email_explicit",
+  "user": "send my notes to my inbox",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-151-email_subject",
+  "user": "email me the notes with the subject grocery run",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$",
+      "arg": "grocery"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-152-email_unusual_verb",
+  "user": "can you shoot those notes over to my email",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-153-email_subject",
+  "user": "mail myself everything I saved, call it school stuff",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$",
+      "arg": "school"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-154-email_short",
+  "user": "send me my notes",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-155-email_subject",
+  "user": "forward my notes to me titled Thanksgiving plans",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$",
+      "arg": "thanksgiving"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-156-email_no_tool_word",
+  "user": "I need all my notes in my email before the meeting",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-157-email_short",
+  "user": "email notes subject Costco",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$",
+      "arg": "costco"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-158-email_explicit",
+  "user": "send the notes to myself",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-159-email_unusual_verb",
+  "user": "dump my notes into an email for me",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "id": "rh-160-email_asr_slip",
+  "user": "and my notes to me",
+  "category": "action",
+  "expect": {
+   "shipped": [],
+   "proposed": [
+    {
+     "name": "do_action",
+     "args": {
+      "action": "^send_notes_to_me$"
+     }
+    }
+   ]
+  }
+ }
+]

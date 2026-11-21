@@ -1,0 +1,664 @@
+[
+  {
+    "id": "chat-hello",
+    "category": "no_call",
+    "user": "Hey Computer, how's it going?",
+    "expect": []
+  },
+  {
+    "id": "chat-thanks",
+    "category": "no_call",
+    "user": "Thanks, that's all for now",
+    "expect": []
+  },
+  {
+    "id": "chat-joke",
+    "category": "no_call",
+    "user": "Tell me a joke",
+    "expect": []
+  },
+  {
+    "id": "chat-tired",
+    "category": "no_call",
+    "user": "I'm feeling kind of tired today",
+    "expect": []
+  },
+  {
+    "id": "brainstorm-app-names",
+    "category": "no_call",
+    "user": "Help me brainstorm names for a voice notes app",
+    "expect": []
+  },
+  {
+    "id": "brainstorm-talk",
+    "category": "no_call",
+    "user": "I'm giving a talk on running AI models on phones. What are three angles I could take?",
+    "expect": []
+  },
+  {
+    "id": "brainstorm-rainy-day",
+    "category": "no_call",
+    "user": "What's a fun rainy day activity for four kids?",
+    "expect": []
+  },
+  {
+    "id": "brainstorm-followup",
+    "category": "no_call",
+    "user": "What else could we try?",
+    "expect": [],
+    "history": [
+      {
+        "role": "user",
+        "text": "Give me ideas for a weekend project with an Arduino"
+      },
+      {
+        "role": "model",
+        "text": "You could build a plant moisture sensor that lights an LED when the soil is dry."
+      }
+    ]
+  },
+  {
+    "id": "general-cups",
+    "category": "no_call",
+    "user": "How many ounces are in a cup?",
+    "expect": [],
+    "rubric": {
+      "must_match_any": [
+        "\\b8\\b",
+        "eight"
+      ]
+    }
+  },
+  {
+    "id": "general-heart-rate",
+    "category": "no_call",
+    "user": "What's a normal resting heart rate?",
+    "expect": [],
+    "rubric": {
+      "must_match_any": [
+        "60|sixty",
+        "100|hundred"
+      ]
+    }
+  },
+  {
+    "id": "general-heat-pump",
+    "category": "no_call",
+    "user": "Explain how a heat pump works.",
+    "expect": []
+  },
+  {
+    "id": "general-story",
+    "category": "no_call",
+    "user": "Tell me a short story about a robot who learns to garden.",
+    "expect": []
+  },
+  {
+    "id": "trap-remember-past",
+    "category": "over_call",
+    "user": "I remember when phones had physical keyboards. Do you think they'll come back?",
+    "expect": []
+  },
+  {
+    "id": "trap-music-note",
+    "category": "over_call",
+    "user": "What's the difference between a whole note and a half note in music?",
+    "expect": []
+  },
+  {
+    "id": "trap-steam-time",
+    "category": "over_call",
+    "user": "How long should I steam broccoli?",
+    "expect": []
+  },
+  {
+    "id": "trap-walk-or-bike",
+    "category": "over_call",
+    "user": "Is it faster to walk or bike two miles?",
+    "expect": []
+  },
+  {
+    "id": "trap-days-november",
+    "category": "over_call",
+    "user": "How many days are in November?",
+    "expect": [],
+    "rubric": {
+      "must_match_any": [
+        "30|thirty"
+      ]
+    }
+  },
+  {
+    "id": "trap-save-money",
+    "category": "over_call",
+    "user": "What's a good way to save money on groceries?",
+    "expect": []
+  },
+  {
+    "id": "trap-reminded",
+    "category": "over_call",
+    "user": "My neighbor reminded me to water the plants, which was nice of her.",
+    "expect": []
+  },
+  {
+    "id": "trap-lost-note",
+    "category": "over_call",
+    "user": "I wrote a note to myself yesterday but lost the paper. So annoying.",
+    "expect": []
+  },
+  {
+    "id": "trap-said-thanks-after-save",
+    "category": "over_call",
+    "user": "Thanks!",
+    "expect": [],
+    "history": [
+      {
+        "role": "user",
+        "text": "Remember the garage code is 4512"
+      },
+      {
+        "role": "model",
+        "text": "I saved that the garage code is 4512."
+      }
+    ]
+  },
+  {
+    "id": "save-vet",
+    "category": "save",
+    "user": "Remember that the vet said Max needs a dental cleaning",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "dental"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-idea",
+    "category": "save",
+    "user": "Save this idea: a voice app that reads recipes step by step",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "recipe"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-brakes",
+    "category": "save",
+    "user": "Write down that the brake pads have three millimeters left",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "brake"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-meetup",
+    "category": "save",
+    "user": "Note that the AI meetup moved to the 24th",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "24"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-wifi",
+    "category": "save",
+    "user": "Remember the guest wifi password is sunflower42",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "sunflower42"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-batteries",
+    "category": "save",
+    "user": "Don't let me forget to buy batteries for the smoke detector",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "batter"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-run",
+    "category": "save",
+    "user": "Log that I ran three miles this morning",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "three|3"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-roofer",
+    "category": "save",
+    "user": "Jot this down: call the roofer about the gutter",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "roofer|gutter"
+        }
+      }
+    ]
+  },
+  {
+    "id": "save-that",
+    "category": "save",
+    "user": "Save that",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "echo"
+        }
+      }
+    ],
+    "history": [
+      {
+        "role": "user",
+        "text": "What's a good name for a voice notes app?"
+      },
+      {
+        "role": "model",
+        "text": "How about Echo Pad? It's short and easy to say."
+      }
+    ]
+  },
+  {
+    "id": "recall-wifi",
+    "category": "recall",
+    "user": "What's the guest wifi password?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "read_notes",
+          "args": {
+            "query": "wifi|wi-fi|password|guest"
+          }
+        }
+      ]
+    },
+    "notes": [
+      "guest wifi password is sunflower42",
+      "brake pads have three millimeters left",
+      "AI meetup moved to the 24th",
+      "vet said Max needs a dental cleaning"
+    ],
+    "rubric": {
+      "must_match_any": [
+        "sunflower42"
+      ]
+    }
+  },
+  {
+    "id": "recall-brakes",
+    "category": "recall",
+    "user": "How much is left on my brake pads?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "read_notes",
+          "args": {
+            "query": "brake"
+          }
+        }
+      ]
+    },
+    "notes": [
+      "guest wifi password is sunflower42",
+      "brake pads have three millimeters left",
+      "AI meetup moved to the 24th",
+      "vet said Max needs a dental cleaning"
+    ],
+    "rubric": {
+      "must_match_any": [
+        "3|three"
+      ]
+    }
+  },
+  {
+    "id": "recall-meetup",
+    "category": "recall",
+    "user": "When is the AI meetup?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "read_notes",
+          "args": {
+            "query": "meetup"
+          }
+        }
+      ]
+    },
+    "notes": [
+      "guest wifi password is sunflower42",
+      "brake pads have three millimeters left",
+      "AI meetup moved to the 24th",
+      "vet said Max needs a dental cleaning"
+    ],
+    "rubric": {
+      "must_match_any": [
+        "24"
+      ]
+    }
+  },
+  {
+    "id": "recall-missing",
+    "category": "recall",
+    "user": "What did I save about the boat?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "read_notes",
+          "args": {
+            "query": "boat"
+          }
+        }
+      ]
+    },
+    "notes": [
+      "guest wifi password is sunflower42",
+      "brake pads have three millimeters left",
+      "AI meetup moved to the 24th",
+      "vet said Max needs a dental cleaning"
+    ],
+    "rubric": {
+      "must_match_any": [
+        "\\b(no|not|don't|didn't|couldn't|nothing|any)\\b"
+      ],
+      "must_not_match": [
+        "\\bboat (is|was|needs|has)\\b"
+      ]
+    }
+  },
+  {
+    "id": "act-timer-oven",
+    "category": "action",
+    "user": "Remind me in 20 minutes to check the oven",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^remind_me$",
+            "arg": "20"
+          }
+        }
+      ]
+    },
+    "rubric_shipped": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "act-timer-hour",
+    "category": "action",
+    "user": "Set a timer for an hour to move the car",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^remind_me$",
+            "arg": "\\b(1|one|60)\\b"
+          }
+        }
+      ]
+    },
+    "rubric_shipped": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "act-timer-wrapup",
+    "category": "action",
+    "user": "Ping me in 15 minutes so I can wrap up this brainstorm",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^remind_me$",
+            "arg": "15"
+          }
+        }
+      ]
+    },
+    "rubric_shipped": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "act-email-notes",
+    "category": "action",
+    "user": "Email my notes to myself",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^send_notes_to_me$"
+          }
+        }
+      ]
+    },
+    "rubric_shipped": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "act-email-subject",
+    "category": "action",
+    "user": "Send me my notes with the subject talk ideas",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^send_notes_to_me$",
+            "arg": "talk"
+          }
+        }
+      ]
+    },
+    "rubric_shipped": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "act-nav-library",
+    "category": "action",
+    "user": "Walk me to the library",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^navigate_to$",
+            "arg": "library"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-nav-store",
+    "category": "action",
+    "user": "Get me driving directions to Home Depot",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^navigate_to$",
+            "arg": "home ?depot"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "act-cal-today",
+    "category": "action",
+    "user": "What's on my calendar today?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^whats_on$",
+            "arg": "today"
+          }
+        }
+      ]
+    },
+    "rubric_proposed": {
+      "must_match_any": [
+        "dentist"
+      ]
+    }
+  },
+  {
+    "id": "act-cal-tomorrow",
+    "category": "action",
+    "user": "Do I have anything tomorrow evening?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^whats_on$",
+            "arg": "tomorrow"
+          }
+        }
+      ]
+    },
+    "rubric_proposed": {
+      "must_match_any": [
+        "meetup|7"
+      ]
+    }
+  },
+  {
+    "id": "cant-alarm",
+    "category": "cannot",
+    "user": "Wake me up at 6 tomorrow",
+    "expect": [],
+    "rubric": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "cant-text",
+    "category": "cannot",
+    "user": "Text Sam that I'm running late",
+    "expect": [],
+    "rubric": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "cant-add-event",
+    "category": "cannot",
+    "user": "Put a dentist appointment on my calendar for Friday at 3",
+    "expect": [],
+    "rubric": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "cant-call",
+    "category": "cannot",
+    "user": "Call the pharmacy",
+    "expect": [],
+    "rubric": {
+      "must_match_any": [
+        "\\b(can't|cannot|can not|unable|not able|don't have|do not have)\\b"
+      ]
+    }
+  },
+  {
+    "id": "multi-save-and-timer",
+    "category": "multi",
+    "user": "Remember the furnace needs a new filter, and remind me in 10 minutes to order it",
+    "expect": {
+      "shipped": [
+        {
+          "name": "save_note",
+          "args": {
+            "text": "filter"
+          }
+        }
+      ],
+      "proposed": [
+        {
+          "name": "save_note",
+          "args": {
+            "text": "filter"
+          }
+        },
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^remind_me$",
+            "arg": "10"
+          }
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,590 @@
+[
+  {
+    "id": "save-appointment",
+    "user": "Note that my next cardiology appointment is March 12th",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "march|12"
+    }
+  },
+  {
+    "id": "save-doctor-said",
+    "user": "Remember that Dr. Patel wants me off ibuprofen",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "ibuprofen"
+    }
+  },
+  {
+    "id": "save-reading",
+    "user": "Write down blood pressure 128 over 82 this morning",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "128"
+    }
+  },
+  {
+    "id": "save-pharmacy",
+    "user": "Can you save that the pharmacy closes at nine",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "9|nine"
+    }
+  },
+  {
+    "id": "save-ask-later",
+    "user": "Make a note to ask about the rash on my arm",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "rash"
+    }
+  },
+  {
+    "id": "save-dose",
+    "user": "Jot down that I took my Lipitor at 8",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "lipitor"
+    }
+  },
+  {
+    "id": "save-symptom",
+    "user": "Keep track that my knee hurt after the walk today",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "knee"
+    }
+  },
+  {
+    "id": "save-allergist",
+    "user": "Remember my son's allergist is Dr. Kim",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "kim"
+    }
+  },
+  {
+    "id": "save-generic",
+    "user": "Add to my notes: ask about switching to the generic",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "generic"
+    }
+  },
+  {
+    "id": "save-sleep",
+    "user": "Log that I slept six hours last night",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "six|6"
+    }
+  },
+  {
+    "id": "save-mechanic",
+    "user": "Save this: the mechanic said the brake pads have three millimeters left",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "brake"
+    }
+  },
+  {
+    "id": "save-lawyer",
+    "user": "I want to remember that the lawyer needs the lease by Friday",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "lease"
+    }
+  },
+  {
+    "id": "save-location",
+    "user": "Put down that the MRI is at Edward Hospital",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "edward|mri"
+    }
+  },
+  {
+    "id": "save-fasting",
+    "user": "Note: no food after midnight before the blood draw",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "food|fast|midnight"
+    }
+  },
+  {
+    "id": "save-forget",
+    "user": "Don't let me forget the vet said Max needs a dental cleaning",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "dental|max"
+    }
+  },
+  {
+    "id": "plain-heart-rate",
+    "user": "What's a normal resting heart rate?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "must_match_any": [
+        "60|sixty"
+      ]
+    }
+  },
+  {
+    "id": "plain-pronounce",
+    "user": "How do you pronounce metformin?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-joke",
+    "user": "Tell me a joke",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-thanks",
+    "user": "Thanks, that's all for now",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-ask-doctor",
+    "user": "What should I ask my doctor about cholesterol?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-tylenol",
+    "user": "Is it okay to take Tylenol with coffee?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-cups",
+    "user": "How many ounces are in a cup?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "must_match_any": [
+        "\\b8\\b|eight"
+      ]
+    }
+  },
+  {
+    "id": "plain-feeling",
+    "user": "I'm feeling kind of tired today",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-reminder",
+    "user": "Remind me at 5 to take my pill",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-email",
+    "user": "Email my doctor that I'll be late",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "recall-pharmacy",
+    "user": "When does the pharmacy close?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "must_match_any": [
+        "\\b9\\b|nine"
+      ]
+    },
+    "notes": [
+      "Pharmacy closes at 9 pm on weekdays",
+      "MRI is at Edward Hospital on March 3",
+      "Dr. Patel said to stop ibuprofen",
+      "Mechanic said the brake pads have 3 mm left",
+      "Lawyer needs the signed lease by Friday"
+    ]
+  },
+  {
+    "id": "recall-mri",
+    "user": "Where is my MRI?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "must_match_any": [
+        "edward"
+      ]
+    },
+    "notes": [
+      "Pharmacy closes at 9 pm on weekdays",
+      "MRI is at Edward Hospital on March 3",
+      "Dr. Patel said to stop ibuprofen",
+      "Mechanic said the brake pads have 3 mm left",
+      "Lawyer needs the signed lease by Friday"
+    ]
+  },
+  {
+    "id": "recall-ibuprofen",
+    "user": "What did Dr. Patel say about ibuprofen?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "must_match_any": [
+        "stop"
+      ]
+    },
+    "notes": [
+      "Pharmacy closes at 9 pm on weekdays",
+      "MRI is at Edward Hospital on March 3",
+      "Dr. Patel said to stop ibuprofen",
+      "Mechanic said the brake pads have 3 mm left",
+      "Lawyer needs the signed lease by Friday"
+    ]
+  },
+  {
+    "id": "recall-brakes",
+    "user": "How much is left on my brake pads?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "must_match_any": [
+        "3|three"
+      ]
+    },
+    "notes": [
+      "Pharmacy closes at 9 pm on weekdays",
+      "MRI is at Edward Hospital on March 3",
+      "Dr. Patel said to stop ibuprofen",
+      "Mechanic said the brake pads have 3 mm left",
+      "Lawyer needs the signed lease by Friday"
+    ]
+  },
+  {
+    "id": "recall-lease",
+    "user": "When does the lawyer need the lease?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "must_match_any": [
+        "friday"
+      ]
+    },
+    "notes": [
+      "Pharmacy closes at 9 pm on weekdays",
+      "MRI is at Edward Hospital on March 3",
+      "Dr. Patel said to stop ibuprofen",
+      "Mechanic said the brake pads have 3 mm left",
+      "Lawyer needs the signed lease by Friday"
+    ]
+  },
+  {
+    "id": "plain-timer",
+    "user": "Set a timer for ten minutes",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-alarm",
+    "user": "Wake me up at 6 tomorrow",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "plain-date",
+    "user": "What's today's date?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_match_any": [
+        "\\b(don't|do not|can't|cannot|not able|unable|no way)\\b"
+      ]
+    }
+  },
+  {
+    "id": "story-lighthouse",
+    "user": "Tell me a long story about a lighthouse keeper and her dog.",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "^[^.!?]*\\b(can't|cannot|can not|unable|not able)\\b",
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "min_words": 60
+    }
+  },
+  {
+    "id": "story-bedtime",
+    "user": "Can you tell me a bedtime story about a dragon who is afraid of the dark?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "^[^.!?]*\\b(can't|cannot|can not|unable|not able)\\b",
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "min_words": 60
+    }
+  },
+  {
+    "id": "story-plain",
+    "user": "Tell me a story.",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "^[^.!?]*\\b(can't|cannot|can not|unable|not able)\\b",
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "min_words": 60
+    }
+  },
+  {
+    "id": "long-engine",
+    "user": "Explain in detail how a car engine works.",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "^[^.!?]*\\b(can't|cannot|can not|unable|not able)\\b",
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "min_words": 60
+    }
+  },
+  {
+    "id": "long-history",
+    "user": "Tell me everything you know about the Roman Empire.",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "^[^.!?]*\\b(can't|cannot|can not|unable|not able)\\b",
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "min_words": 60
+    }
+  },
+  {
+    "id": "story-after-chat",
+    "user": "Computer, tell me a long story about a lighthouse keeper and her dog.",
+    "history": [
+      {
+        "role": "user",
+        "text": "Computer, what is the capital of France?"
+      },
+      {
+        "role": "model",
+        "text": "The capital of France is Paris."
+      },
+      {
+        "role": "user",
+        "text": "Computer, how many legs does a spider have?"
+      },
+      {
+        "role": "model",
+        "text": "Spiders have eight legs."
+      },
+      {
+        "role": "user",
+        "text": "Computer, what color do you get when you mix blue and yellow?"
+      },
+      {
+        "role": "model",
+        "text": "When you mix blue and yellow, you get green."
+      }
+    ],
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "^[^.!?]*\\b(can't|cannot|can not|unable|not able)\\b",
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ],
+      "min_words": 60
+    }
+  },
+  {
+    "id": "overheard-wake-only",
+    "user": "Said near you since your last reply, not to you. It is background you can use to answer, not a request:\nI finally painted my boat green\nOh nice, what color was it before?\nIt was white, but the green looks way better on the lake\n\nNow said to you: Computer",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_not_match": [
+        "\\bI('ve| have)? (saved|noted|jotted|written|added|logged|set)\\b"
+      ]
+    }
+  },
+  {
+    "id": "overheard-ask-same-turn",
+    "user": "Said near you since your last reply, not to you. It is background you can use to answer, not a request:\nI finally painted my boat green\nOh nice, what color was it before?\nIt was white, but the green looks way better on the lake\n\nNow said to you: Computer, what color is my boat?",
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_match": [
+        "green"
+      ]
+    }
+  },
+  {
+    "id": "overheard-ask-next-turn",
+    "user": "Computer, what color is my boat?",
+    "history": [
+      {
+        "role": "user",
+        "text": "Said near you since your last reply, not to you. It is background you can use to answer, not a request:\nI finally painted my boat green\nOh nice, what color was it before?\nIt was white, but the green looks way better on the lake\n\nNow said to you: Computer"
+      },
+      {
+        "role": "model",
+        "text": "I'm here. What can I do for you?"
+      }
+    ],
+    "rubric": {
+      "must_not_call": [
+        "save_note"
+      ],
+      "must_match": [
+        "green"
+      ]
+    }
+  },
+  {
+    "id": "overheard-save-asked",
+    "user": "Said near you since your last reply, not to you. It is background you can use to answer, not a request:\nThe plumber is coming Thursday at ten\nGood, the sink has been leaking all week\n\nNow said to you: Computer, note that",
+    "rubric": {
+      "must_call": [
+        "save_note"
+      ],
+      "note_match": "plumber|thursday"
+    }
+  }
+]

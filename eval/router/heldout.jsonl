@@ -1,0 +1,601 @@
+{"id": "h9ad70aa9", "text": "Please save a note that the furnace filter is a 16x25x1.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "hb19e03c2", "text": "Remember that Jake's soccer practice moved to Thursdays at the Oak Street field.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "dev"}
+{"id": "h1c7714bd", "text": "Write down that the plumber quoted $340 to replace the water heater valve.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "h7f9dee69", "text": "Make a note that the Civic is due for an oil change at 48,000 miles.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "hdb231906", "text": "Add a note: Dr. Patel wants bloodwork done before my next checkup.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "dev"}
+{"id": "h31a1af31", "text": "Save this: the Wi-Fi password for the cabin is bluefinch42.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "he11405d0", "text": "Keep a note that we're out of dishwasher pods and paper towels.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "dev"}
+{"id": "haf208bd1", "text": "hey computer remember that the garage door code is 7719", "intent": "SAVE", "kind": "save-plain", "style": "stt", "split": "test"}
+{"id": "hd9df806a", "text": "jot down that maya's teacher is mrs okonkwo room for teen", "intent": "SAVE", "kind": "save-plain", "style": "stt", "split": "dev"}
+{"id": "h608ff8c8", "text": "ok computer note that the tomatoes in the back bed got blossom end rot this year", "intent": "SAVE", "kind": "save-plain", "style": "stt", "split": "dev"}
+{"id": "h9b72b8f6", "text": "Please remember that Biscuit's heartworm pill is the green box, 51 to 100 pounds.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "dev"}
+{"id": "h813c6ef3", "text": "Write down an idea for the app: let users share grocery lists by QR code.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "h921d79db", "text": "Save a note that our hotel in Lisbon is Casa Amora, confirmation number 88213.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "h6a7f3112", "text": "Remember that the Henderson proposal needs sign-off from legal before it goes out.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "dev"}
+{"id": "ha0e5b92a", "text": "make a note that the kitchen faucet cartridge is a mo en 1225", "intent": "SAVE", "kind": "save-plain", "style": "stt", "split": "dev"}
+{"id": "h9bc85fd5", "text": "Add to my notes that the tire pressure for the Tacoma is 35 psi front and rear.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "h93dbbddd", "text": "Remember my locker combination at the gym is 24-8-31.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "h29c75993", "text": "Please note that Grandma prefers the window seat and no shellfish.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "h3e12cf55", "text": "Save that the HOA minutes say the pool reopens in May.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "test"}
+{"id": "h70d70561", "text": "write down that leo needs new cleats uh size for youth", "intent": "SAVE", "kind": "save-plain", "style": "stt", "split": "test"}
+{"id": "h35960263", "text": "um save a note that i paid the landscaper a hundred eighty cash on friday", "intent": "SAVE", "kind": "save-plain", "style": "stt", "split": "test"}
+{"id": "h61a51c96", "text": "Remember that the dog sitter's name is Priya and she charges forty a night.", "intent": "SAVE", "kind": "save-plain", "style": "clean", "split": "dev"}
+{"id": "h5498b7e5", "text": "Yo, can you jot down that Derek owes me 60 bucks for the concert tickets?", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "hae4c799f", "text": "Hey so, the guy at the tire shop said my rear brakes have like a month left, save that somewhere.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "h39742d0b", "text": "Okay real quick, stick a note in there that the kids' dentist is Dr. Lund now, not Dr. Ferris.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "h5d0adba3", "text": "Dude, write this down: the Costco rotisserie chickens come out fresh around opening.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "h61bdc21a", "text": "Alright so basically just note that sprinkler zone 3 has a busted head.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "ha181ab9d", "text": "Ooh, idea, save this: a podcast about weird small-town museums.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "h8e7b652e", "text": "hey so uh remember that tasha's birthday is the twelfth of march", "intent": "SAVE", "kind": "save-casual", "style": "stt", "split": "dev"}
+{"id": "h37a29383", "text": "yo note to self the spare key is under the blue planter now", "intent": "SAVE", "kind": "save-casual", "style": "stt", "split": "test"}
+{"id": "h15916760", "text": "Lemme get a note in: Olive's vet visit went fine, she's 22 pounds.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "h54ea0a9e", "text": "Hey buddy, keep a note that the new neighbors are Carmen and Raj, the house with the red door.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "h762bd529", "text": "ok so like put down that the work laptop asset tag is p w x 40981", "intent": "SAVE", "kind": "save-casual", "style": "stt", "split": "test"}
+{"id": "hc1227414", "text": "Ugh, just write down that the dishwasher is making that grinding noise again so I can tell the repair guy.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "h7d2f63b7", "text": "Real talk, I'll forget this, so save that the gate code at Mom's complex is pound 4421.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "h50c5c65e", "text": "Quick one, note that the hallway paint is Sherwin Williams Agreeable Gray.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "h100bf7a4", "text": "hey hey jot this down we're doing tacos for nate's party not pizza", "intent": "SAVE", "kind": "save-casual", "style": "stt", "split": "dev"}
+{"id": "hd08772aa", "text": "So, uh, keep this for me: the babysitter can't do Saturdays anymore.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "h0ee18091", "text": "Gimme a note that says the blueberry bushes need acidic fertilizer.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "h3a0076c0", "text": "Alright, save this one: flight to Denver is on Frontier, seat 17C.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "h79e36e2a", "text": "yo yo write down that the kayak rack is a thule 830", "intent": "SAVE", "kind": "save-casual", "style": "stt", "split": "dev"}
+{"id": "hfc983ee6", "text": "Heads up, remember for me that Coach Diaz said the tournament fee is $45.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "dev"}
+{"id": "hbab84dab", "text": "Okay okay, note it: I told Sam I'd bring the folding chairs.", "intent": "SAVE", "kind": "save-casual", "style": "clean", "split": "test"}
+{"id": "h0655adee", "text": "eh just jot down that the internet guys ticket number is 5530 218", "intent": "SAVE", "kind": "save-casual", "style": "stt", "split": "dev"}
+{"id": "h99316c30", "text": "Milk, add it.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "h92e2e953", "text": "Note: dentist Tuesday.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "test"}
+{"id": "hdd78e425", "text": "Save: locker 112.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "test"}
+{"id": "he49a98c3", "text": "Remember: parking level 3, row G.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "test"}
+{"id": "h297c5674", "text": "Note, oil change at 52k.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "had74ff3c", "text": "Write down \"Bernie, 555-0182.\"", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "h9755b622", "text": "Note: printer toner, HP 64.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "h8674bfd6", "text": "Save wifi code ZEBRA77.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "he94c0130", "text": "Remember Emma's shoe size, 11.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "h3393f0a8", "text": "Add eggs and bread to the list.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "heb595e23", "text": "Note this: water shutoff behind the dryer.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "test"}
+{"id": "h13742286", "text": "Save idea: dog-walking app for seniors.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "hd360974f", "text": "Remember shed lock PIN, 0815.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "test"}
+{"id": "ha50ecd51", "text": "note gutter guy 220 dollars", "intent": "SAVE", "kind": "save-terse", "style": "stt", "split": "test"}
+{"id": "hd37a133e", "text": "um note batteries double a", "intent": "SAVE", "kind": "save-terse", "style": "stt", "split": "dev"}
+{"id": "h0071cdc7", "text": "save that bike lock combo 3 3 6 9", "intent": "SAVE", "kind": "save-terse", "style": "stt", "split": "test"}
+{"id": "hcc459a91", "text": "remember cat food salmon not chicken", "intent": "SAVE", "kind": "save-terse", "style": "stt", "split": "test"}
+{"id": "h8a89a2af", "text": "jot down rental car white kia plate 7 k x r 204", "intent": "SAVE", "kind": "save-terse", "style": "stt", "split": "test"}
+{"id": "h45b5adf0", "text": "Note: Halloween costume, dinosaur.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "dev"}
+{"id": "ha215a037", "text": "Save: gate B22.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "test"}
+{"id": "h3599dc89", "text": "Keep: passport expires 2028.", "intent": "SAVE", "kind": "save-terse", "style": "clean", "split": "test"}
+{"id": "h7823fb77", "text": "So I was talking to the mechanic this morning and he said the transmission fluid on the Highlander looks a little dark, not urgent, but he'd want to flush it at the next service. Can you save that so I ask about it next time?", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "h5f09d1ac", "text": "Okay, we just finished the parent-teacher conference and it went fine overall, but Ms. Alvarez mentioned Ruby is struggling with fractions and suggested the Khan Academy unit on equivalent fractions. Make a note of that, please.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h4a9ad6bc", "text": "I've been thinking about the backyard all week and I think the best spot for the raised beds is along the south fence where it gets sun until about four. Jot that down so I have it when I order lumber.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h7a923115", "text": "My sister called and said for Thanksgiving she's bringing the green bean casserole and two pies, and Uncle Mike is handling the turkey this year, so we just need sides and drinks. Write all that down for me.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "hf8ce4125", "text": "Long day. Anyway, the dermatologist said the spot on my shoulder looks benign but she wants to see it again in six months, and I should use SPF 50 daily. Can you keep a note of what she said?", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "h309fe62c", "text": "The landlord finally got back to me and said the lease renewal for unit 2B is going up to 1,450 a month starting February, and he needs the signed form by the end of December. Save that info.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "hd3ac3fb9", "text": "So for the work offsite next month, Karen said we're meeting at the Lakeview Conference Center, room Maple, and everyone needs to bring a laptop and a one-page project summary. Note that down.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "ha9fad496", "text": "I just measured the living room window because the blinds we have are falling apart, and it's 34 and a half inches wide by 60 inches tall inside the frame. Keep that measurement for me.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h2dab28f6", "text": "We ended up at this little Thai place on Cermak tonight and the drunken noodles were honestly the best I've had, it's called Siam Garden, right next to the dry cleaner. Remember that one for date night.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h64c16da9", "text": "Okay, the vet called back about Pepper, the bloodwork was normal, but they want to switch her to the senior kibble and cut treats down to two a day. I need you to write that down.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "h276bc3dd", "text": "I've had this idea bouncing around: a little app where neighbors can list tools they're willing to lend, like ladders and pressure washers, with a simple way to see who has what. Save that idea somewhere.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "hc4bdf535", "text": "Just got off the phone with the insurance company, the claim number for the hail damage is HC-7730215, and the adjuster's name is Tom Bridges, he's coming out sometime next week. Please note all that.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "h4acb9c5d", "text": "so um i was out in the garage looking for the ladder and realized the breaker for the freezer is the one labeled number nine not seven like i thought so uh write that down", "intent": "SAVE", "kind": "save-ramble", "style": "stt", "split": "test"}
+{"id": "hf66631eb", "text": "hey computer uh so the kids were asking about summer camp and it turns out registration for camp wanakee opens in january and costs 320 a week per kid with a ten percent sibling discount can you file that away for me", "intent": "SAVE", "kind": "save-ramble", "style": "stt", "split": "test"}
+{"id": "h806a2438", "text": "My buddy Greg was over and recommended this book, The Overstory, he said it completely changed how he thinks about trees, and he also mentioned a documentary about mycelium. I want to keep a note of both of those.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h2fdd4ec0", "text": "We got the quote from the roofer today and it's 11,200 for the full tear-off with architectural shingles, they said it'd take three days, and the warranty is twenty-five years. Write that down so I can compare quotes.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h4d80e526", "text": "Alright, so at the kids' soccer meeting they said snack rotation goes alphabetically by last name and we're the week of the 18th, two dozen orange slices and water bottles. Note that for me.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "hb870c564", "text": "You know how I keep forgetting which oil the lawn mower takes? I finally checked the manual and it's SAE 30, about 15 ounces. Just hang on to that for me.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h73eb63e1", "text": "I was reading about composting last night and apparently the ratio is roughly three parts browns to one part greens, and you should turn the pile every week or two. I'd like that saved.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "test"}
+{"id": "he9c22ff0", "text": "The pharmacy said my refill will be ready Thursday, but they also mentioned my insurance changed the copay to fifteen dollars and I need to bring the new card. Can you make a note of that?", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "h86551300", "text": "ok so um the airbnb host in asheville sent the details the lockbox code is 4 1 9 2 and checkout is at eleven and the trash goes in the green bin out back uh save all that", "intent": "SAVE", "kind": "save-ramble", "style": "stt", "split": "dev"}
+{"id": "h23b4a9f6", "text": "I'm standing in the paint aisle and they're out of the eggshell finish, the guy said they'd have more Wednesday, and the color code we need is SW 7029. Keep a record of that code.", "intent": "SAVE", "kind": "save-ramble", "style": "ramble", "split": "dev"}
+{"id": "ha308d2c2", "text": "Could you keep track of the fact that the car registration renews in April?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "dev"}
+{"id": "h6eb9ed3f", "text": "Will you remember that Ellie is allergic to cashews?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "ha75a86d8", "text": "Can you save a note saying the basement dehumidifier filter needs cleaning monthly?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "dev"}
+{"id": "hc2ad0f36", "text": "Would you write down that my badge number at the hospital is 30418?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "dev"}
+{"id": "hfb4f74a7", "text": "Can you jot down that the Patterson invoice was paid on the 3rd?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "hde94bfff", "text": "Mind making a note that the snow blower needs a new shear pin?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "h5a5cc867", "text": "Could you add oat milk and dish soap to my shopping list?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "h3dfe13a3", "text": "Can you remember that the school pickup line opens at 2:50?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "h77b8f357", "text": "would you mind saving that the vin for the jeep ends in 4471", "intent": "SAVE", "kind": "save-question", "style": "stt", "split": "test"}
+{"id": "h45548841", "text": "hey can you uh note that the wifi at the office is guest underscore 2025", "intent": "SAVE", "kind": "save-question", "style": "stt", "split": "test"}
+{"id": "hb3d2317b", "text": "Is it possible to keep a note that we owe the Johnsons a dinner?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "hf0ca8cf2", "text": "Could you hold on to this for me: the gift card balance is $37.50?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "dev"}
+{"id": "he454eb88", "text": "can you write down that the kids passports are in the gray fire box", "intent": "SAVE", "kind": "save-question", "style": "stt", "split": "dev"}
+{"id": "h84508f7b", "text": "Would you be able to save that our anniversary dinner place was Bistro Lune?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "hc3e9f4ab", "text": "Can you keep track of my running mileage? I did 4.2 today.", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "hd4a4d53f", "text": "ok computer can you remember that the furnace was serviced in october", "intent": "SAVE", "kind": "save-question", "style": "stt", "split": "test"}
+{"id": "h3dbcd2c4", "text": "can u make a note the hose bib in the front leaks", "intent": "SAVE", "kind": "save-question", "style": "stt", "split": "dev"}
+{"id": "h1a0559ee", "text": "Could you note that Marcus prefers to be called Marc at work?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "dev"}
+{"id": "hb0bf454e", "text": "Will you save that the alarm company's code word is pineapple?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "dev"}
+{"id": "hc7ef7d77", "text": "Could you put down that the backyard faucet shutoff is in the crawl space?", "intent": "SAVE", "kind": "save-question", "style": "clean", "split": "test"}
+{"id": "h2f8f264b", "text": "um could you uh write down that the guinea pig bedding is the paper kind not the wood shavings", "intent": "SAVE", "kind": "save-question", "style": "stt", "split": "test"}
+{"id": "h325af103", "text": "Hang on to this: the storage unit is number 214 at CubeSmart.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h11a831af", "text": "File away that Professor Kim's office hours are Wednesdays after lunch.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h3018adeb", "text": "Stash this somewhere: Ben's jersey number is 23.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h4e12e749", "text": "Keep in mind for me that Laura doesn't eat gluten.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "hbab728db", "text": "Put batteries and lightbulbs on my list.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h15f59f0a", "text": "Make sure I don't lose this: the warranty number for the fridge is WR-55190.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "dev"}
+{"id": "h609cf2a0", "text": "Hold onto the fact that the boiler was replaced in 2019.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "dev"}
+{"id": "hdfffbd02", "text": "Log that I gave Lily her allergy medicine.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "dev"}
+{"id": "hbb25488b", "text": "Tuck this away for later: the waterfall trail at Starved Rock is French Canyon.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "hb38e0faf", "text": "Stick this in my to-do list: fix the squeaky stair.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h5f21d3d1", "text": "add a to do call the bank about the over draft fee", "intent": "SAVE", "kind": "save-indirect", "style": "stt", "split": "test"}
+{"id": "hc3c79e46", "text": "Keep this handy: the router admin password is tango-river-9.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "dev"}
+{"id": "h65867334", "text": "Don't let me forget that the Jeep's spare tire is a 33 inch.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "dev"}
+{"id": "h87ae8479", "text": "Log the mileage, 61,340 at this fill-up.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h3ecb8496", "text": "Put it on my list to replace the smoke detector batteries.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "dev"}
+{"id": "h016b613f", "text": "Capture this thought: a newsletter on raising backyard chickens.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h221a2689", "text": "Store the license plate for the rental, it's ABX 4410.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "he41d3e8b", "text": "yo put cilantro and limes on the grocery list", "intent": "SAVE", "kind": "save-indirect", "style": "stt", "split": "test"}
+{"id": "hccc4e981", "text": "um hang onto this the plumbers number is five five five oh one four seven", "intent": "SAVE", "kind": "save-indirect", "style": "stt", "split": "test"}
+{"id": "h9bea125b", "text": "hey computer stash the code for the bike shed its nine nine two one", "intent": "SAVE", "kind": "save-indirect", "style": "stt", "split": "test"}
+{"id": "h8537f66c", "text": "ok keep in mind for me that the bus stop moved to elm and fifth", "intent": "SAVE", "kind": "save-indirect", "style": "stt", "split": "dev"}
+{"id": "hf2603a5d", "text": "Record that the baby took 4 ounces at the last feeding.", "intent": "SAVE", "kind": "save-indirect", "style": "clean", "split": "test"}
+{"id": "h28189273", "text": "Set a timer for 10 minutes.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "h1c56d619", "text": "Give me 8 minutes.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "h9e383b34", "text": "Start a countdown for 25 minutes.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "h3392008c", "text": "Buzz me in half an hour.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "hf47a8ec8", "text": "Timer 5", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "h560adfc3", "text": "Remind me in 45 minutes to take the chicken out of the oven.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "h8c02a923", "text": "Could you set a 3 minute timer for my tea?", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "hd88667c6", "text": "I need a 90 second timer.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "h9487463a", "text": "Ping me in an hour and a half.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "h2a9252c0", "text": "Pasta timer, eleven minutes please.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "h4b4fac40", "text": "Count down from two minutes.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "h357c35c1", "text": "Let me know when 20 minutes have passed.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "h06de1d79", "text": "Would you mind starting a timer for 15 minutes for the laundry?", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "hd8a17e16", "text": "Set a 6 minute egg timer.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "dev"}
+{"id": "hefe939d3", "text": "Remind me in 2 hours to move the car.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "h0b199223", "text": "Start a 30 second plank timer.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "haa4115af", "text": "Nudge me in 40 minutes, I need to leave for pickup.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "heebad3db", "text": "Alert me in 4 minutes.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "h27ec6d57", "text": "Can you time 18 minutes for the cookies?", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "hea5f15cf", "text": "Quick timer, 7 minutes.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "hedddf3a5", "text": "In 35 minutes tell me to check the bread.", "intent": "ACTION", "kind": "action-timer", "style": "clean", "split": "test"}
+{"id": "h5ed328b9", "text": "hey computer set a timer for uh fifteen minutes", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "test"}
+{"id": "h2025636c", "text": "um can you give me like ten minutes on the timer", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "dev"}
+{"id": "h607c3a28", "text": "set a time or for twenty minutes", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "dev"}
+{"id": "h386eca41", "text": "timer for for four minutes please the rice is on", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "test"}
+{"id": "hb393bd21", "text": "remind me in thirty minutes to uh switch the laundry over", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "test"}
+{"id": "h78a766b6", "text": "start a count down for one our", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "dev"}
+{"id": "h1b9880cd", "text": "okay so set a set a timer five minutes", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "test"}
+{"id": "h59cead68", "text": "hey computer buzz me in like an hour", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "dev"}
+{"id": "h79c2d896", "text": "can you uh time two and a half minutes", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "dev"}
+{"id": "h35f01449", "text": "set timer for fourty five minutes", "intent": "ACTION", "kind": "action-timer", "style": "stt", "split": "test"}
+{"id": "hae376e92", "text": "So I just put the lasagna in and the box says it needs about fifty minutes but my oven runs hot, so let's go a little under that, can you set a timer for forty five minutes?", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "dev"}
+{"id": "he7a9f708", "text": "I'm going to lie down for a bit because I've been up since five with the baby and I'm wiped, but I can't sleep too long or I'll be groggy all night, so buzz me in twenty minutes.", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "dev"}
+{"id": "h37740d55", "text": "The kids are allowed one more episode and then it's homework time, and I always lose track of time when I start answering emails, so please give me a heads up in twenty five minutes.", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "test"}
+{"id": "h79856644", "text": "Okay the parking meter on this street only takes an hour max and I just paid for exactly that, I'm going into the dentist now, remind me in fifty minutes to come move the car.", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "dev"}
+{"id": "h7da54315", "text": "I've got the brisket resting on the counter and everything I read says you want to let it sit for a while before slicing so the juices settle, just start a timer for thirty minutes for that.", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "test"}
+{"id": "h101cd717", "text": "hey so um i'm doing this interval workout thing where i run hard and then walk and i keep forgetting when to switch can you just do a two minute timer", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "test"}
+{"id": "h1622f693", "text": "My sister is supposed to call me back after her meeting, which she said would take about an hour, and I don't want to miss her, so ping me in an hour.", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "test"}
+{"id": "h930f3c02", "text": "We're making pour over coffee for the first time with this fancy kettle and the guide says the bloom and brew together should take exactly four minutes, so start a four minute countdown.", "intent": "ACTION", "kind": "action-timer", "style": "ramble", "split": "dev"}
+{"id": "h4a766004", "text": "Directions to Target.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hdbea7726", "text": "Take me to work.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hd524a55c", "text": "How do I get to the public library?", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hcd0eb88d", "text": "Nav home", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "h4a14939e", "text": "Could you get me directions to Costco?", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "he9f001ff", "text": "Find the nearest gas station and take me there.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "he640ff1a", "text": "Walking directions to the train station.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hafde4665", "text": "What's the fastest way to O'Hare?", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "hb6800d46", "text": "Route me to 412 Maple Avenue.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "h96f76b26", "text": "Bike route to the lakefront trail.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hae055b6b", "text": "Get me to the closest pharmacy.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "hefbee028", "text": "Drive me to Home Depot.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "h10e1fe56", "text": "Show me how to get to Mom's house.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hd0da8965", "text": "Directions to the nearest urgent care, please.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "h6cbed019", "text": "Can you navigate to Trader Joe's on Roosevelt Road?", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "h9949af57", "text": "Take me to the airport.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "h426892e6", "text": "Get me walking directions to the nearest coffee shop.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hb0eb52c5", "text": "Start navigation to 1600 Elm Street.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "hfe067c47", "text": "Best route to the stadium avoiding the highway.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "hafb064c9", "text": "I need driving directions to Whole Foods.", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "test"}
+{"id": "h5deb6600", "text": "Would you route me to the kids' school?", "intent": "ACTION", "kind": "action-nav", "style": "clean", "split": "dev"}
+{"id": "hd9324f33", "text": "hey computer take me to the near us gas station", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "test"}
+{"id": "h875fff23", "text": "um directions to uh walmart", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "test"}
+{"id": "h2d66ff97", "text": "navigate to too twelve oak street", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "test"}
+{"id": "h0f9421f1", "text": "how do i get two the post office", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "test"}
+{"id": "h9a1aeb78", "text": "nav to the uh the dog park on fifth", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "dev"}
+{"id": "he215dc76", "text": "can you give me directions to the hardware store the ace one", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "dev"}
+{"id": "heb01f6e4", "text": "hey computer whats the fastest way home", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "dev"}
+{"id": "h22abe1b1", "text": "take me to the vet the vet clinic on main", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "test"}
+{"id": "ha872067a", "text": "um walking directions to the farmers market", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "dev"}
+{"id": "hf0562b72", "text": "route to work and avoid tolls if you can", "intent": "ACTION", "kind": "action-nav", "style": "stt", "split": "dev"}
+{"id": "ha37897cd", "text": "So I'm dropping my daughter off at a birthday party and I have literally never been to this place, it's some trampoline park out near the mall, I think it's called Sky Zone, can you get me directions there?", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "test"}
+{"id": "h28e3d554", "text": "I've got about forty minutes before my next thing and I really need to grab a prescription and I don't care which one it is, just take me to whatever pharmacy is closest to where I am right now.", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "dev"}
+{"id": "h4fb3fa2a", "text": "The GPS in the car keeps trying to send me through downtown which is a nightmare at this hour, so I'd rather go around, what's the fastest way to get back to the office from here?", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "dev"}
+{"id": "h35d15ab0", "text": "Okay we just landed, I'm in the rental car lot, it's raining, the kids are tired and cranky and I have no idea where anything is, please navigate us to the Hilton Garden Inn on Airport Boulevard.", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "dev"}
+{"id": "h28512f90", "text": "my buddy just texted me the address for the barbecue tonight it's um 2250 north harlem avenue and i've never been over there so can you get me driving directions", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "dev"}
+{"id": "he8134673", "text": "I'm out on my bike doing a long loop and I think I took a wrong turn somewhere back by the forest preserve, can you give me biking directions back home?", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "test"}
+{"id": "h45ed0a1a", "text": "We're supposed to meet everyone at the restaurant at seven and I'm already running late because of traffic on 355, so just take me to Portillo's in Naperville the quickest way.", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "dev"}
+{"id": "hb2ee93de", "text": "Before I head in for the interview I want to know exactly where I'm going because the building is in a big office park, so could you give me walking directions to 3000 Lakeside Drive?", "intent": "ACTION", "kind": "action-nav", "style": "ramble", "split": "dev"}
+{"id": "hac847660", "text": "Shoot me an email with everything I saved.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "dev"}
+{"id": "h81c5c553", "text": "Mail my notes to myself.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "h6c1bc908", "text": "Export my notes to my inbox.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "dev"}
+{"id": "h669c7153", "text": "Forward my saved notes to my email.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "hfa23f9b6", "text": "Send everything I saved to my email.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "dev"}
+{"id": "hee8aa72c", "text": "Email my notes to me with the subject Weekend Plans.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "dev"}
+{"id": "h18f893ff", "text": "Notes to email.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "hc34f1561", "text": "Email notes", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "h67acb42f", "text": "Can you email me a copy of my notes?", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "hb8d24d93", "text": "Send my notes to me, subject line 'project ideas'.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "h68a9a92a", "text": "Put all my notes in an email to me.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "dev"}
+{"id": "h29ca4498", "text": "Would you mind mailing me my saved notes?", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "dev"}
+{"id": "h9d8aeb7b", "text": "Dump my notes into an email and send it to me.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "h28a97e79", "text": "Email me today's notes.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "hae70f0fe", "text": "Send me my to-do list by email.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "dev"}
+{"id": "h5e5d3553", "text": "I'd like my notes emailed to me.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "hbd5ef007", "text": "Send my notes to my email address.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "h69943033", "text": "Email myself the notes I took.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "h008ea663", "text": "Please forward all of my notes to me.", "intent": "ACTION", "kind": "action-email", "style": "clean", "split": "test"}
+{"id": "h43dde92a", "text": "um send my notes to my in box", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "dev"}
+{"id": "h1f0a0600", "text": "can you uh shoot me my notes over email", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "dev"}
+{"id": "hd6b3d6fe", "text": "email me my notes subject line uh work stuff", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "dev"}
+{"id": "h4dcc887d", "text": "send all my no it's to my email", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "test"}
+{"id": "h1aa1143d", "text": "mail mail me everything i saved", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "test"}
+{"id": "ha24d1e50", "text": "hey computer forward my notes to me", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "dev"}
+{"id": "h9f191c3c", "text": "okay send my saved notes to my e mail", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "dev"}
+{"id": "h6389fbbe", "text": "uh export my notes too my inbox", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "dev"}
+{"id": "h144ff8cf", "text": "email me the notes i saved um all of them", "intent": "ACTION", "kind": "action-email", "style": "stt", "split": "test"}
+{"id": "h19523375", "text": "I've been dumping ideas into this thing all week for the garage reorganization and I want to actually look at them on my laptop tonight when I sit down, so can you email me all my notes?", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "test"}
+{"id": "h6d52aa86", "text": "So my boss wants a summary of the stuff we talked about and I jotted a bunch of it down here during the call, the easiest thing is probably to just send my notes to my email and I'll clean them up from there.", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "dev"}
+{"id": "h2989c9de", "text": "I'm switching phones this weekend and I'm paranoid about losing anything, I know it probably syncs but just to be safe, export everything I've saved to my inbox.", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "dev"}
+{"id": "hc8f9f9d5", "text": "okay so i have like a million little notes in here from the trip planning and i can never find anything on this tiny screen um could you just mail them all to me", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "test"}
+{"id": "h1e1166b1", "text": "Before I forget, and I always forget, I'd love to have my notes in my email so I can print them out for the meeting tomorrow morning, subject can be meeting prep.", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "test"}
+{"id": "hd526a4c6", "text": "I can't scroll through the hardware store list while I'm driving and it's getting long, so just shoot my saved notes to my email and I'll pull them up when I park.", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "dev"}
+{"id": "hf6022895", "text": "I've got this habit of saving recipes and gift ideas and random reminders in here, and at the end of every month I like to go through it all on the computer, so go ahead and send everything I saved to my email.", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "test"}
+{"id": "hbec8a52f", "text": "Not sure if you can do this but it would really help me out, I want to review my notes from the conference on a bigger screen, can you email them to me?", "intent": "ACTION", "kind": "action-email", "style": "ramble", "split": "test"}
+{"id": "hf5ad3685", "text": "Am I free tomorrow afternoon?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "test"}
+{"id": "haba1bc70", "text": "When's my next meeting?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h7e3bd50a", "text": "What does my day look like?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h2599dae1", "text": "Do I have anything Friday?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "test"}
+{"id": "h611f2fd8", "text": "Am I booked this afternoon?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h963f3eca", "text": "Anything after lunch?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h16aba066", "text": "When's my next appointment?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "hb617d24b", "text": "What's on my schedule next week?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "test"}
+{"id": "h12562f18", "text": "Calendar today", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h77e7aa75", "text": "Read me my schedule for tomorrow.", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "test"}
+{"id": "h25b42370", "text": "Could you tell me what I have going on Thursday?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "hafbeb48b", "text": "Am I busy at 3?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "test"}
+{"id": "hee73c1bf", "text": "Do I have any meetings this morning?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "test"}
+{"id": "h7e99192e", "text": "What's my first thing tomorrow?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h6e8543bc", "text": "Is my Saturday open?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h337adf62", "text": "How packed is my Monday?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h5d44dff4", "text": "What have I got on Wednesday evening?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h1f4ed320", "text": "Any appointments this week?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h448fe1be", "text": "Check my calendar for the 22nd.", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h035ad1f5", "text": "Am I free for lunch tomorrow?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "test"}
+{"id": "ha59b508c", "text": "What's left on my calendar today?", "intent": "ACTION", "kind": "action-calendar", "style": "clean", "split": "dev"}
+{"id": "h899f9fce", "text": "hey computer whats on my calender today", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "dev"}
+{"id": "hfcf34147", "text": "um do i have anything uh tomorrow morning", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "test"}
+{"id": "hc2bb09e1", "text": "am i free this uh this tuesday", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "test"}
+{"id": "h5b68760f", "text": "whens my next a point meant", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "test"}
+{"id": "hb7afa6a7", "text": "what does my weak look like", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "test"}
+{"id": "h91a3538c", "text": "hey computer am i booked friday after noon", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "dev"}
+{"id": "hcf2363a0", "text": "do i have do i have anything after lunch", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "dev"}
+{"id": "h4ce32a9b", "text": "whats my schedule for to morrow", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "test"}
+{"id": "h57897645", "text": "um when is my next meeting", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "test"}
+{"id": "hde528815", "text": "anything on my calendar for sunday or am i clear", "intent": "ACTION", "kind": "action-calendar", "style": "stt", "split": "test"}
+{"id": "h7d48d735", "text": "So my brother-in-law wants to come by and help me put the new shelves up in the garage at some point this weekend, before I tell him yes, do I have anything on Saturday?", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "test"}
+{"id": "h5c75be43", "text": "I'm trying to figure out if I can sneak out for a haircut today without missing something important, what does my afternoon look like?", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "test"}
+{"id": "h269bf9ec", "text": "I just woke up from the worst night of sleep and I honestly can't remember what I agreed to this week, can you just read me what's on my calendar for the next few days?", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "dev"}
+{"id": "h91651a2f", "text": "um so the school just emailed about a parent teacher conference and they want me to pick a slot next thursday but i have no idea what i already have going on that day so what's on my calendar next thursday", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "test"}
+{"id": "h7b2428e8", "text": "The plumber says he can come either Monday morning or Wednesday morning and I need to tell him in the next ten minutes, am I free Monday morning?", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "dev"}
+{"id": "hc2ab1668", "text": "I've been in back to back calls since eight and I've totally lost track, when is my next meeting and how long do I have until then?", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "dev"}
+{"id": "h0ca628b9", "text": "My wife asked if we could do dinner with the neighbors on Friday night, and I said probably but I'm not totally sure, so before I commit, is anything on my schedule Friday evening?", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "test"}
+{"id": "hb8f3bb7b", "text": "Real quick before I head into this doctor's appointment, is there anything else on my calendar today after four?", "intent": "ACTION", "kind": "action-calendar", "style": "ramble", "split": "test"}
+{"id": "h9f8dd54b", "text": "I remember when we used to drive to the lake every summer with no phones at all.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "hcc396cdf", "text": "My boss sent me an email about the reorg and I still don't know what it means for me.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h2e24c750", "text": "The timer on the oven broke again, so dinner got a little crispy tonight.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h8b9e2b3a", "text": "Honestly I forgot how much I liked this song until it came on just now.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h465c10f0", "text": "The map in the trail guide was way off, we ended up on a completely different ridge.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "hc88f2a07", "text": "My dentist appointment went fine, no cavities for once.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "hbce5d368", "text": "Took the long route home and saw three deer by the forest preserve.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "hac16d0f1", "text": "Funny how my calendar looked empty Monday and now the whole week is packed.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h5a93e443", "text": "Saved twenty bucks on groceries by skipping the snack aisle.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "hd64a32fd", "text": "The walk to the station only took twelve minutes this morning.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "hd55ad5dd", "text": "I keep a log of every fish I catch, it's kind of my thing.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h73c3046a", "text": "Neva wrote down every word of the spelling list without peeking.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h10569a6f", "text": "That reminder app my coworker swears by looks way too complicated.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h2c55bf9c", "text": "The GPS sent us through a cornfield last weekend, which was an adventure.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h7e1989f4", "text": "Our school sends a schedule home every Friday and it's always wrong by Tuesday.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h788434e0", "text": "Just got a note from the teacher saying Luna did great on her reading test.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "hcfdbf8eb", "text": "I tracked my steps all last month and it was mostly couch.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h8a9add6a", "text": "Five minutes of silence in this house is a miracle.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h30d5a8b1", "text": "The directions on this furniture box are basically hieroglyphics.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h0f94a6c5", "text": "My sister emailed the whole family a photo of her new puppy.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h04b4c2d0", "text": "Nobody remembers my birthday at work and I've stopped minding.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h78db8613", "text": "The bakery was sending out free samples so I came home with a croissant.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h532b21da", "text": "Drove past the old house today, they painted it bright yellow.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h16906611", "text": "The plumber was supposed to show at nine and showed at noon.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "test"}
+{"id": "h917f2be4", "text": "Writing things down by hand always helped me study better than typing.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "hc73f9e22", "text": "That route through downtown is a nightmare at rush hour.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "clean", "split": "dev"}
+{"id": "h25bc2cfe", "text": "so i was at the store and um i totally forgot my wallet in the car lol", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "h17431dd2", "text": "hey computer nothing just saying the kitchen timer went off and scared the dog", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "hb73b968c", "text": "man the email from the bank was just a privacy policy update false alarm", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "h1cc2884a", "text": "i walked like four miles today my legs are done", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "h650fc672", "text": "my calendar at work is just back to back meetings it's ridiculous", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "h30f7e612", "text": "the uh the appointment card fell behind the fridge and we only found it yesterday", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "h865eca26", "text": "reminds me of that trip we took to the dunes when the kids were little", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "h82b65700", "text": "ugh the navigation lady kept saying recalculating the whole drive", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "stt", "split": "dev"}
+{"id": "hbe461a83", "text": "So this morning I was trying to get everybody out the door and of course the reminder on my phone went off for the wrong thing, and then Eiley couldn't find her shoe, and by the time we left I'd basically forgotten why I set it in the first place.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "ramble", "split": "test"}
+{"id": "h55fe707a", "text": "Funny story, my neighbor keeps a notebook where he writes down every car that parks on our street, the plate, the time, everything, and I honestly can't tell if it's a hobby or if he's worried about something.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "ramble", "split": "dev"}
+{"id": "h9cac51b0", "text": "I used to save every single receipt in a shoebox thinking I'd need them for taxes, and then last year I finally went through it and like ninety percent were for gas and coffee, so that was a fun evening.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "ramble", "split": "dev"}
+{"id": "ha062e295", "text": "Driving back from the airport the map app wanted me to take some toll road I'd never heard of, and I ignored it and went the way I know, and honestly it was probably faster anyway because there was zero traffic.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "ramble", "split": "test"}
+{"id": "h75e772e1", "text": "um so the thing is i remember my grandpa used to send letters to everybody instead of emails even when he was like ninety and i kind of miss getting those you know", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "ramble", "split": "test"}
+{"id": "h6ce40a06", "text": "The schedule for the soccer league came out today and somehow every single game is at eight in the morning on Saturday, which means I'll be standing on a cold field with coffee for the next two months.", "intent": "NONE", "kind": "none-nearmiss-statement", "style": "ramble", "split": "dev"}
+{"id": "hd44479e5", "text": "Remember that show about the chemistry teacher who cooks meth? What was it called?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h961b43e3", "text": "Save the date cards, are they actually worth it or just a waste of paper?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h567ab301", "text": "How do directions apps figure out traffic in real time?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h0c50545c", "text": "What's a good note-taking method for long meetings?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h1c7b1b1e", "text": "How many minutes are in a week?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "hecd41ae0", "text": "Is it better to save or invest when interest rates are this high?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h461d5efa", "text": "Directions to make sourdough bread from scratch?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h700dd222", "text": "Why do I always forget people's names right after I meet them?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h5cd9178e", "text": "What's the difference between a reminder and a notification on Android?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h6868f129", "text": "How long should I let a steak rest, like how many minutes?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "hc1b95f6f", "text": "Who invented the calendar we use now?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h1d6e0a09", "text": "Is walking thirty minutes a day enough exercise?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h1415e549", "text": "What does it mean when an email says sent on behalf of?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "hd02fedb9", "text": "How far is the moon, in driving time if you could drive there?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "ha291b904", "text": "Is a bullet journal better than a planner for tracking habits?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h67612ede", "text": "What's the fastest route a plane takes from Chicago to Tokyo, over the pole?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "hcfe6c6a8", "text": "Why do recipes say to write down your substitutions?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h75791d94", "text": "Do memory palaces actually help you remember stuff?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h04208b5b", "text": "How do I make my kids remember to brush their teeth without nagging?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h5aceeacc", "text": "What's the etiquette on sending a thank you email after an interview?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h3a33b0d2", "text": "Is it rude to schedule a meeting during lunch?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "h14a1d328", "text": "How does Google Maps estimate walking time?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "he5f2cdeb", "text": "Can you explain the Pomodoro technique and why it uses twenty five minute timers?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h2a44c613", "text": "What's the best way to log hours if you freelance on the side?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "hacf94379", "text": "How do you write a note to a teacher excusing an absence, like what should it say?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "h1a5eccae", "text": "Why is the drive through always slower than going inside?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "dev"}
+{"id": "hc96756ac", "text": "um what's the route of the boston marathon go through", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "dev"}
+{"id": "h05a3504a", "text": "hey computer how does an egg timer actually work like the sand ones", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "dev"}
+{"id": "h1e8f531c", "text": "what was the name of that movie where the guy can't make new memories and writes notes on himself", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "dev"}
+{"id": "he40e2ffb", "text": "how many minutes is a hockey period", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "test"}
+{"id": "h31a8fa32", "text": "is it worth it to save the cardboard boxes for moving or just buy new ones", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "dev"}
+{"id": "h35ee8bb5", "text": "what's um what's the history of the gregorian calendar", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "test"}
+{"id": "h23d7e081", "text": "why does my email keep going to spam for some people", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "test"}
+{"id": "hce4d28c4", "text": "do you know if the map in the old zelda game was hand drawn", "intent": "NONE", "kind": "none-nearmiss-question", "style": "stt", "split": "dev"}
+{"id": "he620dbee", "text": "So I've been reading about how people track their sleep with rings and watches and stuff, and I'm wondering, are those things actually accurate or is it mostly guessing based on how much your wrist moves around at night?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "ramble", "split": "dev"}
+{"id": "hcb71b34c", "text": "My daughter asked me today why we have leap years and I sort of remembered it's something about the calendar drifting, but I couldn't explain it, so what's the actual reason in simple terms I could tell a ten year old?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "ramble", "split": "dev"}
+{"id": "h3cc5f8bb", "text": "okay so random question but when people say write it down and it'll come true like with goals and stuff is there any real research behind that or is it just like a self help thing", "intent": "NONE", "kind": "none-nearmiss-question", "style": "ramble", "split": "test"}
+{"id": "h998cc952", "text": "I'm trying to figure out if I should drive or fly to Nashville for Thanksgiving, it's about seven hours by car and we'd have four kids in the back, what would you weigh in a decision like that?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "ramble", "split": "dev"}
+{"id": "h30df288b", "text": "We keep getting these emails from the school saying to send in a signed permission slip and I never know if a typed name counts as a signature, is that legally the same thing or not really?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "ramble", "split": "test"}
+{"id": "hb3653c63", "text": "Remind me, what's the capital of Australia again?", "intent": "NONE", "kind": "none-nearmiss-question", "style": "clean", "split": "test"}
+{"id": "ha90a5b7f", "text": "What's the gate code again?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h6c0f84b9", "text": "When did I say the plumber's coming?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h508f8854", "text": "What did I note about the car?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "hb1e37675", "text": "Do I have anything saved about passwords?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h435b4fc6", "text": "What was the name of that wine I wanted to try?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "h5ca3f8b8", "text": "Did I write down the size of the furnace filter?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "haa43b026", "text": "Which paint color did I pick for the hallway?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "hbe3a6b23", "text": "What's the WiFi name at my parents' house, did I save that?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "hc975563c", "text": "What were the books I wanted to read this winter?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "h93ae8bbc", "text": "How much did I say the tires cost?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "h95a30383", "text": "What's on my grocery list?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "hd244e8a7", "text": "Did I save the name of the guy who fixed the roof?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "hfb7924ce", "text": "What did I jot down after the parent teacher conference?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "h73934455", "text": "Read back my notes about the boat trailer.", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h09938b27", "text": "What size shoes did I say Silas needs?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "he428be41", "text": "Have I got anything noted about the meetup topic for December?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "hab98f378", "text": "Which locker number did I save at the gym?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "hf87d408b", "text": "What did I say the dog's medication dose was?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "hdd384699", "text": "Where did I say I parked at the airport?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h3938d49b", "text": "Tell me what I saved about the garden layout.", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h8cdf2f17", "text": "What's my license plate, I think I noted it somewhere.", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "he9579326", "text": "Did I ever save that recipe for the chili?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "h81154f55", "text": "What were those gift ideas for Gina?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h03c35945", "text": "Any notes from me about the rental property inspection?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "hca1efe8e", "text": "What's left on my to-do list?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "h5ba386fa", "text": "um what was the gate code for the storage unit", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "dev"}
+{"id": "ha95023a7", "text": "hey computer what did i say the babysitter's number was", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "test"}
+{"id": "hf79eabf3", "text": "did i save anything about the the water heater model", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "test"}
+{"id": "ha1c3daf2", "text": "whats the name of that podcast i told you about last week", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "dev"}
+{"id": "h4b9f597b", "text": "what time did i say the vet appointment was", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "test"}
+{"id": "h5d7e8839", "text": "uh do i have a note on which fuse is the garage", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "test"}
+{"id": "haef43454", "text": "what were the things i needed from home depot", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "dev"}
+{"id": "h00868154", "text": "what did i put down for the kids christmas lists", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "dev"}
+{"id": "hee857896", "text": "read me my notes", "intent": "NONE", "kind": "none-recall", "style": "stt", "split": "dev"}
+{"id": "h03a4fc92", "text": "Okay so a while back I told you the name of the contractor my neighbor recommended for the deck, I think it started with an M, and I also mentioned what he quoted, can you tell me what I said about that?", "intent": "NONE", "kind": "none-recall", "style": "ramble", "split": "dev"}
+{"id": "h11b542ef", "text": "I'm standing in the hardware store right now and I know I saved the measurements for the bathroom window blinds at some point, like the width and height, what were they?", "intent": "NONE", "kind": "none-recall", "style": "ramble", "split": "test"}
+{"id": "h1f11b4d8", "text": "um so earlier this week i told you something about what the mechanic said was wrong with the jeep like some part was leaking what did i say it was", "intent": "NONE", "kind": "none-recall", "style": "ramble", "split": "dev"}
+{"id": "h963d45e8", "text": "Did I note down the serial number for the generator?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "dev"}
+{"id": "hb0baa5c5", "text": "What did I say I owe Katie for the shipping supplies?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h5403e5c3", "text": "Which day did I note the trash pickup moves to?", "intent": "NONE", "kind": "none-recall", "style": "clean", "split": "test"}
+{"id": "h021a2942", "text": "Wake me at six thirty.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "ha5f8d627", "text": "Alarm for 7.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h00011d08", "text": "Text Gina that I'm running late.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "hbd871518", "text": "Call my dad.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "h2b457f8b", "text": "Put lunch with Sam on my calendar for Thursday.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h35808abc", "text": "Cancel my 3 o'clock.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "h457a6ee6", "text": "Play some Fleetwood Mac.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "h7585ae48", "text": "Turn off the living room lights.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "h8cbb915c", "text": "What's the weather going to be like tomorrow?", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "h9aee8031", "text": "Set an alarm for 5:45 tomorrow morning.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "hb1533ad9", "text": "Move my dentist appointment to next Friday.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h258c83ef", "text": "Delete the team sync from my calendar.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h17982327", "text": "Send a message to the soccer group chat saying practice is cancelled.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "hb8d4ea88", "text": "Dim the bedroom lights to twenty percent.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "ha3cc3a81", "text": "Is it going to rain this afternoon?", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h581d8550", "text": "Add a meeting with the landlord at 2 on Wednesday.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "hc3fd85bb", "text": "Set a timer on Gina's phone for ten minutes.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h5c6b8bef", "text": "Skip this song.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h3839b65b", "text": "Reschedule tomorrow's standup to 10 a.m.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "hc4abe56d", "text": "Call the pizza place on Roosevelt.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "he88c8198", "text": "Remind my wife in an hour to pick up the kids.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "hfdb8aa9d", "text": "Turn the thermostat up to 70.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "hfd2430ec", "text": "Set my alarm for noon so I don't oversleep my nap.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "h6cd289f6", "text": "Shuffle my liked songs.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "dev"}
+{"id": "habe68f65", "text": "Invite Mike to the Saturday barbecue on my calendar.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "hce7fa4d8", "text": "hey computer wake me up at quarter to six", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "dev"}
+{"id": "h113f36db", "text": "um text my brother happy birthday", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "test"}
+{"id": "h336294c9", "text": "turn on the uh the porch light", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "test"}
+{"id": "h96096193", "text": "whats the temperature outside right now", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "test"}
+{"id": "hd587e952", "text": "cancel the dentist thing on my calendar for thursday", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "dev"}
+{"id": "h9dd28845", "text": "play the kids bedtime playlist", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "test"}
+{"id": "hc3eb9060", "text": "alarm at 6 am weekdays", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "dev"}
+{"id": "h50f6b421", "text": "call gina", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "test"}
+{"id": "hefb3763e", "text": "set a timer on the kitchen speaker for twenty minutes", "intent": "NONE", "kind": "none-unsupported", "style": "stt", "split": "dev"}
+{"id": "h0814fa8d", "text": "So tomorrow I've got that early flight, can you set an alarm for four fifteen in the morning, and maybe a backup one at four thirty because I always sleep through the first one when I'm tired like this.", "intent": "NONE", "kind": "none-unsupported", "style": "ramble", "split": "test"}
+{"id": "h68940408", "text": "Hey can you shoot a text to Katie and let her know I looked over the shipping site stuff and it looks good, and that I'll call her tomorrow afternoon if that works for her.", "intent": "NONE", "kind": "none-unsupported", "style": "ramble", "split": "dev"}
+{"id": "hc7e849b9", "text": "um so the team moved the planning meeting so can you go into my calendar and push the thursday one to friday same time and then also delete the old reminder thing from that invite", "intent": "NONE", "kind": "none-unsupported", "style": "ramble", "split": "test"}
+{"id": "h8156fbbb", "text": "It's getting dark early now, can you turn on the lights in the kitchen and the hallway, and maybe play something mellow in the background while I make dinner for everybody.", "intent": "NONE", "kind": "none-unsupported", "style": "ramble", "split": "test"}
+{"id": "h35e3656f", "text": "Will it snow this weekend in Winfield?", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "hc3bffeaf", "text": "Block off Friday afternoon on my calendar as focus time.", "intent": "NONE", "kind": "none-unsupported", "style": "clean", "split": "test"}
+{"id": "h9b8c155c", "text": "thats it for now", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "dev"}
+{"id": "h20f4ea32", "text": "you're the best", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "hb67a58ca", "text": "ugh what a day", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "hd0f0b33c", "text": "um nothing never mind", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "dev"}
+{"id": "hee25692c", "text": "lol that's funny", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "dev"}
+{"id": "h5bae372e", "text": "wow", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "h411db9d2", "text": "I'm so tired today.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "h19dca277", "text": "Honestly I'm feeling pretty good about this week.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "h91cba20f", "text": "sorry i was talking to my kid", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "test"}
+{"id": "h03d5e94c", "text": "Can you just talk to me for a minute? I've had a rough morning.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "h00d69105", "text": "perfect thank you", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "test"}
+{"id": "hece183a9", "text": "no thats all", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "test"}
+{"id": "h15780c23", "text": "Good night!", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "h28c9348d", "text": "What's your favorite color?", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "hd1dcea53", "text": "Do you ever get bored?", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "h8b288277", "text": "haha nice one", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "test"}
+{"id": "h601b1b67", "text": "Sounds good.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "hc4538f3c", "text": "I'm proud of myself, I finally fixed the leaky faucet.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "h1f83d5bc", "text": "Man, the kids were wild at dinner tonight.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "hcc8d67f5", "text": "oops wrong button", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "test"}
+{"id": "h365bb3ad", "text": "Are you still there?", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "h6bc02353", "text": "So today was one of those days where nothing went right, the dog threw up on the rug, my daughter forgot her lunch, and I spilled coffee on my shirt right before a big meeting. I just needed to vent for a second.", "intent": "NONE", "kind": "none-chat", "style": "ramble", "split": "test"}
+{"id": "hd93922f6", "text": "You know what, I just wanted to say I really appreciate how much easier you've made my mornings. Between the kids and work it's been nonstop lately, and having something to bounce stuff off of actually helps a lot.", "intent": "NONE", "kind": "none-chat", "style": "ramble", "split": "dev"}
+{"id": "h5f98a41e", "text": "uh hey so i don't really need anything i just got the kids to bed finally and the house is quiet for like the first time all day and i'm just kind of sitting here enjoying it", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "dev"}
+{"id": "hec6b0877", "text": "Hello?", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "he8e07778", "text": "Okay, got it.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "h598ed0a4", "text": "Bye for now.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "h2f370483", "text": "Happy Friday!", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "test"}
+{"id": "h08cbe1ec", "text": "Not you, sorry.", "intent": "NONE", "kind": "none-chat", "style": "clean", "split": "dev"}
+{"id": "h620ed68a", "text": "hmm let me think", "intent": "NONE", "kind": "none-chat", "style": "stt", "split": "dev"}
+{"id": "ha46cb0b9", "text": "Why is the sky blue?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "hc051d335", "text": "What's 15 percent of 84?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "haa12c910", "text": "How long do you boil hard boiled eggs?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "hb96a7cb1", "text": "what temperature should chicken be cooked to", "intent": "NONE", "kind": "none-knowledge", "style": "stt", "split": "test"}
+{"id": "haf2cd36d", "text": "Who was the first president to live in the White House?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "h50fed69f", "text": "How does a heat pump work?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "ha3c2cb5e", "text": "What's the difference between baking soda and baking powder?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "hcddaf98a", "text": "how often should i change my furnace filter", "intent": "NONE", "kind": "none-knowledge", "style": "stt", "split": "dev"}
+{"id": "hcf35939b", "text": "Why do leaves change color in the fall?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "h53ca95a2", "text": "How many teaspoons in a tablespoon?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "h2f03a189", "text": "What causes hiccups?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "h59d4f5c5", "text": "um what year did the titanic sink", "intent": "NONE", "kind": "none-knowledge", "style": "stt", "split": "test"}
+{"id": "heac10a79", "text": "Explain how vaccines work in simple terms for an eight year old.", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "h51ea6e51", "text": "What's 12 times 17?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "h9dce16d4", "text": "How much water should a ten-year-old drink a day?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "hb2d2f78c", "text": "Is it safe to put a cast iron pan in the dishwasher?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "he92ba357", "text": "Why does bread go stale?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "hdd3f0265", "text": "how do solar panels make electricity", "intent": "NONE", "kind": "none-knowledge", "style": "stt", "split": "test"}
+{"id": "h6c16c0a8", "text": "What is a Roth IRA?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "haa905900", "text": "How far away is the moon?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "h0e9f2ff0", "text": "hey computer whats the tallest mountain in north america", "intent": "NONE", "kind": "none-knowledge", "style": "stt", "split": "dev"}
+{"id": "h8e788c11", "text": "What's the best way to get a red wine stain out of carpet?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "h16257053", "text": "What does a GFCI outlet do?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "h76604281", "text": "Why do cats purr?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "hce13e358", "text": "Convert 180 Celsius to Fahrenheit.", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "h8ccbec9d", "text": "whats the difference between a virus and bacteria", "intent": "NONE", "kind": "none-knowledge", "style": "stt", "split": "test"}
+{"id": "h380e2006", "text": "When did the Civil War end?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "h3e94f81b", "text": "How long should a toddler nap?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "test"}
+{"id": "hb555e61d", "text": "So my son asked me tonight why we have leap years and I kind of fumbled it, something about the earth not going around the sun in exactly 365 days. Can you explain how that actually works so I can tell him properly?", "intent": "NONE", "kind": "none-knowledge", "style": "ramble", "split": "test"}
+{"id": "hc73cd125", "text": "Our basement smells a little musty after all the rain this week and I'm wondering what actually causes that smell, is it mold or just humidity, and what's the science behind why dehumidifiers help with it?", "intent": "NONE", "kind": "none-knowledge", "style": "ramble", "split": "test"}
+{"id": "hd878defb", "text": "ok so uh my daughter's science project is about volcanoes and she wants to know what makes the lava come up in the first place like what's actually happening underground", "intent": "NONE", "kind": "none-knowledge", "style": "stt", "split": "test"}
+{"id": "h40ac9844", "text": "How does compound interest work?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "h84bab54c", "text": "What's a good substitute for buttermilk?", "intent": "NONE", "kind": "none-knowledge", "style": "clean", "split": "dev"}
+{"id": "h84980046", "text": "Give me some ideas for a rainy day with the kids.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h364c0878", "text": "Help me write a birthday message for my wife.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h99a628f8", "text": "What should we make for dinner tonight with chicken and rice?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "hf99069f0", "text": "Can you tell a short bedtime story about a dragon who's afraid of the dark?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "hfda7d2f5", "text": "any ideas for a cheap date night", "intent": "NONE", "kind": "none-brainstorm", "style": "stt", "split": "test"}
+{"id": "h82b1e08d", "text": "How should I ask my boss for a raise?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "h94befe09", "text": "Write a funny limerick about a lazy dog.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "h2a290264", "text": "What are some good chores for a five year old?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h8b6ff84f", "text": "uh give me a few names for a goldfish", "intent": "NONE", "kind": "none-brainstorm", "style": "stt", "split": "test"}
+{"id": "h57af6f64", "text": "Help me plan a weekend camping trip with four kids.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "ha1387dbd", "text": "What's a nice way to say no to volunteering at the school bake sale?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "he3df07cd", "text": "Suggest a few board games for family game night.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "h8428ab61", "text": "How can I get my kids to eat more vegetables?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "h36fb603a", "text": "Brainstorm some themes for a twelve year old's birthday party.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "ha68cf108", "text": "tell me a knock knock joke for my daughter", "intent": "NONE", "kind": "none-brainstorm", "style": "stt", "split": "dev"}
+{"id": "h3481b568", "text": "What should I get my dad for his birthday? He likes fishing.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "hf40db848", "text": "Help me come up with a weekly meal plan on a budget.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h6e5bda28", "text": "Write a short thank you note to my kid's teacher.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h1bc2fc67", "text": "any tips for getting my toddler to sleep through the night", "intent": "NONE", "kind": "none-brainstorm", "style": "stt", "split": "test"}
+{"id": "h68965a0e", "text": "Give me a quick workout I can do in the living room.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h0782e6e6", "text": "What are some fun science experiments to do in the kitchen?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "hbfd59c74", "text": "Help me word a polite message to my neighbor about their dog barking at night.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "hd72e255c", "text": "Ideas for organizing a messy garage?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "ha997bd48", "text": "Make up a riddle for my kids.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h13a022d9", "text": "What's a good way to split chores between four kids fairly?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "h7c0a39a9", "text": "hey computer tell me something funny", "intent": "NONE", "kind": "none-brainstorm", "style": "stt", "split": "test"}
+{"id": "h53240113", "text": "How should I start a vegetable garden next spring?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "h88b0a2fe", "text": "Write a toast for my brother's wedding, something short and sweet.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h331339ee", "text": "I've got about two hundred dollars and a long weekend coming up and the kids keep asking to do something special. We're near Chicago, so what are some fun day trip ideas that won't break the bank and work for ages five to twelve?", "intent": "NONE", "kind": "none-brainstorm", "style": "ramble", "split": "dev"}
+{"id": "h005d6c06", "text": "My wife and I keep arguing about screen time rules for the kids. She wants it strict and I think a little more freedom is fine. Can you suggest some kind of middle ground system we could both live with?", "intent": "NONE", "kind": "none-brainstorm", "style": "ramble", "split": "dev"}
+{"id": "hf89bc016", "text": "so um i'm trying to think of a halloween costume idea for the whole family like a group theme with two adults and four kids something that's not too hard to make", "intent": "NONE", "kind": "none-brainstorm", "style": "stt", "split": "dev"}
+{"id": "h6167d5dc", "text": "Give me three ideas for leftover mashed potatoes.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h108f85ed", "text": "Help me write a short story to read to my son's class.", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "test"}
+{"id": "h89689efa", "text": "What's a good name for a family fantasy football team?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h406d20ae", "text": "Any tips for staying focused while working from home?", "intent": "NONE", "kind": "none-brainstorm", "style": "clean", "split": "dev"}
+{"id": "h24e0be00", "text": "We're out of milk, save a note about that and set a timer for 10 minutes.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "he4670e13", "text": "Navigate to Costco and add paper towels to my notes.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "hf48870fa", "text": "Make a note that the plumber's coming Thursday, then email me my notes.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h8fa78eab", "text": "What's on my calendar today? Also jot down that I need to call the dentist.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "hbe050d20", "text": "remind me in 30 minutes to move the laundry and save a note to buy dryer sheets", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "h8c63b178", "text": "Take a note that soccer practice moved to five, then give me directions to Cantigny Park.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "ha1183912", "text": "Email my notes to me, oh and first save one that says renew the car registration.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "hf40224d5", "text": "um set a 15 minute timer and uh note that the oven runs hot", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "hece0b481", "text": "Check my schedule for tomorrow and write down that I owe my brother twenty bucks.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h7ec9e6fd", "text": "Jot down that the cabin Wi-Fi password is pinecone42. Also take me to the nearest gas station.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "he45ad8f7", "text": "Add a note to pick up the dry cleaning. Then navigate to the dry cleaner on Roosevelt Road.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h97fedd50", "text": "hey computer start a timer for 45 minutes and save a note that the roast went in at 4", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "hce437392", "text": "Can you read me what I have going on this week and also save a note that I need to RSVP for the birthday party?", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h69ca176d", "text": "Save this idea: a chore chart app with stickers. And email me all my notes.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h82c4d967", "text": "Directions to Home Depot please, and add caulk and wood screws to my notes.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h9aeee34d", "text": "Okay so I'm heading out in a minute. Can you get me directions to the pediatrician's office on Main Street, and also make a note that the doctor wants a follow up in six weeks for the ear infection so I don't forget to book it?", "intent": "SAVE+ACTION", "kind": "multi", "style": "ramble", "split": "test"}
+{"id": "h58c2a1dc", "text": "note that the furnace filter is 16 by 25 by 1 and set a timer for 5 minutes", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "he242600b", "text": "What's on my calendar Friday? And save a note: buy a gift for the teacher.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h129aa000", "text": "Set a timer for 8 minutes, then save a note that soft boiled eggs need 7 next time.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h71b13d6b", "text": "Write down that the garage code changed, and send my notes to my email.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h7bd7391b", "text": "uh navigate to the library and um save a note that the books are due next tuesday", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "h9d12b8e2", "text": "remind me in an hour to take the chicken out and also note we need more foil", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "hf9991187", "text": "Save a note saying call the insurance company about the hail damage. After that, read me my schedule for today.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h9bce01e6", "text": "Give me directions to Grandma's house and note that we need to bring the folding chairs.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h3fcf8ee9", "text": "email me my notes oh and add one first that says cancel the gym membership", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "h0263088d", "text": "So the kids have a half day tomorrow and I'm trying to figure out the afternoon. Can you check what's on my calendar for tomorrow, and also save a note that I need to arrange a sitter for the half day since I've got calls until four.", "intent": "SAVE+ACTION", "kind": "multi", "style": "ramble", "split": "test"}
+{"id": "hb615caa4", "text": "Start a 25 minute timer. Also save a note: finish the quarterly report draft.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "hf052bf87", "text": "Put a note in that the car needs an oil change at 63,000 miles and take me to the nearest Jiffy Lube.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "hf2796724", "text": "hey computer what do i have on my schedule monday and save a note to pack the kids swim bags", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "h7714dcfe", "text": "Make a note of the parking spot, level 3 row G, then set a timer for two hours.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h36ccdf86", "text": "navigate to the post office and jot down i need stamps", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "hcf3202cc", "text": "Keep a note that the babysitter charges fifteen an hour, and email all my notes to me.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "hbaa01f64", "text": "set timer ten minutes save note pasta water needs more salt", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "h50b10390", "text": "Add to my notes that the dishwasher model is a Bosch 300 series. Then tell me what my calendar looks like this afternoon.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h19399034", "text": "In 40 minutes remind me to pick up the kids, and save a note that early dismissal is every Wednesday now.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h826bb540", "text": "ok so um i'm in the car and i need directions to the hardware store on butterfield and uh while you're at it can you save a note that we need a new flapper for the upstairs toilet because it keeps running", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "hc75d0a09", "text": "Field trip money is due Friday, so save a note about that, then check my calendar for next week.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h22bfed8f", "text": "Directions to the Naperville Riverwalk. Also note that the kids want ice cream after.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h5c11e212", "text": "Can you email me my notes? Also save one that reads pay the water bill.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h2e720356", "text": "Set a 3 minute timer for the tea and write down that I like the green one better.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h0bbf5a5f", "text": "uh hey save a note mulch delivery is saturday and um what's on my calendar saturday", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "h3cf36bbc", "text": "Note to self: the HVAC guy said the capacitor is failing. Navigate me to Menards.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h8d9b2476", "text": "Get me to the nearest urgent care and save a note that the fever started around noon.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h25871e7e", "text": "remind me in twenty minutes to check on the bread and add yeast to my shopping note", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "dev"}
+{"id": "haae4b383", "text": "I just had a great idea for my meetup talk about running language models on phones, please save it as a note, the angle is privacy first assistants, and then email me all my notes so I have them on my laptop.", "intent": "SAVE+ACTION", "kind": "multi", "style": "ramble", "split": "test"}
+{"id": "hf81e347d", "text": "write down that i parked near the north entrance and set a timer for 90 minutes", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "hd84780c4", "text": "Show me my schedule for Thursday, then make a note to bring snacks for the soccer team.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h1e34d58e", "text": "Save a note with the recipe tweak: half the sugar. After that, start a 30 minute timer.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "ha8c3fd49", "text": "navigate to target and uh add a note birthday card for my mom", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "h215bb007", "text": "Store a note that the Tuesday meeting moved to Wednesday, and email me my notes afterward.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h694aca2c", "text": "First check my calendar for tomorrow morning, then save a note that I need to drop off the permission slip.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h1ce787a6", "text": "Okay, the cookies need to bake for twelve minutes so set a timer for that, and while they're baking I want to save a note that this batch used brown butter and it smells amazing so I do it again next time.", "intent": "SAVE+ACTION", "kind": "multi", "style": "ramble", "split": "dev"}
+{"id": "h637ddb51", "text": "hey computer take me to the vet on jewell road and note the dog's due for her rabies shot", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "h05832124", "text": "Add a note: return the Amazon package. Oh, and directions to the UPS store.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "hfb100e3e", "text": "Send my notes to my email and also note down that the contractor's quote was eight thousand.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "dev"}
+{"id": "h0b47423f", "text": "timer for 12 minutes please and save that the kids liked the new mac and cheese", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "h451ab6cd", "text": "can you save a note um the gutter guy is coming next week and then read me my calendar", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}
+{"id": "h2de24f53", "text": "Let me know what's on my calendar this weekend, and save a note to buy charcoal for the grill.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "he08c2dd5", "text": "The hotel confirmation number is 48213, save that, and give me directions to the Marriott downtown.", "intent": "SAVE+ACTION", "kind": "multi", "style": "clean", "split": "test"}
+{"id": "h199ceedd", "text": "um set a timer for like 5 minutes and also uh no wait make it 6 and save a note that the rice needs more water", "intent": "SAVE+ACTION", "kind": "multi", "style": "stt", "split": "test"}

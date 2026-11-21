@@ -1,0 +1,15 @@
+{
+  "collectionTitle": "Sample home inspection",
+  "items": [
+    {"kind": "PHOTO", "ocrText": "Square D QO load center model QO120M100", "generatedText": "Electrical panel in a basement"},
+    {"kind": "VOICE_NOTE", "transcript": "Double tapped breaker in slot fourteen"},
+    {"kind": "TEXT_NOTE", "text": "Roof leak stain above the north bedroom window"},
+    {"kind": "PHOTO", "ocrText": "Water heater serial 2319A7782", "generatedText": "Tall water heater beside a floor drain"},
+    {"kind": "TEXT_NOTE", "text": "Furnace filter size is sixteen by twenty five by one"},
+    {"kind": "VOICE_NOTE", "transcript": "Loose handrail on the basement stairs"},
+    {"kind": "PHOTO", "ocrText": "GFCI protected outlet", "generatedText": "Exterior electrical receptacle"},
+    {"kind": "TEXT_NOTE", "text": "Crack in the east foundation wall near the utility sink"},
+    {"kind": "VOICE_NOTE", "transcript": "Kitchen faucet drips when the cold handle is closed"},
+    {"kind": "PHOTO", "ocrText": "Smoke alarm replace by 2030", "generatedText": "Ceiling mounted smoke alarm"}
+  ]
+}

@@ -1,0 +1,271 @@
+[
+  {
+    "id": "ho-hang-onto",
+    "category": "save",
+    "user": "Can you hang onto this for me: the locker combo is 31 7 22",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "31"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ho-add-milk",
+    "category": "save",
+    "user": "Add milk to my notes",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "milk"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ho-put-a-note",
+    "category": "save",
+    "user": "Put a note in that the gutter guy comes Thursday",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "gutter|thursday"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ho-remember-comma",
+    "category": "save",
+    "user": "Remember, the recital is at 6:30 on Friday",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "recital|6:30"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ho-store-this",
+    "category": "save",
+    "user": "Store this: Luna's shoe size is 13",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "13|shoe"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ho-keep-a-note",
+    "category": "save",
+    "user": "Keep a note that I owe Dave twenty bucks",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "dave|twenty|20"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ho-note-to-self",
+    "category": "save",
+    "user": "Note to self, call the insurance company",
+    "expect": [
+      {
+        "name": "save_note",
+        "args": {
+          "text": "insurance"
+        }
+      }
+    ]
+  },
+  {
+    "id": "ho-ten-minute-timer",
+    "category": "action",
+    "user": "Give me a ten minute timer",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^remind_me$",
+            "arg": "\\b(10|ten)\\b"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "ho-timer-comma",
+    "category": "action",
+    "user": "Timer, 5 minutes",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^remind_me$",
+            "arg": "\\b5\\b|five"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "ho-get-to-store",
+    "category": "action",
+    "user": "How do I get to the hardware store from here?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^navigate_to$",
+            "arg": "hardware"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "ho-navigate-home",
+    "category": "action",
+    "user": "Navigate home",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^navigate_to$",
+            "arg": "home"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "ho-busy-afternoon",
+    "category": "action",
+    "user": "Am I busy this afternoon?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^whats_on$",
+            "arg": "today"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "ho-agenda-tomorrow",
+    "category": "action",
+    "user": "What's on the agenda for tomorrow?",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^whats_on$",
+            "arg": "tomorrow"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "ho-shoot-notes",
+    "category": "action",
+    "user": "Shoot my notes over to my email",
+    "expect": {
+      "shipped": [],
+      "proposed": [
+        {
+          "name": "do_action",
+          "args": {
+            "action": "^send_notes_to_me$"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "ho-remember-movie",
+    "category": "over_call",
+    "user": "Remember that movie with the talking dog? What was it called?",
+    "expect": []
+  },
+  {
+    "id": "ho-microwave-timer",
+    "category": "over_call",
+    "user": "How do timers work in a microwave?",
+    "expect": []
+  },
+  {
+    "id": "ho-save-the-date",
+    "category": "over_call",
+    "user": "Save the date cards, are they still a thing?",
+    "expect": []
+  },
+  {
+    "id": "ho-log-cabin",
+    "category": "over_call",
+    "user": "Log cabins are cozy, what's the best wood for them?",
+    "expect": []
+  },
+  {
+    "id": "ho-calendar-year",
+    "category": "over_call",
+    "user": "What's a calendar year versus a fiscal year?",
+    "expect": []
+  },
+  {
+    "id": "ho-pancake-directions",
+    "category": "over_call",
+    "user": "Directions to make pancakes?",
+    "expect": []
+  },
+  {
+    "id": "ho-maps-history",
+    "category": "over_call",
+    "user": "Tell me about the history of Google Maps",
+    "expect": []
+  },
+  {
+    "id": "ho-haiku",
+    "category": "no_call",
+    "user": "Write me a haiku about autumn",
+    "expect": []
+  },
+  {
+    "id": "ho-forgetting-names",
+    "category": "no_call",
+    "user": "I keep forgetting people's names, any tips?",
+    "expect": []
+  },
+  {
+    "id": "ho-mars-weather",
+    "category": "no_call",
+    "user": "What's the weather like on Mars?",
+    "expect": []
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "embed_mlp": {
+    "model": "gemma-4-E4B-it",
+    "setup": "embed_mlp",
+    "runs": 3,
+    "constrained": false,
+    "rows": 120,
+    "pass_rate": 0.975,
+    "call_precision": 1.0,
+    "call_recall": 1.0,
+    "over_call": {
+      "n": 72,
+      "rate": 0.0
+    },
+    "wrong_tool": {
+      "n": 48,
+      "rate": 0.0
+    },
+    "bad_args": {
+      "n": 48,
+      "rate": 0.0
+    },
+    "repeat_call": {
+      "n": 48,
+      "rate": 0.021
+    },
+    "false_claim": {
+      "n": 72,
+      "rate": 0.0
+    },
+    "double_confirm_raw": {
+      "n": 48,
+      "rate": 0.479
+    },
+    "double_confirm_guarded": {
+      "n": 48,
+      "rate": 0.0
+    },
+    "spoke_both_sides": {
+      "n": 48,
+      "rate": 0.5
+    },
+    "parse_error": {
+      "n": 120,
+      "count": 0
+    },
+    "ttft_s_median": 2.259,
+    "decode_tok_s_median": 21.09,
+    "by_category": {
+      "capability": "25/27",
+      "complaint": "24/24",
+      "save": "47/48",
+      "talk": "21/21"
+    },
+    "intent_table": {
+      "NONE": {
+        "NONE": 72
+      },
+      "SAVE": {
+        "SAVE": 48
+      }
+    },
+    "intent_match": 1.0,
+    "route_sources": {
+      "embed": 120
+    },
+    "gate": {
+      "calls": 0,
+      "parse_errors": 0,
+      "prompt_tokens_median": null,
+      "router_s_median": null
+    },
+    "timing": {
+      "tool_turns": {
+        "n": 48,
+        "router_s_median": 0.0736,
+        "response_ttft_s_median": 3.2996,
+        "total_s_median": 3.3994,
+        "prompt_tokens_median": 367.0
+      },
+      "no_tool_turns": {
+        "n": 72,
+        "router_s_median": 0.0732,
+        "response_ttft_s_median": 2.2473,
+        "total_s_median": 2.3217,
+        "prompt_tokens_median": 266.5
+      }
+    },
+    "save_decision": {
+      "false_saves": {
+        "n": 72,
+        "count": 0
+      },
+      "missed_saves": {
+        "n": 48,
+        "count": 0
+      },
+      "capability_honest": {
+        "n": 27,
+        "count": 25
+      }
+    }
+  }
+}

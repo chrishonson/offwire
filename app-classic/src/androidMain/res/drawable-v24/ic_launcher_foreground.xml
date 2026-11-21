@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Offwire mark on its 192 unit grid, scaled into the adaptive icon's 66 dp safe circle. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.38"
+        android:scaleY="0.38"
+        android:translateX="17.7"
+        android:translateY="17.7">
+        <path
+            android:fillColor="#FFB62E"
+            android:pathData="M35,97V53A18,18 0,0 1,53 35H88V77H146A10,10 0,0 1,146 97Z" />
+        <path
+            android:fillColor="#52E06F"
+            android:pathData="M37,109h22v16h-22z" />
+        <path
+            android:fillColor="#FF5A45"
+            android:pathData="M37,136h22v19h-22z" />
+        <path
+            android:fillColor="#E2DAC6"
+            android:pathData="M95,131a25,25 0,1 0,50 0a25,25 0,1 0,-50 0z" />
+    </group>
+</vector>
