@@ -52,7 +52,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Notes
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
-import androidx.compose.material.icons.filled.AddComment
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.MicOff
@@ -238,12 +238,14 @@ fun ChatScreen(
             NetworkIndicator(active = state.networkActive)
             OutlinedButton(
                 onClick = { store.dispatch(ChatIntent.NewChat) },
-                modifier = Modifier.heightIn(min = TopBarButtonHeight),
+                modifier = Modifier
+                    .heightIn(min = TopBarButtonHeight)
+                    .semantics { contentDescription = "Clear conversation" },
                 shape = KeyShape,
                 colors = steelKeyColors(),
                 contentPadding = TopBarButtonPadding
             ) {
-                ButtonContent(icon = Icons.Default.AddComment, label = "New")
+                ButtonContent(icon = Icons.Default.Delete, label = "New")
             }
             OutlinedButton(
                 onClick = onOpenNotes,

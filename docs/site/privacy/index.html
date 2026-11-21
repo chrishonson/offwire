@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offwire privacy policy</title>
+<meta name="description" content="Offwire runs on your device. No account, no analytics, no ads, no tracking.">
+<style>
+  :root { color-scheme: light dark; --fg: #1a1a1a; --bg: #ffffff; --muted: #555; --rule: #ddd; --accent: #c4600a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #e8e8e8; --bg: #000000; --muted: #aaa; --rule: #333; --accent: #ff9c33; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.8rem; line-height: 1.2; margin: 0 0 0.25rem; }
+  h2 { font-size: 1.2rem; margin: 2rem 0 0.5rem; color: var(--accent); }
+  .effective { color: var(--muted); margin: 0 0 1.5rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 0.5rem 0.5rem 0.5rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.4rem 0; }
+  code { font-size: 0.95em; }
+  .placeholder { background: #fff3b0; color: #1a1a1a; padding: 0.1rem 0.3rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Offwire privacy policy</h1>
+<p class="effective">Effective date: 2026-11-21</p>
+
+<p>This policy covers Offwire (app.offwire.classic, on Android and iPhone) and Offwire Console
+(app.offwire.console, on Android).</p>
+
+<p>This policy describes the store builds from Google Play and the App Store. Developer builds, including those
+attached to GitHub Releases, can also save debug audio clips, which stay on the device.</p>
+
+<h2>Summary</h2>
+<p>Offwire runs its speech recognition, language model and voice on your device. Your voice, your conversations
+and your notes never leave it. There is no account, no analytics, no crash reporting, no advertising and no
+third-party tracking. We do not collect, receive or share any of your data.</p>
+
+<h2>What the app connects to</h2>
+<p>The app goes online only to download its model files, once, when you start the download. These requests
+fetch files and send nothing you said or typed.</p>
+<table>
+<thead><tr><th>File</th><th>App</th><th>Host</th></tr></thead>
+<tbody>
+<tr><td>Gemma 4 language model (E2B or E4B)</td><td>Both apps</td><td>huggingface.co</td></tr>
+<tr><td>Computer voice (Pocket TTS)</td><td>Offwire Console</td><td>github.com</td></tr>
+</tbody>
+</table>
+<p>Both hosts redirect the download to their storage servers (today us.aws.cdn.hf.co for Hugging Face and
+release-assets.githubusercontent.com for GitHub), and the app follows those redirects. Every download uses
+HTTPS. As with any download, these services see your IP address and the standard request headers, under their
+own privacy policies. After the download the app works with no connection.</p>
+
+<h2>What stays on your device</h2>
+<ul>
+<li>Microphone audio. Offwire listens when you tap to talk, and, if you turn on the wake word, listens for it
+while the app is open. Audio is processed in memory and is not saved.</li>
+<li>Conversations. The chat shown on screen is kept in memory only and is gone when the app closes.</li>
+<li>Notes. Notes you ask the assistant to save are stored in the app's private storage. On Android they are
+encrypted with a key held in the Android Keystore. On iPhone they are protected by the device's file
+encryption.</li>
+<li>Settings. Your choices, such as the assistant name, wake word and selected model, are stored in the app's
+settings.</li>
+<li>Model files. The downloaded models are stored in the app's own storage.</li>
+<li>Download log. On Android the app keeps a local record of its downloads (time, host, purpose and size) for
+its network indicator.</li>
+</ul>
+<p>On Android the app opts out of cloud backup and device-to-device transfer, so none of this is copied off the
+device. On iPhone, notes and model files are excluded from iCloud and device backups. Settings on iPhone are
+included in your device backup like any app's settings.</p>
+
+<h2>Permissions</h2>
+<ul>
+<li>Microphone, to hear your questions and the wake word.</li>
+<li>Internet and network state, to download the models and to wait for Wi-Fi unless you allow mobile data.</li>
+<li>Audio settings (Android), to route the assistant's voice while the microphone is open.</li>
+</ul>
+
+<h2>Deleting your data</h2>
+<p>Delete individual notes in the app. Uninstalling the app deletes everything it stored: notes, settings,
+models and the download log.</p>
+
+<h2>Children</h2>
+<p>Offwire does not collect personal information from anyone, including children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be posted at https://offwire.app/privacy with a new effective
+date.</p>
+
+<h2>Contact</h2>
+<p><span class="placeholder">[PLACEHOLDER FOR NICK: add a contact email before publishing]</span></p>
+</main>
+</body>
+</html>
