@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Offwire</title>
-<meta name="description" content="Offwire is an open source, hands-free voice assistant for Android that runs Gemma 4 entirely on your phone. No account, no cloud, works in airplane mode.">
+<meta name="description" content="Offwire is an open source, hands-free voice assistant that runs Gemma 4 entirely on your phone. On Android now, iPhone and iPad next. No account, no cloud, works in airplane mode.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://offwire.app/">
 <meta property="og:title" content="Offwire: nothing leaves your phone">
-<meta property="og:description" content="An open source, hands-free voice assistant for Android that runs Gemma 4 entirely on your phone. No account, no cloud, works in airplane mode.">
+<meta property="og:description" content="An open source, hands-free voice assistant that runs Gemma 4 entirely on your phone. On Android now, iPhone and iPad next. No account, no cloud, works in airplane mode.">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
       <div>
         <p class="eyebrow">
           <span><i class="dot" aria-hidden="true"></i>Open source voice assistant</span>
-          <span>Android 12+</span>
+          <span>Android · iPhone · iPad</span>
           <span>MIT</span>
         </p>
         <h1>Nothing <em>leaves</em> your phone.</h1>
@@ -54,6 +54,7 @@
           </a>
           <a class="btn btn-ghost" href="https://github.com/chrishonson/offwire">View on GitHub</a>
         </div>
+        <p class="start-note">iPhone and iPad are fully supported and are coming to the App Store next.</p>
         <ul class="hero-facts">
           <li><b>0 servers</b><span>Speech, model and voice run on the device</span></li>
           <li><b>0.26 s</b><span>Time to first token on a Pixel 9 Pro</span></li>
@@ -110,7 +111,7 @@
           <li>
             <span class="k">Encrypted</span>
             <h3>Notes are encrypted at rest</h3>
-            <p>Things you ask it to remember are saved on the device with AES-256-GCM, using an Android Keystore key that cannot be exported.</p>
+            <p>Things you ask it to remember are saved only on the device. On Android they are encrypted with AES-256-GCM, using a Keystore key that cannot be exported. On iPhone and iPad they are protected by the device's file encryption.</p>
           </li>
         </ul>
 
@@ -174,8 +175,8 @@
           <li>
             <span class="role">Text to speech</span>
             <h3>Your phone's voice</h3>
-            <p>Speaks each clause as it arrives, using the voice built into Android.</p>
-            <span class="rt">Android TextToSpeech</span>
+            <p>Speaks each clause as it arrives, using the voice built into your phone.</p>
+            <span class="rt">System voice</span>
           </li>
           <li>
             <span class="role">Output</span>
@@ -280,7 +281,7 @@
             <div><dt>Storage</dt><dd>About 3.6 GB free</dd></div>
             <div><dt>Memory</dt><dd>A recent phone with 8 GB RAM or more is recommended</dd></div>
             <div><dt>Model</dt><dd>Downloads once over Wi-Fi, about 2.6 GB</dd></div>
-            <div><dt>iOS</dt><dd>Builds from source for iPhone and iPad. App Store planned</dd></div>
+            <div><dt>iPhone and iPad</dt><dd>Fully supported. Coming to the App Store next</dd></div>
           </dl>
           <div>
             <div class="release">
@@ -320,8 +321,8 @@
             <p>Test cases that show when the model should call a tool and when it should just answer.</p>
           </div>
           <div>
-            <h3>iOS</h3>
-            <p>The app is Kotlin Multiplatform and already runs on iPhone and iPad from source. It needs testing on more devices.</p>
+            <h3>iPhone and iPad</h3>
+            <p>The same app runs on iPhone and iPad and is on its way to the App Store. Build it from source and report what you find.</p>
           </div>
         </div>
 
