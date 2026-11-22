@@ -8,6 +8,6 @@ Preview locally:
 python3 -m http.server -d docs/site 8000
 ```
 
-It is hosted on Vercel in the project `offwire`, with this folder as the root directory.
+It is hosted on Vercel in the project `offwire`, which is not connected to this repository. Deploy by uploading this folder: `vercel deploy docs/site` makes a private preview, and `vercel deploy docs/site --prod` updates the live site.
 
 `privacy/privacy.md` is the source text of the privacy policy and `privacy/index.html` is the page.
