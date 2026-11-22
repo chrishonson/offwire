@@ -83,8 +83,8 @@ android {
         applicationId = "app.offwire.classic"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "0.3.0-dev"
+        versionCode = 400
+        versionName = "0.4.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     androidResources {
@@ -118,6 +118,8 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             signingConfig = signingConfigs.findByName("release")
+            // Phones are arm64. The other ABIs only serve emulators and would double the download.
+            ndk { abiFilters += "arm64-v8a" }
             manifestPlaceholders["sttBenchEnabled"] = "false"
             manifestPlaceholders["llmBenchEnabled"] = "false"
         }
