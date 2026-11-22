@@ -1,6 +1,10 @@
 package com.chrishonson.gemmavoice
 
 import androidx.activity.ComponentActivity
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.assertIsNotEnabled
@@ -9,6 +13,8 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.chrishonson.gemmavoice.chat.ChatIntent
 import com.chrishonson.gemmavoice.chat.ChatState
@@ -157,5 +163,19 @@ class SettingsScreenUiTest {
         }
 
         composeTestRule.onNodeWithTag("appVersion").assertIsDisplayed().assertTextEquals("Version 9.8.7")
+    }
+
+    // In landscape the rows are taller than the screen, so the list has to scroll to reach the last one.
+    @Test
+    fun aShortScreenScrollsToTheVersionLine() {
+        composeTestRule.setContent {
+            GemmaVoiceTheme {
+                Box(modifier = Modifier.fillMaxWidth().height(300.dp)) {
+                    SettingsScreen(state = ChatState(), onIntent = {}, onBack = {}, appVersion = "0.4.0")
+                }
+            }
+        }
+
+        composeTestRule.onNodeWithTag("appVersion").performScrollTo().assertIsDisplayed()
     }
 }
