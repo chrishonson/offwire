@@ -1,10 +1,13 @@
 package com.chrishonson.gemmavoice
 
 import androidx.compose.ui.test.assertHasClickAction
+import androidx.compose.ui.test.assertHeightIsAtLeast
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextEquals
+import androidx.compose.ui.test.assertWidthIsAtLeast
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
+import androidx.compose.ui.unit.dp
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.chrishonson.gemmavoice.LimitsUiTest.FakeAudioStream
 import com.chrishonson.gemmavoice.LimitsUiTest.FakeLlmEngine
@@ -19,7 +22,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-/** Card 310. The trash key in the top bar tells screen readers it clears the conversation. */
+/** Cards 310 and 315. The top bar's trash key shows only its icon and tells screen readers what it clears. */
 @RunWith(AndroidJUnit4::class)
 class ChatTopBarUiTest {
 
@@ -27,7 +30,7 @@ class ChatTopBarUiTest {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun clearKeyDescribesItselfAndKeepsItsLabel() {
+    fun clearKeyDescribesItselfAndShowsOnlyTheIcon() {
         val store = ChatStore(
             engine = FakeLlmEngine(),
             repo = FakeModelRepository(),
@@ -43,6 +46,8 @@ class ChatTopBarUiTest {
         composeTestRule.onNodeWithContentDescription("Clear conversation")
             .assertIsDisplayed()
             .assertHasClickAction()
-            .assertTextEquals("New")
+            .assertTextEquals()
+            .assertWidthIsAtLeast(48.dp)
+            .assertHeightIsAtLeast(48.dp)
     }
 }

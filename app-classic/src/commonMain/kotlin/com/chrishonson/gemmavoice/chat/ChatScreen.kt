@@ -245,7 +245,11 @@ fun ChatScreen(
                 colors = steelKeyColors(),
                 contentPadding = TopBarButtonPadding
             ) {
-                ButtonContent(icon = Icons.Default.Delete, label = "New")
+                Icon(
+                    imageVector = Icons.Default.Delete,
+                    contentDescription = null,
+                    modifier = Modifier.size(ButtonIconSize)
+                )
             }
             OutlinedButton(
                 onClick = onOpenNotes,
