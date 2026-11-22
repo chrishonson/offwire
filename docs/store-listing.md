@@ -29,10 +29,37 @@ Antonio, tagline "Say Computer. Nothing leaves your phone."
 ## Listing facts
 
 - Category: Productivity. Content rating: Everyone.
-- Data safety: no data collected, no data shared, no account. Microphone audio is processed on the device
-  and never stored except the opt-in debug clips in the developer build.
-- Permissions: RECORD_AUDIO, INTERNET (model download only), CAMERA for the library.
+- Privacy policy: https://offwire.app/privacy, source in `docs/site/privacy/` (`index.html`, `privacy.md`).
+  The URL is also in `fastlane/metadata/android/en-US/privacy_url.txt`. fastlane supply does not upload a
+  privacy policy URL, so enter it by hand under Play Console, App content, Privacy policy.
+- Permissions: RECORD_AUDIO, MODIFY_AUDIO_SETTINGS, INTERNET and ACCESS_NETWORK_STATE (model download only).
 - Distribution: GitHub Releases first, Play Store later (decided 2026-10-31).
+
+## Play Data safety answers
+
+The same answers apply to app.offwire.classic and app.offwire.console. They match the privacy policy.
+
+- Does the app collect or share any of the required user data types? No.
+- Is all user data encrypted in transit? Yes. The only network traffic is the HTTPS model download from
+  huggingface.co (both apps) and github.com (Console voice), which sends no user data.
+- Do you provide a way for users to request that their data is deleted? Not applicable, nothing is collected.
+  Notes can be deleted in the app, and uninstalling removes everything the app stored.
+- Account creation: none.
+
+Per data type, for reference if Play asks:
+
+| Data type | Collected | Shared | On device only |
+|---|---|---|---|
+| Audio (voice) | No | No | Processed in memory, never saved |
+| Messages / chat | No | No | In memory, gone when the app closes |
+| Notes (user content) | No | No | App storage, Keystore-encrypted on Android |
+| App settings | No | No | App preferences |
+| Personal info, location, contacts, photos, files | No | No | Not accessed |
+| App activity, app info and performance, crash logs, diagnostics | No | No | Local download log only |
+| Device or other IDs | No | No | Not accessed |
+
+Android backup and device transfer are disabled (`allowBackup="false"`, `data_extraction_rules.xml`
+excludes every domain), so nothing reaches Google's backup service either.
 
 ## Clear before publishing
 
