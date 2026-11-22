@@ -30,6 +30,12 @@ Version numbers: PATCH for fixes that leave the AI architecture alone. MINOR whe
 
 `scripts/release-artifacts.sh <tag>` builds the tag in a temporary worktree, so the current checkout and any uncommitted work are left alone. The apps are debug builds. The APKs are signed with this Mac's debug key, so they install over an earlier build from this Mac and as a fresh install anywhere else. The iOS app is signed for development and installs only on devices in the provisioning profile.
 
+## Release signing
+
+`./gradlew :app-classic:assembleRelease` signs the classic app when `~/.offwire-signing/signing.properties` exists. The file names the keystore and its passwords: `storeFile`, `storePassword`, `keyAlias` and `keyPassword`. Pass `-Poffwire.signingProperties=<path>` to read it from somewhere else. Without the file the release APK is built unsigned, so a fresh clone still builds.
+
+The keystore and the properties file are never committed. A phone only accepts an update signed with the same key as the installed copy, so a lost key means installed copies can never be updated. Keep a backup of both files outside this Mac.
+
 ## The evals and what each one is for
 
 Four suites live in `scripts/eval`. Three are release evals. One is research.

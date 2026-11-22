@@ -1,3 +1,4 @@
+import java.util.Properties
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -65,6 +66,15 @@ kotlin {
     }
 }
 
+// The release key lives outside the repository (docs/RELEASING.md). Without the file, release builds stay unsigned.
+val releaseSigning = Properties().apply {
+    val file = file(
+        providers.gradleProperty("offwire.signingProperties").orNull
+            ?: "${System.getProperty("user.home")}/.offwire-signing/signing.properties"
+    )
+    if (file.isFile) file.inputStream().use(::load)
+}
+
 android {
     namespace = "com.chrishonson.gemmavoice.classic"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -90,6 +100,16 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    signingConfigs {
+        if (!releaseSigning.isEmpty) {
+            create("release") {
+                storeFile = file(releaseSigning.getProperty("storeFile"))
+                storePassword = releaseSigning.getProperty("storePassword")
+                keyAlias = releaseSigning.getProperty("keyAlias")
+                keyPassword = releaseSigning.getProperty("keyPassword")
+            }
+        }
+    }
     buildTypes {
         getByName("debug") {
             manifestPlaceholders["sttBenchEnabled"] = "true"
@@ -97,6 +117,7 @@ android {
         }
         getByName("release") {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.findByName("release")
             manifestPlaceholders["sttBenchEnabled"] = "false"
             manifestPlaceholders["llmBenchEnabled"] = "false"
         }
