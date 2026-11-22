@@ -15,6 +15,8 @@ A release is a git tag, a version number in the apps, and one file of release no
 
 Between releases the version is the last release with `-dev` added, for example `0.1.0-dev`. A build that shows `-dev` is that release plus changes that are not released yet. A build with no suffix is exactly the tag.
 
+`versionCode` in the two Android apps is MAJOR x 10000 + MINOR x 100 + PATCH, so `0.4.0` is `400`. Android only installs an update whose `versionCode` is higher than the installed one. It stays the same between releases.
+
 Version numbers: PATCH for fixes that leave the AI architecture alone. MINOR when a model, a prompt, the router, a tool or a sampling setting changes. MAJOR is held for the first public build.
 
 ## Release artifacts
