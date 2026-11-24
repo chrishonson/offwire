@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Local AI Models, Part Two</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500..700&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:#0B0E13}
+body{font-family:'IBM Plex Sans', Arial, sans-serif;color:#F4F1EA}
+section{position:relative;width:1920px;height:1080px;overflow:hidden;margin:0 auto 24px;zoom:var(--z,1)}
+x-shape{display:block}
+x-shape[kind="arrow-right"]{clip-path:polygon(0 30%,62% 30%,62% 0,100% 50%,62% 100%,62% 70%,0 70%)}
+@media screen{:root{--z:min(1, calc(100vw / 1920))}}
+@page{size:1920px 1080px;margin:0}
+@media print{html{background:none}section{margin:0;break-after:page;zoom:1}}
+</style></head><body>
+<section id="cover" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A;letter-spacing:2px;text-transform:uppercase">Naperville AI Enthusiasts · November 23</p>
+<div style="display:flex;flex-direction:column;gap:40px">
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05">Local AI Models, Part Two</h1>
+<p style="font-size:52px;color:#E8A13A;line-height:1.25;font-weight:600">How far can local go?</p>
+</div>
+<div style="display:flex;gap:48px;align-items:center">
+<p style="font-size:32px;font-weight:600">Nick Christensen</p>
+</div>
+</section>
+<section id="bridge" data-transition="fade" style="background:#F4F1EA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;gap:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">Picking up where Part One left off</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Part One asked where your data goes. Tonight it goes nowhere.</h2>
+<svg viewBox="0 0 1664 560" width="1664" height="560" role="img" aria-label="Four ways to run the same question. OpenRouter: it leaves for a third party's servers. A rented AWS L40S: it leaves for a server you rent. A 2021 MacBook Pro: it stays on your desk. Part One compared these three. Tonight adds a Pixel 9 Pro: it stays in your pocket, with airplane mode on.">
+<g font-family="IBM Plex Sans, Arial, sans-serif">
+<text x="0" y="28" font-family="JetBrains Mono, monospace" font-size="24" fill="#4A5160" letter-spacing="2">PART ONE</text>
+<line x1="0" y1="46" x2="1234" y2="46" stroke="#9AA3AD" stroke-width="3"/>
+<text x="1288" y="28" font-family="JetBrains Mono, monospace" font-size="24" fill="#9A5B0E" letter-spacing="2">TONIGHT</text>
+<line x1="1288" y1="46" x2="1664" y2="46" stroke="#9A5B0E" stroke-width="3"/>
+
+<rect x="0" y="80" width="376" height="470" rx="16" fill="#FBFAF6" stroke="#DDD6C8" stroke-width="2"/>
+<g transform="translate(188 205)"><path d="M -60 40 a 34 34 0 0 1 10 -66 a 44 44 0 0 1 84 -6 a 30 30 0 0 1 26 72 z" fill="none" stroke="#4A5160" stroke-width="5"/><g fill="#4A5160"><rect x="-74" y="58" width="36" height="26" rx="4"/><rect x="-18" y="58" width="36" height="26" rx="4"/><rect x="38" y="58" width="36" height="26" rx="4"/></g><g stroke="#4A5160" stroke-width="3"><line x1="0" y1="40" x2="-56" y2="58"/><line x1="0" y1="40" x2="0" y2="58"/><line x1="0" y1="40" x2="56" y2="58"/></g></g>
+<text x="188" y="360" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="36" font-weight="600" fill="#14181F">OpenRouter</text>
+<text x="188" y="400" text-anchor="middle" font-size="26" fill="#4A5160">a third party's servers</text>
+<rect x="32" y="464" width="312" height="56" rx="28" fill="none" stroke="#9AA3AD" stroke-width="3"/>
+<text x="188" y="501" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="24" fill="#4A5160">leaves the house</text>
+
+<rect x="429" y="80" width="376" height="470" rx="16" fill="#FBFAF6" stroke="#DDD6C8" stroke-width="2"/>
+<g transform="translate(617 150)" fill="none" stroke="#4A5160" stroke-width="5"><rect x="-80" y="0" width="160" height="40" rx="6"/><rect x="-80" y="52" width="160" height="40" rx="6"/><rect x="-80" y="104" width="160" height="40" rx="6"/></g>
+<g fill="#9A5B0E"><circle cx="557" cy="170" r="7"/><circle cx="557" cy="222" r="7"/><circle cx="557" cy="274" r="7"/></g>
+<text x="617" y="360" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="36" font-weight="600" fill="#14181F">AWS L40S</text>
+<text x="617" y="400" text-anchor="middle" font-size="26" fill="#4A5160">a GPU server you rent</text>
+<rect x="461" y="464" width="312" height="56" rx="28" fill="none" stroke="#9AA3AD" stroke-width="3"/>
+<text x="617" y="501" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="24" fill="#4A5160">leaves the house</text>
+
+<rect x="858" y="80" width="376" height="470" rx="16" fill="#FBFAF6" stroke="#DDD6C8" stroke-width="2"/>
+<g transform="translate(1046 150)"><rect x="-90" y="0" width="180" height="116" rx="8" fill="none" stroke="#4A5160" stroke-width="5"/><path d="M -118 132 h 236 l -16 18 h -204 z" fill="#4A5160"/></g>
+<text x="1046" y="360" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="36" font-weight="600" fill="#14181F">2021 MacBook Pro</text>
+<text x="1046" y="400" text-anchor="middle" font-size="26" fill="#4A5160">your laptop</text>
+<rect x="890" y="464" width="312" height="56" rx="28" fill="none" stroke="#9A5B0E" stroke-width="3"/>
+<text x="1046" y="501" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="24" fill="#9A5B0E">stays on your desk</text>
+
+<rect x="1288" y="80" width="376" height="470" rx="16" fill="#14181F"/>
+<g transform="translate(1476 130)"><rect x="-52" y="0" width="104" height="180" rx="18" fill="none" stroke="#F4F1EA" stroke-width="5"/><g transform="translate(-30 52) scale(0.6)"><path fill="#E8A13A" d="M47 6 h6 l4 34 l35 18 v8 l-35 -10 l-2 24 l10 8 v6 l-15 -4 l-15 4 v-6 l10 -8 l-2 -24 l-35 10 v-8 l35 -18 z"/></g></g>
+<text x="1476" y="360" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="36" font-weight="600" fill="#F4F1EA">Pixel 9 Pro</text>
+<text x="1476" y="400" text-anchor="middle" font-size="26" fill="#B8C2CC">airplane mode on</text>
+<rect x="1320" y="464" width="312" height="56" rx="28" fill="#E8A13A"/>
+<text x="1476" y="501" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="24" fill="#14181F">stays in your pocket</text>
+</g>
+</svg>
+</section>
+<section id="try-it" data-transition="fade" style="background:#F4F1EA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">Try it yourself tonight</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Google’s own app runs Gemma 4 on your phone, offline</h2>
+<div style="display:flex;gap:48px;align-items:center;flex:1">
+<img class="rise" src="assets/7aad5ab67caa34c6c772880a941480de.png" alt="Android Authority, April 9, 2026: Google’s AI Edge Gallery lets users run Gemma 4 entirely on-device, requiring no internet connection" style="width:1060px;height:521px;object-fit:contain;border-radius:12px;flex:0 0 auto">
+<div class="rise2" style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="background:#14181F;color:#F4F1EA;border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A">Android · iPhone</p><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:40px;font-weight:600">AI Edge Gallery</p></div>
+<p style="font-size:30px;line-height:1.35;color:#4A5160">Also: PocketPal AI, Loci. Search your app store.</p>
+<p style="font-size:28px;line-height:1.35;color:#4A5160">Download the model on Wi-Fi first. It’s a few gigabytes.</p>
+</div>
+</div>
+</section>
+<section id="reveal" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A;letter-spacing:2px;text-transform:uppercase">Tonight · the phone in your pocket</p>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:96px">
+<div style="display:flex;flex-direction:column;gap:40px">
+<h1 class="rise" style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05">Local AI on the phone</h1>
+<p class="rise2" style="font-size:52px;color:#E8A13A;line-height:1.25;font-weight:600">Your data never leaves the phone.</p>
+</div>
+<img class="rise2" src="assets/7427c40cecda6e1df6babac0fbc4390b.png" alt="The Offwire app icon" style="width:340px;height:340px;border-radius:76px;flex:0 0 auto">
+</div>
+<div style="display:flex;gap:48px;align-items:center">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B8C2CC">Offwire</p>
+</div>
+</section>
+<section id="demo-airplane" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;align-items:center;gap:96px">
+<div style="flex:1;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#14181F;background:#E8A13A;letter-spacing:2px;text-transform:uppercase;align-self:flex-start;padding:8px 20px;border-radius:8px">Live demo 1</p>
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05">Airplane mode on. It still answers.</h1>
+<div style="display:flex;align-items:center;gap:32px;background:#1E2530;border:1px solid #3A4452;border-radius:24px;padding:28px 40px;align-self:flex-start">
+<svg viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Airplane"><path fill="#E8A13A" d="M47 6 h6 l4 34 l35 18 v8 l-35 -10 l-2 24 l10 8 v6 l-15 -4 l-15 4 v-6 l10 -8 l-2 -24 l-35 10 v-8 l35 -18 z"/></svg>
+<p style="font-size:44px;font-weight:600">Airplane mode</p>
+<svg viewBox="0 0 120 64" width="120" height="64" role="img" aria-label="Switch on"><rect x="2" y="2" width="116" height="60" rx="30" fill="#E8A13A"/><circle cx="88" cy="32" r="24" fill="#14181F"/></svg>
+</div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:34px;color:#B8C2CC">“Computer, what’s a fun rainy day activity for four kids?”</p>
+</div>
+</section>
+<section id="demo-brainstorm" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#14181F;background:#E8A13A;letter-spacing:2px;text-transform:uppercase;align-self:flex-start;padding:8px 20px;border-radius:8px">Live demo 2</p>
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.08">It talks it through. It saves only when you ask.</h1>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="background:#1E2530;border:1px solid #3A4452;border-radius:20px;padding:24px 36px;display:flex;justify-content:space-between;align-items:center;gap:32px"><p style="font-size:38px;line-height:1.25"><b style="color:#E8A13A">1</b>  “I’m driving home and I want to think through a weekend project in the garage.”</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#9AA3AD;white-space:nowrap">notes 0</p></div>
+<div style="background:#1E2530;border:1px solid #3A4452;border-radius:20px;padding:24px 36px;display:flex;justify-content:space-between;align-items:center;gap:32px"><p style="font-size:38px;line-height:1.25"><b style="color:#E8A13A">2</b>  “Give me three ideas.”</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#9AA3AD;white-space:nowrap">notes 0</p></div>
+<div style="background:#1E2530;border:1px solid #3A4452;border-radius:20px;padding:24px 36px;display:flex;justify-content:space-between;align-items:center;gap:32px"><p style="font-size:38px;line-height:1.25"><b style="color:#E8A13A">3</b>  “Can you save notes?”</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#9AA3AD;white-space:nowrap">notes 0</p></div>
+<div style="background:#E8A13A;color:#14181F;border-radius:20px;padding:24px 36px;display:flex;justify-content:space-between;align-items:center;gap:32px"><p style="font-size:38px;line-height:1.25;font-weight:600"><b>4</b>  “I like the idea of ____. Save a note for that.”</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;white-space:nowrap">notes 1</p></div>
+</div>
+</section>
+<section id="demo-speed" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;align-items:center;gap:96px">
+<div style="flex:1;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#14181F;background:#E8A13A;letter-spacing:2px;text-transform:uppercase;align-self:flex-start;padding:8px 20px;border-radius:8px">Live demo 3</p>
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:96px;font-weight:700;line-height:1.05">How fast does it start talking?</h1>
+<div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px">
+<p style="font-size:32px;background:#1E2530;border:1px solid #3A4452;border-radius:999px;padding:16px 32px">How many ounces are in a cup?</p>
+<p style="font-size:32px;background:#1E2530;border:1px solid #3A4452;border-radius:999px;padding:16px 32px">How many days are in November?</p>
+<p style="font-size:32px;background:#1E2530;border:1px solid #3A4452;border-radius:999px;padding:16px 32px">Tell me a joke.</p>
+</div>
+<p style="font-size:36px;color:#B8C2CC">Three short questions, back to back.</p>
+</div>
+<svg viewBox="0 0 520 600" width="520" height="600" role="img" aria-label="A stopwatch with the hand just past the start" style="flex:0 0 auto">
+<rect x="226" y="10" width="68" height="44" rx="10" fill="#E8A13A"/>
+<rect x="250" y="50" width="20" height="40" fill="#E8A13A"/>
+<path d="M 420 120 l 34 -34" stroke="#E8A13A" stroke-width="16" stroke-linecap="round"/>
+<circle cx="260" cy="340" r="230" fill="#1E2530" stroke="#E8A13A" stroke-width="16"/>
+<g stroke="#B8C2CC" stroke-width="6" stroke-linecap="round"><line x1="260" y1="140" x2="260" y2="170"/><line x1="460" y1="340" x2="430" y2="340"/><line x1="260" y1="540" x2="260" y2="510"/><line x1="60" y1="340" x2="90" y2="340"/></g>
+<path d="M 260 340 L 260 150 A 190 190 0 0 1 340 168 Z" fill="#E8A13A" opacity="0.35"/>
+<line x1="260" y1="340" x2="338" y2="168" stroke="#E8A13A" stroke-width="10" stroke-linecap="round"/>
+<circle cx="260" cy="340" r="18" fill="#E8A13A"/>
+</svg>
+</section>
+<section id="built-for-phones" data-transition="fade" style="background:#EAE5DA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:96px 128px;display:flex;flex-direction:column;gap:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">Google · Gemma 4 model card</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">The small Gemma 4 models are made for phones</h2>
+<img class="rise" src="assets/fda2eff5de0bcfa13232b5e384b5bf9f.png" alt="Gemma 4 model card: Optimized for On-Device, smaller models are specifically designed for efficient local execution on laptops and mobile devices" style="width:1340px;height:296px;object-fit:contain;border-radius:12px;align-self:center">
+<img class="rise2" src="assets/d3e6cb23e3d705fdcaf8da58ae2469ac.png" alt="Gemma 4 model card Dense Models table: E2B 2.3B effective parameters, 5.1B with embeddings; E4B 4.5B effective, 8B with embeddings" style="width:1100px;height:380px;object-fit:contain;border-radius:12px;align-self:center">
+</section>
+<section id="parts" data-transition="fade" style="background:#F4F1EA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">The parts around Gemma</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Three helpers hear you, write it down and speak</h2>
+<div style="display:flex;gap:32px;align-items:stretch;flex:1">
+<div class="rise" style="flex:1;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">1 · hears</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:600;line-height:1.1">Silero VAD</h3>
+<p style="font-size:30px;line-height:1.35">An open-source, lightweight voice activity detection model. It labels each short chunk of audio as speech or not speech, in real time. Silence and background noise both count as not speech.</p>
+<p style="font-size:26px;line-height:1.35;color:#4A5160">It tells the app when you start and stop talking.</p>
+</div>
+<div class="rise2" style="flex:1;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">2 · writes it down</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:600;line-height:1.1">Parakeet TDT 110M</h3>
+<p style="font-size:30px;line-height:1.35">NVIDIA’s open speech-to-text model, with 110 million parameters. It turns the audio of what you said into text.</p>
+<p style="font-size:26px;line-height:1.35;color:#4A5160">That text is what Gemma reads.</p>
+</div>
+<div class="rise3" style="flex:1;background:#14181F;color:#F4F1EA;border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A">3 · speaks</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:600;line-height:1.1">System voice</h3>
+<p style="font-size:30px;line-height:1.35">The text-to-speech voice built into the phone, the same one that reads your screen aloud. The app ships no voice of its own.</p>
+<p style="font-size:26px;line-height:1.35;color:#B8C2CC">It speaks Gemma’s reply, one clause at a time.</p>
+</div>
+</div>
+</section>
+<section id="engine" data-transition="fade" style="background:#F4F1EA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">The engine under Gemma</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">LiteRT-LM is what runs Gemma on the phone</h2>
+<div style="display:flex;gap:32px;align-items:stretch;flex:1">
+<div class="rise" style="flex:1.3;background:#14181F;color:#F4F1EA;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A">what it is</p>
+<p style="font-size:38px;line-height:1.3;font-weight:600">Google’s open-source runtime for running language models on a device.</p>
+<p style="font-size:30px;line-height:1.35;color:#B8C2CC">Gemma is the model file. LiteRT-LM is the program that loads it and does the math.</p>
+</div>
+<div class="rise2" style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="flex:1;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">runs on</p><p style="font-size:30px;line-height:1.3">The phone’s GPU. It can use the CPU too, but starts slower.</p></div>
+<div style="flex:1;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">gives back</p><p style="font-size:30px;line-height:1.3">The reply a piece at a time, so speech can start early.</p></div>
+<div style="flex:1;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">where</p><p style="font-size:30px;line-height:1.3">Android, iPhone and iPad, from the same app code.</p></div>
+</div>
+</div>
+</section>
+<section id="inside" data-transition="fade" style="background:#F4F1EA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">Inside the phone</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Every model runs on the phone. No cloud call.</h2>
+<div style="display:flex;gap:56px;align-items:center;flex:1">
+<svg viewBox="0 0 1160 600" width="1160" height="600" role="img" aria-label="Pipeline on the phone: microphone, Silero VAD hears, Parakeet TDT 110M transcribes, Gemma 4 E4B thinks on the GPU, the phone’s own voice speaks, speaker. A crossed-out cloud sits outside the phone." style="flex:0 0 auto">
+<rect x="4" y="110" width="1152" height="440" rx="36" fill="#FBFAF6" stroke="#14181F" stroke-width="4"/>
+<text x="40" y="160" font-family="JetBrains Mono, monospace" font-size="22" fill="#4A5160" letter-spacing="2">PIXEL 9 PRO · EVERYTHING BELOW RUNS HERE</text>
+<g transform="translate(1040 40)"><path d="M -60 40 a 34 34 0 0 1 10 -66 a 44 44 0 0 1 84 -6 a 30 30 0 0 1 26 72 z" fill="none" stroke="#9AA3AD" stroke-width="5"/><line x1="-70" y1="-50" x2="72" y2="54" stroke="#B3412E" stroke-width="7" stroke-linecap="round"/></g>
+<text x="930" y="56" text-anchor="end" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" fill="#4A5160">no server, no API key</text>
+<g transform="translate(70 340)"><circle r="42" fill="#14181F"/><rect x="-11" y="-24" width="22" height="34" rx="11" fill="#F4F1EA"/><path d="M -18 2 a 18 18 0 0 0 36 0" fill="none" stroke="#F4F1EA" stroke-width="4"/><line x1="0" y1="20" x2="0" y2="28" stroke="#F4F1EA" stroke-width="4"/></g>
+<g fill="none" stroke="#14181F" stroke-width="4"><line x1="118" y1="340" x2="140" y2="340"/><line x1="350" y1="340" x2="380" y2="340"/><line x1="590" y1="340" x2="620" y2="340"/><line x1="830" y1="340" x2="860" y2="340"/><line x1="1070" y1="340" x2="1078" y2="340"/></g>
+<g fill="#14181F"><path d="M 150 340 l -12 -8 v 16 z"/><path d="M 390 340 l -12 -8 v 16 z"/><path d="M 630 340 l -12 -8 v 16 z"/><path d="M 870 340 l -12 -8 v 16 z"/></g>
+<g font-family="IBM Plex Sans, Arial, sans-serif">
+<rect x="150" y="220" width="200" height="240" rx="16" fill="#F4F1EA" stroke="#DDD6C8" stroke-width="2"/>
+<text x="250" y="280" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="34" font-weight="600" fill="#14181F">Hears</text>
+<text x="250" y="330" text-anchor="middle" font-size="24" fill="#14181F">Silero VAD</text>
+<text x="250" y="400" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" fill="#4A5160">when you speak</text>
+<rect x="390" y="220" width="200" height="240" rx="16" fill="#F4F1EA" stroke="#DDD6C8" stroke-width="2"/>
+<text x="490" y="280" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="34" font-weight="600" fill="#14181F">Transcribes</text>
+<text x="490" y="330" text-anchor="middle" font-size="24" fill="#14181F">Parakeet TDT</text>
+<text x="490" y="362" text-anchor="middle" font-size="24" fill="#14181F">110M</text>
+<text x="490" y="400" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" fill="#4A5160">int8 · sherpa-onnx</text>
+<rect x="630" y="200" width="200" height="280" rx="16" fill="#14181F"/>
+<text x="730" y="268" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="34" font-weight="600" fill="#E8A13A">Thinks</text>
+<text x="730" y="318" text-anchor="middle" font-size="24" fill="#F4F1EA">Gemma 4 E4B</text>
+<text x="730" y="390" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" fill="#B8C2CC">GPU · LiteRT-LM</text>
+<text x="730" y="420" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" fill="#B8C2CC">3.7 GB</text>
+<rect x="870" y="220" width="200" height="240" rx="16" fill="#F4F1EA" stroke="#DDD6C8" stroke-width="2"/>
+<text x="970" y="280" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="34" font-weight="600" fill="#14181F">Speaks</text>
+<text x="970" y="330" text-anchor="middle" font-size="24" fill="#14181F">System voice</text>
+<text x="970" y="400" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" fill="#4A5160">built into Android</text>
+</g>
+<g transform="translate(1110 340)"><path d="M -24 -12 h 12 l 16 -16 v 56 l -16 -16 h -12 z" fill="#14181F"/><path d="M 12 -14 a 20 20 0 0 1 0 28" fill="none" stroke="#14181F" stroke-width="4"/></g>
+<text x="580" y="520" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="24" fill="#4A5160">Speech starts at the first clause, before the answer is finished</text>
+</svg>
+<div style="display:flex;flex-direction:column;align-items:center;gap:16px;flex:0 0 auto">
+<img src="assets/62c6a98baee8fc0aef2b5baf6d870c27.png" alt="Offwire v0.3.0 on the Pixel answering a request for a retro robot dog name, with the CPU and memory meter below" style="height:540px;width:242px;border-radius:28px;border:6px solid #14181F;object-fit:cover;object-position:top">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#4A5160">Offwire v0.3.0 · Nov 20</p>
+</div>
+</div>
+</section>
+<section id="arc" data-transition="fade" style="background:#EAE5DA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:104px 128px;display:flex;flex-direction:column;gap:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">The problem and the fix</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Gemma was bad at calling tools. The evals proved it, and proved the fix.</h2>
+<p style="font-size:32px;line-height:1.3;color:#4A5160">Router and Gemma together, scored on the whole turn. 48 test cases, run three times. No router: Nov 10. Router: today’s app, Nov 18.</p>
+<div style="display:flex;flex-direction:column;gap:16px;flex:1">
+<div style="display:flex;gap:16px;align-items:flex-end">
+<p style="flex:1.1;font-size:24px"> </p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#4A5160;padding:0 28px">No router · E2B</p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#9A5B0E;padding:0 28px">Router · E2B</p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#9A5B0E;padding:0 28px">Router · E4B</p>
+</div>
+<div class="rise" style="display:flex;gap:16px;align-items:stretch;flex:1">
+<div style="flex:1.1;display:flex;align-items:center"><p style="font-size:38px;font-weight:600;line-height:1.25">Test turns it got right</p></div>
+<div style="flex:1;background:#F4F1EA;color:#14181F;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#14181F">73%</p><p style="font-size:28px;color:#4A5160">105 of 144</p></div>
+<div style="flex:1;background:#14181F;color:#F4F1EA;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#E8A13A">98%</p><p style="font-size:28px;color:#B8C2CC">141 of 144</p></div>
+<div style="flex:1;background:#14181F;color:#F4F1EA;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#E8A13A">97%</p><p style="font-size:28px;color:#B8C2CC">139 of 144</p></div>
+</div>
+<div class="rise2" style="display:flex;gap:16px;align-items:stretch;flex:1">
+<div style="flex:1.1;display:flex;align-items:center"><p style="font-size:38px;font-weight:600;line-height:1.25">Tool calls nobody asked for</p></div>
+<div style="flex:1;background:#F4F1EA;color:#14181F;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#14181F">40%</p><p style="font-size:28px;color:#4A5160">35 of 87 chat turns</p></div>
+<div style="flex:1;background:#14181F;color:#F4F1EA;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#E8A13A">0%</p><p style="font-size:28px;color:#B8C2CC">0 of 87 chat turns</p></div>
+<div style="flex:1;background:#14181F;color:#F4F1EA;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#E8A13A">0%</p><p style="font-size:28px;color:#B8C2CC">0 of 87 chat turns</p></div>
+</div>
+</div>
+</section>
+<section id="router-result" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:104px 128px;display:flex;flex-direction:column;gap:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A;letter-spacing:2px;text-transform:uppercase">The held-out test</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">On sentences nothing was tuned on, the router still wins</h2>
+<p style="font-size:32px;line-height:1.3;color:#B8C2CC">Router and Gemma together, scored on the whole turn. 24 unseen cases, run three times. No router: Nov 10. Router: today’s app, Nov 18.</p>
+<div style="display:flex;flex-direction:column;gap:16px;flex:1">
+<div style="display:flex;gap:16px;align-items:flex-end">
+<p style="flex:1.1;font-size:24px"> </p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#B8C2CC;padding:0 28px">No router · E2B</p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#E8A13A;padding:0 28px">Router · E2B</p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#E8A13A;padding:0 28px">Router · E4B</p>
+</div>
+<div class="rise" style="display:flex;gap:16px;align-items:stretch;flex:1">
+<div style="flex:1.1;display:flex;align-items:center"><p style="font-size:38px;font-weight:600;line-height:1.25">Test turns it got right</p></div>
+<div style="flex:1;background:#232A36;color:#F4F1EA;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#F4F1EA">69%</p><p style="font-size:28px;color:#B8C2CC">50 of 72</p></div>
+<div style="flex:1;background:#E8A13A;color:#14181F;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#14181F">79%</p><p style="font-size:28px;color:#14181F">57 of 72</p></div>
+<div style="flex:1;background:#E8A13A;color:#14181F;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#14181F">82%</p><p style="font-size:28px;color:#14181F">59 of 72</p></div>
+</div>
+<div class="rise2" style="display:flex;gap:16px;align-items:stretch;flex:1">
+<div style="flex:1.1;display:flex;align-items:center"><p style="font-size:38px;font-weight:600;line-height:1.25">Tool calls nobody asked for</p></div>
+<div style="flex:1;background:#232A36;color:#F4F1EA;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#F4F1EA">63%</p><p style="font-size:28px;color:#B8C2CC">19 of 30 chat turns</p></div>
+<div style="flex:1;background:#E8A13A;color:#14181F;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#14181F">10%</p><p style="font-size:28px;color:#14181F">3 of 30 chat turns</p></div>
+<div style="flex:1;background:#E8A13A;color:#14181F;border-radius:16px;padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1;color:#14181F">10%</p><p style="font-size:28px;color:#14181F">3 of 30 chat turns</p></div>
+</div>
+</div>
+</section>
+<section id="router-how" data-transition="fade" style="background:#F4F1EA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">How it works · tool calling</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Gemma only sees a tool when you ask for one</h2>
+<div style="display:flex;align-items:center;gap:32px;flex:1">
+<div class="rise" style="width:360px;flex:0 0 auto;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">1 · you say</p><p style="font-size:32px;line-height:1.3">“Jot down that I want to try it Saturday.”</p></div>
+<x-shape kind="arrow-right" style="width:72px;height:36px;background:#9A5B0E;flex:0 0 auto"></x-shape>
+<div class="rise2" style="width:420px;flex:0 0 auto;background:#14181F;color:#F4F1EA;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A">2 · the router</p><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:40px;font-weight:600">Save, action or chat?</p><p style="font-size:28px;color:#B8C2CC;line-height:1.35">A small embedding model (MiniLM) plus a tiny classifier, on the phone</p></div>
+<x-shape kind="arrow-right" style="width:72px;height:36px;background:#9A5B0E;flex:0 0 auto"></x-shape>
+<div class="rise3" style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="background:#E8A13A;border-radius:16px;padding:24px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">Save</p><p style="font-size:30px;font-weight:600;line-height:1.3">Gemma gets one tool: save_note</p></div>
+<div style="background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:24px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#4A5160">Everything else</p><p style="font-size:30px;font-weight:600;line-height:1.3">Gemma gets no tools. It just talks.</p></div>
+</div>
+</div>
+<p style="font-size:28px;color:#4A5160;line-height:1.35">Phone actions like timers or directions are planned. Today the router spots them and Gemma says it can’t do them yet.</p>
+</section>
+<section id="router-detail" data-transition="fade" style="background:#EAE5DA;color:#14181F;font-family:'IBM Plex Sans', Arial, sans-serif;padding:104px 128px;display:flex;flex-direction:column;gap:28px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E;letter-spacing:2px;text-transform:uppercase">Inside the router</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:600;line-height:1.1">One borrowed model reads the meaning. One tiny model I trained makes the call.</h2>
+<div style="display:flex;gap:28px;align-items:stretch;flex:1">
+<div class="rise" style="flex:1;background:#14181F;color:#F4F1EA;border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;gap:12px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A">1 · reads the meaning</p><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:600;line-height:1.1">MiniLM</h3><p style="font-size:28px;line-height:1.3">Text in, 384 numbers out. It cannot chat.</p><p style="font-size:28px;line-height:1.3">Similar meaning gives similar numbers.</p><p style="font-size:28px;line-height:1.3">22 million parameters, 90 MB. Used as downloaded.</p></div>
+<div class="rise2" style="flex:1;background:#E8A13A;color:#14181F;border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;gap:12px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#14181F">2 · makes the call</p><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:600;line-height:1.1">The classifier</h3><p style="font-size:28px;line-height:1.3">384 numbers in, three scores out: save, action, chat.</p><p style="font-size:28px;line-height:1.3">25,000 parameters, 258 KB. The only part I trained.</p><p style="font-size:28px;line-height:1.3">A tool is offered only when its score clearly beats chat.</p></div>
+</div>
+<div class="rise3" style="display:flex;gap:28px;align-items:stretch">
+<div style="flex:1;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:24px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">trick 1 · the opening words</p><p style="font-size:28px;line-height:1.35">It reads the whole sentence and its first 3 words, then averages. The request is nearly always up front.</p></div>
+<div style="flex:1;background:#FBFAF6;border:1px solid #DDD6C8;border-radius:16px;padding:24px 32px;display:flex;flex-direction:column;gap:8px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#9A5B0E">trick 2 · long messages</p><p style="font-size:28px;line-height:1.35">It also scores each clause on its own, so a request at the end of a story still fires.</p></div>
+</div>
+</section>
+<section id="space" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:120px 128px;display:flex;flex-direction:column;gap:44px">
+<svg aria-label="The Earth's edge with a phone on the surface and the Suncatcher satellite in orbit above it, both running Gemma 4" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="IBM Plex Sans, Arial, sans-serif" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px">
+<g fill="#4A5160"><circle cx="1452" cy="232" r="3"/><circle cx="1610" cy="330" r="2"/><circle cx="1784" cy="258" r="3"/><circle cx="1530" cy="430" r="2"/><circle cx="1838" cy="452" r="2"/><circle cx="1700" cy="770" r="2"/><circle cx="1500" cy="700" r="3"/><circle cx="1850" cy="820" r="2"/></g>
+<path d="M384 1080 A2420 2420 0 0 1 1920 981 L1920 1080 Z" fill="#232A36"/>
+<path d="M384 1080 A2420 2420 0 0 1 1920 981" fill="none" stroke="#F4F1EA" stroke-width="3"/>
+<path d="M1480 576 A2750 2750 0 0 1 1920 641" fill="none" stroke="#4A5160" stroke-width="3" stroke-dasharray="10 12"/>
+<rect x="1612" y="586" width="48" height="20" fill="#232A36" stroke="#E8A13A" stroke-width="2"/><rect x="1700" y="586" width="48" height="20" fill="#232A36" stroke="#E8A13A" stroke-width="2"/><rect x="1664" y="580" width="32" height="32" rx="5" fill="#E8A13A"/>
+<text x="1680" y="540" font-size="28" fill="#E8A13A" text-anchor="middle" font-weight="600">Suncatcher · Gemma 4</text>
+<rect x="1080" y="836" width="40" height="72" rx="7" fill="#232A36" stroke="#F4F1EA" stroke-width="3"/>
+<text x="1144" y="868" font-size="28" fill="#F4F1EA" font-weight="600">Phone · Gemma 4 E4B</text>
+</svg>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A;letter-spacing:2px;text-transform:uppercase">Same model family, further out</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:96px;font-weight:600;line-height:1.05">Gemma 4 is in orbit.</h2>
+<div style="display:flex;flex-direction:column;border-left:6px solid #E8A13A;padding-left:40px"><p style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:72px;font-weight:500;line-height:1.3;color:#F4F1EA">Blue marble below<br>Data streams in silent grace<br>Starlight feeds my core.</p></div>
+<p style="font-size:32px;color:#B8C2CC">Written by Gemma 4 on Google's Project Suncatcher satellite, October 2026.</p>
+<p style="font-size:36px;color:#F4F1EA">Same model family on a phone and on a satellite. Both run it on board.</p>
+<p style="position:absolute;right:128px;top:120px;width:760px;text-align:right;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B8C2CC"><a href="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/" style="color:inherit;text-decoration:underline">Google, "Project Suncatcher", October 30, 2026</a></p>
+</section>
+<section id="inference" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;gap:40px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A;letter-spacing:2px;text-transform:uppercase">My inference · the post did not test Gemma 4</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">What it could mean for the model in your pocket</h2>
+<svg viewBox="0 0 1664 400" width="1664" height="400" role="img" aria-label="A frontier model reads open weights and sends a targeted patch to Gemma 4 E4B on the phone. The patched model runs offline and your data stays on the phone.">
+<g font-family="IBM Plex Sans, Arial, sans-serif">
+<rect x="0" y="80" width="440" height="240" rx="16" fill="#1E2530" stroke="#3A4452" stroke-width="2"/>
+<text x="40" y="150" font-family="Space Grotesk, Arial, sans-serif" font-size="40" font-weight="600" fill="#F4F1EA">Frontier model</text>
+<text x="40" y="200" font-size="26" fill="#B8C2CC">reads open weights directly</text>
+<text x="40" y="240" font-size="26" fill="#B8C2CC">finds one failure mode</text>
+<text x="40" y="280" font-size="26" fill="#B8C2CC">writes a small fix</text>
+<line x1="460" y1="200" x2="1070" y2="200" stroke="#E8A13A" stroke-width="6" stroke-dasharray="18 12"/>
+<path d="M 1100 200 l -34 -20 v 40 z" fill="#E8A13A"/>
+<rect x="680" y="172" width="170" height="56" rx="10" fill="#E8A13A"/>
+<text x="765" y="209" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="24" fill="#14181F">patch</text>
+<text x="765" y="140" text-anchor="middle" font-size="26" fill="#B8C2CC">ships once, like a model update</text>
+<rect x="1120" y="4" width="240" height="392" rx="40" fill="none" stroke="#F4F1EA" stroke-width="5"/>
+<rect x="1150" y="130" width="180" height="120" rx="12" fill="#E8A13A"/>
+<text x="1240" y="182" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="28" font-weight="600" fill="#14181F">Gemma 4</text>
+<text x="1240" y="220" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="28" font-weight="600" fill="#14181F">E4B</text>
+<g transform="translate(1240 310)"><rect x="-24" y="-6" width="48" height="38" rx="6" fill="#F4F1EA"/><path d="M -14 -6 v -12 a 14 14 0 0 1 28 0 v 12" fill="none" stroke="#F4F1EA" stroke-width="6"/></g>
+<text x="1240" y="70" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" fill="#B8C2CC">offline</text>
+<text x="1400" y="170" font-size="34" font-weight="600" fill="#F4F1EA">Your data</text>
+<text x="1400" y="214" font-size="34" font-weight="600" fill="#F4F1EA">still stays</text>
+<text x="1400" y="258" font-size="34" font-weight="600" fill="#F4F1EA">on the phone</text>
+</g>
+</svg>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="background:#1E2530;border:1px solid #3A4452;border-radius:16px;padding:28px 36px"><p style="font-size:30px;line-height:1.35">Only open weights can be inspected and patched like this. A closed cloud model cannot.</p></div>
+<div style="background:#1E2530;border:1px solid #3A4452;border-radius:16px;padding:28px 36px"><p style="font-size:30px;line-height:1.35"><span style="color:#E8A13A;font-weight:600">The limit:</span> a fix removes a failure mode. It does not add ability.</p></div>
+</div>
+</section>
+<section id="testers" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:104px 128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A;letter-spacing:2px;text-transform:uppercase">One ask · Android testers</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:84px;font-weight:700;line-height:1.06">Help me get Offwire on Google Play.<br>I need 12 testers for 14 days.</h2>
+<div style="display:flex;align-items:center;gap:80px">
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<p class="rise" style="font-size:36px;line-height:1.3"><b style="color:#E8A13A">The rule:</b> Google asks a new developer for 12 people opted in to a closed test for 14 days in a row.</p>
+<p class="rise2" style="font-size:36px;line-height:1.3"><b style="color:#E8A13A">Tonight:</b> sign up by joining the Google Group “Offwire testers”, with the Google account on your Android phone.</p>
+<p class="rise3" style="font-size:36px;line-height:1.3"><b style="color:#E8A13A">Then:</b> the Play install link comes by email when the test opens. Nobody can install from Play before that.</p>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:16px;flex:0 0 auto">
+<svg aria-label="QR code for groups.google.com/g/offwire-testers" width="380" height="380" style="width:380px;height:380px;border-radius:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41"><path fill="#fff" d="M0 0h41v41h-41z"/><path stroke="#14181f" d="M4 4.5h7m1 0h3m2 0h7m1 0h3m2 0h7m-33 1h1m5 0h1m2 0h2m1 0h1m1 0h1m1 0h2m2 0h3m1 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m3 0h2m2 0h3m5 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m4 0h1m1 0h3m2 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m6 0h1m1 0h1m8 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-24 1h2m1 0h4m2 0h1m2 0h2m-22 1h7m2 0h2m2 0h1m1 0h2m5 0h1m3 0h2m3 0h1m-33 1h2m2 0h2m1 0h3m2 0h1m1 0h2m2 0h4m1 0h1m2 0h2m1 0h2m1 0h1m-33 1h3m2 0h4m1 0h3m3 0h1m1 0h1m2 0h2m2 0h1m2 0h1m1 0h1m-29 1h1m1 0h2m1 0h1m1 0h3m1 0h1m1 0h2m3 0h3m3 0h1m1 0h4m-30 1h1m3 0h1m1 0h4m1 0h1m1 0h2m1 0h2m2 0h1m1 0h2m1 0h3m1 0h2m-33 1h6m1 0h3m1 0h1m3 0h3m4 0h5m2 0h1m1 0h2m-33 1h1m1 0h1m1 0h3m1 0h1m1 0h2m3 0h4m1 0h1m1 0h1m2 0h5m1 0h1m-29 1h1m1 0h1m1 0h1m2 0h1m3 0h4m1 0h1m1 0h1m3 0h2m2 0h2m-31 1h1m2 0h2m1 0h2m1 0h3m1 0h3m6 0h1m2 0h1m1 0h2m3 0h1m-33 1h2m2 0h2m1 0h3m2 0h1m2 0h3m1 0h3m1 0h1m2 0h2m1 0h2m1 0h1m-31 1h2m1 0h2m1 0h3m1 0h1m2 0h1m4 0h1m4 0h1m1 0h2m1 0h2m-32 1h1m2 0h1m3 0h2m1 0h1m2 0h1m1 0h2m1 0h6m1 0h8m-33 1h2m1 0h4m1 0h6m1 0h1m1 0h1m2 0h1m1 0h4m1 0h3m1 0h2m-33 1h1m7 0h1m2 0h4m1 0h2m1 0h5m2 0h1m2 0h2m1 0h1m-33 1h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h3m1 0h3m3 0h1m1 0h2m2 0h2m1 0h1m-32 1h1m1 0h2m3 0h1m3 0h1m3 0h5m1 0h6m1 0h1m1 0h3m-33 1h1m3 0h4m1 0h5m1 0h1m1 0h2m3 0h1m1 0h5m3 0h1m-25 1h3m2 0h1m4 0h4m2 0h1m3 0h1m1 0h1m1 0h1m-33 1h7m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h5m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m1 0h1m2 0h4m2 0h5m1 0h2m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m2 0h2m1 0h1m1 0h6m-30 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h2m2 0h2m4 0h1m2 0h2m2 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m2 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h4m1 0h1m-30 1h1m5 0h1m1 0h1m1 0h3m1 0h1m1 0h3m1 0h4m2 0h1m1 0h3m-31 1h7m3 0h2m1 0h5m4 0h4m1 0h1m3 0h1"/></svg>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#B8C2CC;text-align:center;width:380px">groups.google.com/g/<br>offwire-testers</p>
+</div>
+</div>
+<div style="display:flex;gap:48px;align-items:center">
+<p style="font-size:32px;font-weight:600">Nick Christensen</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:32px;color:#E8A13A">offwire.app</p>
+</div>
+</section>
+<section id="close" data-transition="fade" style="background:#14181F;color:#F4F1EA;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#E8A13A;letter-spacing:2px;text-transform:uppercase">Thank you · questions</p>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:96px">
+<h1 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:120px;font-weight:700;line-height:1.05">Everything on the phone. Nothing leaves it.</h1>
+<img src="assets/7427c40cecda6e1df6babac0fbc4390b.png" alt="The Offwire app icon" style="width:300px;height:300px;border-radius:68px;flex:0 0 auto">
+</div>
+<div style="display:flex;gap:48px;align-items:center">
+<p style="font-size:32px;font-weight:600">Nick Christensen</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B8C2CC">Offwire · Gemma 4 E4B · Pixel 9 Pro</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:32px;color:#E8A13A">offwire.app</p>
+</div>
+</section>
+</body></html>
