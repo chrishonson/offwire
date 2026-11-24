@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Offwire</title>
+<meta name="description" content="Offwire is an open source, hands-free voice assistant that runs Gemma 4 entirely on your phone. On Android now, iPhone and iPad next. No account, no cloud, works in airplane mode.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://offwire.app/">
+<meta property="og:title" content="Offwire: nothing leaves your phone">
+<meta property="og:description" content="An open source, hands-free voice assistant that runs Gemma 4 entirely on your phone. On Android now, iPhone and iPad next. No account, no cloud, works in airplane mode.">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="gv">
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="Offwire, back to top">
+      <img src="logo.svg" alt="" width="32" height="32">
+      <span>Offwire</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#start">Get started</a>
+      <a class="nav-gh" href="https://github.com/chrishonson/offwire">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <p class="eyebrow">
+          <span><i class="dot" aria-hidden="true"></i>Open source voice assistant</span>
+          <span>Android · iPhone · iPad</span>
+          <span>MIT</span>
+        </p>
+        <h1>Nothing <em>leaves</em> your phone.</h1>
+        <p class="lede">Offwire is a hands-free voice assistant that runs Gemma 4 entirely on your phone. No account, no cloud. Turn on airplane mode and keep talking.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://github.com/chrishonson/offwire/releases/latest">
+            Download for Android
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/chrishonson/offwire">View on GitHub</a>
+        </div>
+        <p class="start-note">iPhone and iPad are fully supported and are coming to the App Store next.</p>
+        <ul class="hero-facts">
+          <li><b>0 servers</b><span>Speech, model and voice run on the device</span></li>
+          <li><b>Hands-free</b><span>Talk to it and interrupt it, with nothing to tap</span></li>
+          <li><b>1 download</b><span>Then it works with no signal</span></li>
+        </ul>
+      </div>
+
+      <div class="phone-col">
+        <figure class="shot hero-shot">
+          <img src="shots/listening.webp" width="480" height="946" alt="Screenshot of Offwire listening. You asked for a name for a retro robot dog, the reply suggests Bolt, Sprocket or Cyberdogg, and a green microphone shows it is listening, with Mute and Stop buttons.">
+        </figure>
+        <p class="phone-note">Screenshot from the app on a Pixel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="screens">
+    <div class="wrap sec">
+      <div class="sec-label">The app</div>
+      <div>
+        <h2>The real app.</h2>
+        <div class="shots">
+          <figure class="shot"><img src="shots/home.webp" width="480" height="946" loading="lazy" alt="Screenshot of the Offwire home screen: an empty chat panel, a CPU and memory meter, a message box and an amber Talk button."><figcaption>Home</figcaption></figure>
+          <figure class="shot"><img src="shots/reply.webp" width="480" height="946" loading="lazy" alt="Screenshot of a reply in Offwire: your question in a filled cyan bubble and the answer in an outlined cyan bubble, with speed figures under the meter."><figcaption>Reply</figcaption></figure>
+          <figure class="shot"><img src="shots/limits.webp" width="480" height="946" loading="lazy" alt="Screenshot of the Offwire Limits sheet, which says it is a small model running on the phone with no internet that can mishear and state things that are not true."><figcaption>Limits</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="privacy">
+    <div class="wrap sec">
+      <div class="sec-label">Privacy</div>
+      <div>
+        <h2>Everything runs on the device.</h2>
+        <p class="sec-intro">Cloud assistants send what you say to a server to answer it. This one answers on the phone itself. Here is exactly what that means.</p>
+
+        <ul class="promises">
+          <li>
+            <span class="k">On device</span>
+            <h3>Speech, model and voice stay local</h3>
+            <p>Speech recognition, the language model and the spoken voice all run on the phone. There is no server on the other end.</p>
+          </li>
+          <li>
+            <span class="k">Offline</span>
+            <h3>One download, then airplane mode</h3>
+            <p>The only network use is fetching the model once: the Gemma 4 E2B file, about 2.6 GB, from Hugging Face. After that it works with every radio off.</p>
+          </li>
+          <li>
+            <span class="k">Anonymous</span>
+            <h3>No account, no analytics</h3>
+            <p>No sign-in, no account, no analytics. The app has nothing to identify you with and nowhere to report to.</p>
+          </li>
+          <li>
+            <span class="k">Encrypted</span>
+            <h3>Notes are encrypted at rest</h3>
+            <p>Things you ask it to remember are saved only on the device. On Android they are encrypted with AES-256-GCM, using a Keystore key that cannot be exported. On iPhone and iPad they are protected by the device's file encryption.</p>
+          </li>
+        </ul>
+
+        <div class="verify">
+          <div>
+            <h3>Check it yourself</h3>
+            <p>The code is open, so the promise is checkable. By project rule, a single class, <code>NetworkClient</code>, is the only code allowed to open a connection.</p>
+            <p>Every request it makes is written on the device to <code>network-log.jsonl</code>. Read the class, then read the log.</p>
+          </div>
+          <div class="gate" role="img" aria-label="Diagram. Speech recognition, the language model, the voice and notes sit on the phone behind a wall. NetworkClient is the single opening in the wall. It is used for the one-time model download, and every request is logged to network-log.jsonl on the device.">
+            <div class="gate-side" aria-hidden="true">
+              <span class="gate-cap">On the phone</span>
+              <span class="gate-pill">Speech recognition</span>
+              <span class="gate-pill">Language model</span>
+              <span class="gate-pill">Voice</span>
+              <span class="gate-pill">Notes</span>
+            </div>
+            <div class="gate-wall" aria-hidden="true"><span class="gate-door">NetworkClient</span></div>
+            <div class="gate-side" aria-hidden="true">
+              <span class="gate-cap">Network</span>
+              <span class="gate-out">One-time model download</span>
+              <span class="gate-log">Each request logged to <strong>network-log.jsonl</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="how">
+    <div class="wrap sec">
+      <div class="sec-label">How it works</div>
+      <div>
+        <h2>Six stages, one phone.</h2>
+        <p class="sec-intro">Your voice goes in at the microphone and a spoken answer comes out of the speaker. Every stage in between is a model running locally.</p>
+
+        <ol class="pipe">
+          <li>
+            <span class="role">Input</span>
+            <h3>Microphone</h3>
+            <p>Listens hands-free. Nothing to tap while you drive or walk.</p>
+          </li>
+          <li>
+            <span class="role">Voice activity</span>
+            <h3>Silero VAD</h3>
+            <p>Detects when you start and stop speaking.</p>
+            <span class="rt">ONNX Runtime</span>
+          </li>
+          <li>
+            <span class="role">Speech to text</span>
+            <h3>Parakeet TDT 110M</h3>
+            <p>NVIDIA's int8 model turns your speech into text.</p>
+            <span class="rt">sherpa-onnx</span>
+          </li>
+          <li class="core">
+            <span class="role">Language model</span>
+            <h3>Gemma 4 E2B</h3>
+            <p>Writes the reply on the phone's GPU and streams it out token by token.</p>
+            <span class="rt">Google LiteRT-LM</span>
+          </li>
+          <li>
+            <span class="role">Text to speech</span>
+            <h3>Your phone's voice</h3>
+            <p>Speaks each clause as it arrives, using the voice built into your phone.</p>
+            <span class="rt">System voice</span>
+          </li>
+          <li>
+            <span class="role">Output</span>
+            <h3>Speaker</h3>
+            <p>The answer, out loud, without looking at the screen.</p>
+          </li>
+        </ol>
+
+        <div class="traits">
+          <div>
+            <h3>It talks while it thinks</h3>
+            <p>Replies are spoken clause by clause as they stream, so you hear the start of an answer before the model has finished writing it.</p>
+          </div>
+          <div>
+            <h3>Interrupt it mid-sentence</h3>
+            <p>Start talking and it stops to listen. Barge-in works the way it does with a person.</p>
+          </div>
+          <div>
+            <h3>Optional wake word</h3>
+            <p>In wake word mode it listens for a wake phrase. Speech that isn't addressed to it is never sent to the model.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="expect">
+    <div class="wrap sec">
+      <div class="sec-label">What to expect</div>
+      <div>
+        <h2>Built for drives and walks.</h2>
+        <p class="sec-intro">A voice-first assistant and brainstorming partner for the times your hands and eyes are busy. It is a small model: quick, private and sometimes wrong.</p>
+
+        <div class="two">
+          <div>
+            <h3>Good at</h3>
+            <ul class="rows">
+              <li><b>Thinking out loud</b><span>Talk through an idea on the road and have something push back.</span></li>
+              <li><b>Remembering things</b><span>Ask it to remember something and it saves a note on the device. It answers later questions from those notes.</span></li>
+              <li><b>Working with no signal</b><span>Anywhere the model is already on the phone, signal or not.</span></li>
+              <li><b>Eyes-free use</b><span>Large print, strong contrast, follows your phone's font size, and usable without looking at the screen.</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Honest limits</h3>
+            <ul class="rows limits">
+              <li><b>It has no internet</b><span>It can't look anything up: no news, weather, scores or search.</span></li>
+              <li><b>It can be wrong</b><span>Gemma 4 E2B is a small model. Check anything that matters.</span></li>
+              <li><b>It isn't a coding tool</b><span>It is made for conversation, and it is the wrong tool for writing code.</span></li>
+              <li><b>It has one tool</b><span><code>save_note</code>. It saves notes and answers from them, and that is all it can act on.</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="aside">A small router model reads each request first, so Gemma is handed the note tool only when you ask it to remember something.</p>
+        <p class="aside"><span class="wip">Planned</span>An on-device code sandbox: the model writes a little JavaScript and runs it offline in a hidden browser view, for exact math, quick stats and small data jobs like parsing or converting.</p>
+        <p class="aside"><span class="wip">Planned</span>Image understanding: show it a photo, a screenshot or a document and ask about it by voice. Input only, no image generation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="start">
+    <div class="wrap sec">
+      <div class="sec-label">Get started</div>
+      <div>
+        <h2>Install it today.</h2>
+        <div class="start">
+          <dl class="reqs">
+            <div><dt>Android</dt><dd>12 or newer</dd></div>
+            <div><dt>Storage</dt><dd>About 3.6 GB free</dd></div>
+            <div><dt>Memory</dt><dd>A recent phone with 8 GB RAM or more is recommended</dd></div>
+            <div><dt>Model</dt><dd>Downloads once over Wi-Fi, about 2.6 GB</dd></div>
+            <div><dt>iPhone and iPad</dt><dd>Fully supported. Coming to the App Store next</dd></div>
+          </dl>
+          <div>
+            <div class="release">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg>
+              <p><b><a href="https://github.com/chrishonson/offwire/releases/latest">Download the APK</a></b>Version 0.4.0, 365 MB, on GitHub Releases. Open it on your phone and allow the install.</p>
+            </div>
+            <div class="term">
+              <div class="term-top">
+                <span>Build from source</span>
+                <button class="copy" type="button" id="copy" aria-label="Copy build commands">Copy</button>
+              </div>
+<pre><code id="cmds"><span class="p">$ </span>git clone https://github.com/chrishonson/offwire
+<span class="p">$ </span>cd offwire
+<span class="p">$ </span>./gradlew :app-classic:installDebug</code></pre>
+            </div>
+            <p class="start-note">To build it yourself, connect a phone with USB debugging on. The first launch downloads the model, then compiles it for the GPU once.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contribute">
+    <div class="wrap sec">
+      <div class="sec-label">Open source</div>
+      <div>
+        <h2>Read it, run it, improve it.</h2>
+        <p class="sec-intro">Offwire is a personal project released under the MIT license. Issues and pull requests are welcome. These are the places help counts most:</p>
+
+        <div class="contrib">
+          <div>
+            <h3>Device testing</h3>
+            <p>Run it on a phone other than a Pixel 9 Pro and report what you measure.</p>
+          </div>
+          <div>
+            <h3>Tool routing evals</h3>
+            <p>Test cases that show when the model should call a tool and when it should just answer.</p>
+          </div>
+          <div>
+            <h3>iPhone and iPad</h3>
+            <p>The same app runs on iPhone and iPad and is on its way to the App Store. Build it from source and report what you find.</p>
+          </div>
+        </div>
+
+        <ul class="stack" aria-label="Built with">
+          <li>Kotlin Multiplatform</li>
+          <li>Compose Multiplatform</li>
+          <li>Strict MVI</li>
+          <li>LiteRT-LM</li>
+          <li>sherpa-onnx</li>
+          <li>ONNX Runtime</li>
+        </ul>
+
+        <div class="links">
+          <a class="btn btn-primary" href="https://github.com/chrishonson/offwire">
+            Open the repo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <a class="plain" href="https://github.com/chrishonson/offwire#readme">README</a>
+          <a class="plain" href="https://github.com/chrishonson/offwire/blob/main/docs/ARCHITECTURE.md">docs/ARCHITECTURE.md</a>
+          <a class="plain" href="https://github.com/chrishonson/offwire/issues">Issues</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <div class="foot-name">Nothing leaves <em>your phone.</em></div>
+      <p>Offwire is an independent open source project, not affiliated with or endorsed by Google. Gemma is a trademark of Google LLC. The Gemma 4 model is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. App code MIT licensed.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="https://github.com/chrishonson/offwire">GitHub</a>
+      <a href="#privacy">Privacy</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="#how">How it works</a>
+      <a href="#start">Get started</a>
+    </nav>
+  </div>
+</footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -69,4 +69,4 @@ date.
 
 ## Contact
 
-[PLACEHOLDER FOR NICK: add a contact email before publishing]
+Questions about this policy: privacy@offwire.app
