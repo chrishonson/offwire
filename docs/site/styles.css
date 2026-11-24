@@ -373,3 +373,14 @@ box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 4px 0 var(--steel-edge), 0
 .gv .foot :focus-visible { outline-color: var(--led-amber); }
 .foot-nav { display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; padding-top: 8px; }
 @media (max-width: 700px) { .foot-in { grid-template-columns: minmax(0, 1fr); } .foot-nav { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; } }
+.release.beta { border-style: solid; }
+.release.beta .btn { margin-top: 12px; }
+.beta-bar { background: var(--led-amber); color: #1a1712; border-bottom: 6px solid transparent; border-image: repeating-linear-gradient(-45deg, #1a1712 0 10px, var(--led-amber) 10px 20px) 6; }
+.beta-bar-in { display: flex; align-items: center; gap: 10px 16px; padding-block: 10px; flex-wrap: wrap; }
+.beta-bar p { margin: 0; flex: 1 1 320px; font-size: 0.98rem; }
+.beta-tag { font-family: var(--font-seg); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; background: #1a1712; color: var(--led-amber); border-radius: 3px; padding: 3px 8px; }
+.gv .beta-go { font-weight: 800; color: #1a1712; background: #fff3d6; border: 2px solid #1a1712; border-radius: 4px; padding: 6px 12px; text-decoration: none; white-space: nowrap; }
+.gv .beta-go:hover { background: #fff; }
+.beta-x { background: none; border: 0; color: #1a1712; font-size: 1.6rem; line-height: 1; padding: 2px 6px; cursor: pointer; }
+.gv .beta-bar :focus-visible { outline: 2px solid #1a1712; outline-offset: 2px; }
+.beta-bar[hidden] { display: none; }

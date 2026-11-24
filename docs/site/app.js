@@ -51,3 +51,14 @@
     setTimeout(tick, 2600);
   }
 })();
+(function () {
+  // Beta banner: hidden for this browser once dismissed.
+  var bar = document.getElementById('beta-bar');
+  var x = document.getElementById('beta-x');
+  if (!bar || !x) return;
+  try { if (localStorage.getItem('betaBarHidden') === '1') bar.hidden = true; } catch (e) {}
+  x.addEventListener('click', function () {
+    bar.hidden = true;
+    try { localStorage.setItem('betaBarHidden', '1'); } catch (e) {}
+  });
+})();
