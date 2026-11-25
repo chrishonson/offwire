@@ -32,6 +32,26 @@ Version numbers: PATCH for fixes that leave the AI architecture alone. MINOR whe
 
 `scripts/release-artifacts.sh <tag>` builds the tag in a temporary worktree, so the current checkout and any uncommitted work are left alone. The apps are debug builds. The APKs are signed with this Mac's debug key, so they install over an earlier build from this Mac and as a fresh install anywhere else. The iOS app is signed for development and installs only on devices in the provisioning profile.
 
+## Google Play bundle
+
+Google Play takes an app bundle, not an APK. `./gradlew :app-classic:bundleRelease` writes `app-classic/build/outputs/bundle/release/app-classic-release.aab`, signed like the release APK.
+
+Play caps an app's base module at 200 MB, and the Parakeet and MiniLM models are 183 MB. A bundle build leaves `assets/parakeet` and `assets/router` out of the base module and ships them in the install-time asset pack `:model-pack`. Play installs the pack with the app, and the app opens the files through `AssetManager` at the same paths. APK builds are unchanged and keep the models in the app's own assets. The files stay in `core/src/androidMain/assets`, and `model-pack/src/main/assets` holds symlinks to them.
+
+To check a bundle on a device, install it the way Play does and run `PackagedModelsTest` against it. Use `bundleDebug` on the emulator, which already holds debug-signed installs:
+
+```
+./gradlew :app-classic:bundleDebug :app-classic:assembleDebugAndroidTest
+java -jar bundletool.jar build-apks --bundle=app-classic/build/outputs/bundle/debug/app-classic-debug.aab --output=debug.apks \
+    --ks="$HOME/.android/debug.keystore" --ks-key-alias=androiddebugkey --ks-pass=pass:android --key-pass=pass:android
+java -jar bundletool.jar install-apks --apks=debug.apks --device-id=emulator-5554
+adb -s emulator-5554 install -r app-classic/build/outputs/apk/androidTest/debug/app-classic-debug-androidTest.apk
+adb -s emulator-5554 shell am instrument -w -e class com.chrishonson.gemmavoice.PackagedModelsTest \
+    app.offwire.classic.test/androidx.test.runner.AndroidJUnitRunner
+```
+
+`adb shell pm path app.offwire.classic` lists `split_model_pack.apk` when the pack is installed.
+
 ## Release signing
 
 `./gradlew :app-classic:assembleRelease` signs the classic app when `~/.offwire-signing/signing.properties` exists. The file names the keystore and its passwords: `storeFile`, `storePassword`, `keyAlias` and `keyPassword`. Pass `-Poffwire.signingProperties=<path>` to read it from somewhere else. Without the file the release APK is built unsigned, so a fresh clone still builds.
