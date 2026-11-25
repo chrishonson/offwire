@@ -61,8 +61,8 @@ android {
         applicationId = "app.offwire.console"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 400
-        versionName = "0.4.0-dev"
+        versionCode = 401
+        versionName = "0.4.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     androidResources {

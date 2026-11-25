@@ -32,3 +32,4 @@ dependencyResolutionManagement {
 include(":app-console")
 include(":app-classic")
 include(":core")
+include(":model-pack")

@@ -75,6 +75,11 @@ val releaseSigning = Properties().apply {
     if (file.isFile) file.inputStream().use(::load)
 }
 
+// True when this run builds an app bundle (bundleRelease, bundleDebug), the form Google Play takes.
+val playBundle = gradle.startParameter.taskNames.any { it.substringAfterLast(':').startsWith("bundle") }
+// aapt's own default, which setting ignoreAssetsPattern would otherwise replace.
+val DEFAULT_IGNORE_ASSETS = "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"
+
 android {
     namespace = "com.chrishonson.gemmavoice.classic"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -83,14 +88,17 @@ android {
         applicationId = "app.offwire.classic"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 400
-        versionName = "0.4.0-dev"
+        versionCode = 401
+        versionName = "0.4.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     androidResources {
         // Keep the ~131 MB Parakeet encoder (and other ONNX models) stored so they load without inflating.
         noCompress += "onnx"
+        // An app bundle carries these two folders in :model-pack, so they stay out of its base module.
+        if (playBundle) ignoreAssetsPattern = "$DEFAULT_IGNORE_ASSETS:<dir>parakeet:<dir>router"
     }
+    assetPacks += ":model-pack"
     packaging {
         jniLibs {
             // Only the x86 emulator build of the sherpa-onnx AAR ships libonnxruntime.so; arm64 has none.
