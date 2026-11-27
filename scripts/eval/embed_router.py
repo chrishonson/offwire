@@ -60,6 +60,9 @@ GRIDS = {"knn": np.round(np.arange(-0.30, 0.401, 0.005), 3), "linear": np.round(
          "mlp": np.round(np.arange(-8.0, 8.01, 0.1), 2)}
 SWEEP = {"head_words": (0, 3, 4), "knn": {"top_k": (1, 3, 5)}, "linear": {"l2": (0.01, 0.03, 0.1, 0.3)},
          "mlp": {"l2": (0.01, 0.03)}}
+# The mlp's starting weights. One seed can be lucky or unlucky (out-of-fold cost moved 10 to 20 across seeds), so
+# the sweep tries these too and keeps the lowest cost, as it does for head_words and l2.
+MLP_SEEDS = (0, 1, 2, 3, 4)
 MLP_HIDDEN, MLP_STEPS = 64, 300
 APP_SCORER = "mlp"  # what the app ships (core/src/androidMain/assets/router/)
 FOLDS = 5
@@ -263,6 +266,7 @@ class EmbeddingRouter:
     l2: float = 0.01
     weights: tuple | None = None       # linear (W 384x3, b 3), mlp (W1, b1, W2, b2); trained from the routes when None
     split: bool = True                 # also score each sentence or clause of a longer message (segments())
+    seed: int = 0                      # the mlp's starting weights (MLP_SEEDS)
     clock: Callable[[], float] = time.perf_counter
 
     def __post_init__(self):
@@ -274,7 +278,7 @@ class EmbeddingRouter:
         if self.scorer == "linear" and self.weights is None:
             self.weights = train_linear(self._matrix, self._labels, self.l2)
         if self.scorer == "mlp" and self.weights is None:
-            self.weights = train_mlp(self._matrix, self._labels, self.l2)
+            self.weights = train_mlp(self._matrix, self._labels, self.l2, seed=self.seed)
 
     def embed(self, transcripts: list[str]) -> np.ndarray:
         """The whole message averaged with its first head_words words.
@@ -354,6 +358,8 @@ class EmbeddingRouter:
             data["top_k"] = self.top_k
             return data
         data.update(l2=self.l2, scale=LINEAR_SCALE, labels=list(LABELS))
+        if self.scorer == "mlp":
+            data["seed"] = self.seed
         if self.scorer == "mlp":
             w1, b1 = self.weights[:2]
             data.update(hidden_weights=np.round(np.asarray(w1), 6).tolist(),
@@ -463,18 +469,20 @@ def cross_fit(encoder: Encoder, scorer: str, items: list[dict], folds: int = FOL
 
 
 def sweep(encoder: Encoder, scorer: str, items: list[dict], log=print) -> EmbeddingRouter:
-    """Every head_words x (top_k or l2), scored by cross-fitting on the training pool alone. The lowest cost wins;
-    the router is then trained on the whole pool with that setting and its out-of-fold thresholds."""
+    """Every head_words x (top_k or l2), and for the mlp every seed in MLP_SEEDS, scored by cross-fitting on the
+    training pool alone. The lowest cost wins; the router is then trained on the whole pool with that setting and its
+    out-of-fold thresholds."""
     best, best_cost = None, None
     (param, values), = SWEEP[scorer].items()
     for head_words in SWEEP["head_words"]:
         for value in values:
-            params = {"head_words": head_words, param: value}
-            thresholds, cost, acc = cross_fit(encoder, scorer, items, **params)
-            log(f"  {scorer} head_words={head_words} {param}={value}: out-of-fold cost {cost:g}, right {acc}, "
-                f"thresholds {thresholds}")
-            if best_cost is None or cost < best_cost:
-                best, best_cost = (params, thresholds), cost
+            for seed in MLP_SEEDS if scorer == "mlp" else (0,):
+                params = {"head_words": head_words, param: value} | ({"seed": seed} if scorer == "mlp" else {})
+                thresholds, cost, acc = cross_fit(encoder, scorer, items, **params)
+                log(f"  {scorer} {' '.join(f'{k}={v}' for k, v in params.items())}: out-of-fold cost {cost:g}, "
+                    f"right {acc}, thresholds {thresholds}")
+                if best_cost is None or cost < best_cost:
+                    best, best_cost = (params, thresholds), cost
     params, thresholds = best
     return EmbeddingRouter(encoder, routes_from(items), scorer, thresholds, **params)
 
@@ -539,6 +547,7 @@ def main(argv: list[str] | None = None) -> None:
             out.write_text(json.dumps(best.config()) + "\n")
             print(f"{scorer}: picked head_words={best.head_words} "
                   f"{'top_k=' + str(best.top_k) if scorer == 'knn' else 'l2=' + str(best.l2)}, "
+                  f"{'seed=' + str(best.seed) + ', ' if scorer == 'mlp' else ''}"
                   f"thresholds {best.thresholds}; wrote {out.name}")
         return
 

@@ -457,24 +457,26 @@ save_note calls are counted.
 
 **Fix:** `eval/router/train-stories.jsonl` holds 100 more long no-request messages from a separate writer. Their
 pieces join the training pool as NONE examples (`load_story_pieces`), at most three per story, chosen with a fixed
-seed. The procedure is unchanged: `embed_router.py fit --scorers mlp` picked head_words 3 and l2 0.01 again, with
-thresholds SAVE 1.15 and ACTION 0.75. No app code changed; the app ships the refitted config.
+seed. `embed_router.py fit` now also tries the mlp's starting seed (0 to 4) and keeps the lowest out-of-fold cost,
+as it already did for head_words and l2: at seed 0 alone the fit missed "Write down that the brake pads have three
+millimeters left", a seed the training data alone ranks worse. It picked head_words 3, l2 0.01 and seed 2, with
+thresholds SAVE 0.3 and ACTION 0.95. No app code changed; the app ships the refitted config.
 
 What did not work, all on dev: subtracting a fixed or log-scaled offset from every piece's margin (it cut false saves
 only by missing about as many real buried requests, and cost R1), adding the long messages whole (worse on both), and
 adding every piece of every story (665 NONE pieces: false saves fell further, but the head began missing short real
 saves). Three seeds per setting, since one fit can be lucky: the shipped setting's R1 dev ran 249 to 257.
 
-Test halves, the shipped config against the fix, with the fix's spread over head seeds 0 to 4 (seed 0 ships):
+Test halves, the shipped config against the fix, with the fix's spread over head seeds 0 to 4:
 
-| | shipped | fix (seed 0) | fix, seeds 0 to 4 |
+| | shipped | fix (seed 2, ships) | fix, seeds 0 to 4 |
 |---|---|---|---|
-| R5 right intent (of 105) | 60 | 78 | 74 to 78 |
-| R5 save_note on a long message that asks for nothing (of 64) | 22 | 2 | 2 to 9 |
-| R5 save request that got no save (of 34) | 5 | 10 | 8 to 10 |
+| R5 right intent (of 105) | 60 | 76 | 74 to 78 |
+| R5 save_note on a long message that asks for nothing (of 64) | 22 | 6 | 2 to 9 |
+| R5 save request that got no save (of 34) | 5 | 8 | 8 to 10 |
 | R1 right intent (of 304) | 270 | 265 | 265 to 269 |
-| R1 save_note on a no-tool message (of 125) | 4 | 1 | 1 to 5 |
-| R1 save request that got no save (of 101) | 7 | 13 | 7 to 13 |
+| R1 save_note on a no-tool message (of 125) | 4 | 3 | 1 to 5 |
+| R1 save request that got no save (of 101) | 7 | 8 | 7 to 13 |
 
 - R1 stays inside the spread of refitting the shipped setting itself (263 to 269 right, 6 to 15 missed saves over
   the same seeds), so by docs/RELEASING.md it does not get worse beyond run-to-run spread.
