@@ -1,0 +1,82 @@
+{
+  "model": "all-MiniLM-L6-v2-minilm-router-int8",
+  "split": "test",
+  "seeds": {
+    "0": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 0.5,
+        "ACTION": 0.0
+      },
+      "right": 269,
+      "over_call": 7,
+      "missed": 19,
+      "missed_save": 8
+    },
+    "1": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 0.8,
+        "ACTION": 0.35
+      },
+      "right": 271,
+      "over_call": 7,
+      "missed": 18,
+      "missed_save": 7
+    },
+    "2": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 0.6,
+        "ACTION": 0.75
+      },
+      "right": 270,
+      "over_call": 6,
+      "missed": 20,
+      "missed_save": 7
+    },
+    "3": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 1.0,
+        "ACTION": 0.5
+      },
+      "right": 272,
+      "over_call": 6,
+      "missed": 18,
+      "missed_save": 7
+    },
+    "4": {
+      "head_words": 4,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 0.7,
+        "ACTION": 0.9
+      },
+      "right": 262,
+      "over_call": 6,
+      "missed": 28,
+      "missed_save": 9
+    }
+  },
+  "right_range": [
+    262,
+    272
+  ],
+  "over_call_range": [
+    6,
+    7
+  ],
+  "missed_range": [
+    18,
+    28
+  ],
+  "missed_save_range": [
+    7,
+    9
+  ]
+}

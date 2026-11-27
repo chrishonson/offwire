@@ -1,0 +1,82 @@
+{
+  "model": "all-MiniLM-L6-v2",
+  "split": "test",
+  "seeds": {
+    "0": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 0.8,
+        "ACTION": 1.7
+      },
+      "right": 263,
+      "over_call": 5,
+      "missed": 27,
+      "missed_save": 8
+    },
+    "1": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 1.5,
+        "ACTION": 0.2
+      },
+      "right": 265,
+      "over_call": 5,
+      "missed": 25,
+      "missed_save": 15
+    },
+    "2": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 0.35,
+        "ACTION": 0.4
+      },
+      "right": 267,
+      "over_call": 8,
+      "missed": 19,
+      "missed_save": 6
+    },
+    "3": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 1.4,
+        "ACTION": 0.6
+      },
+      "right": 266,
+      "over_call": 6,
+      "missed": 23,
+      "missed_save": 13
+    },
+    "4": {
+      "head_words": 3,
+      "l2": 0.01,
+      "thresholds": {
+        "SAVE": 0.4,
+        "ACTION": 0.9
+      },
+      "right": 269,
+      "over_call": 7,
+      "missed": 21,
+      "missed_save": 7
+    }
+  },
+  "right_range": [
+    263,
+    269
+  ],
+  "over_call_range": [
+    5,
+    8
+  ],
+  "missed_range": [
+    19,
+    27
+  ],
+  "missed_save_range": [
+    6,
+    15
+  ]
+}

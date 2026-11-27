@@ -58,6 +58,9 @@ EMBED_SETUPS = ("embed_knn", "embed_linear", "embed_mlp", "embed_rules")
 # embed_mlp for ACTION only: save_note is on every turn and Gemma decides whether the message asks for a save.
 TOOL_ALWAYS = "tool_always"
 ROUTED_EMBED_SETUPS = EMBED_SETUPS + (TOOL_ALWAYS,)
+# Added to the run number to seed Gemma on routed setups. 0 for release runs; another value repeats a run with other
+# seeds, which measures run-to-run spread.
+SEED_OFFSET = 0
 VALID_SETUPS = BASE_SETUPS + tuple(s + CONSTRAINED for s in BASE_SETUPS) + ALONE_SETUPS + ROUTED_EMBED_SETUPS
 SETUPS = BASE_SETUPS + ("shipped_cd", "rules_e2b_gate_cd") + ALONE_SETUPS + EMBED_SETUPS  # the default run
 TOOLS = {router.SAVE: "save_note", router.ACTION: "do_action"}
@@ -290,7 +293,7 @@ def run_routed(case: dict, setup: str, run: int, open_send, gate, count_tokens=N
 
     [app_tools]: give Gemma only the tools the shipped app has for the route (app_tool).
     """
-    seed = run  # LiteRT-LM samples seed 0 the same as seed 1
+    seed = run + SEED_OFFSET  # LiteRT-LM samples seed 0 the same as seed 1
     rc = routed_case(case)
     box = te.ToolBox("routed", case.get("notes", []), case.get("calendar"))
     row = {"id": case["id"], "category": case["category"], "config": setup, "run": run, "user": case["user"],
@@ -509,6 +512,8 @@ def main() -> None:
                                                   "~/models/all-MiniLM-L6-v2/onnx)")
     parser.add_argument("--embed-model-file", default="model.onnx", help="model.onnx or model_int8.onnx")
     parser.add_argument("--runs", type=int, default=3)
+    parser.add_argument("--seed-offset", type=int, default=0,
+                        help="routed setups seed Gemma with run + this (default 0, as releases run)")
     parser.add_argument("--fixture", default=str(te.FIXTURE))
     parser.add_argument("--tag", default="", help="added to the output file names, so runs on one day don't overwrite")
     parser.add_argument("--only")
@@ -521,6 +526,8 @@ def main() -> None:
     parser.add_argument("--endpoint-model", help="model name the endpoint expects")
     parser.add_argument("--api-key-env", help="environment variable holding the endpoint's key")
     args = parser.parse_args()
+    global SEED_OFFSET
+    SEED_OFFSET = args.seed_offset
 
     setups = [s for s in args.setups.split(",") if s]
     unknown = set(setups) - set(VALID_SETUPS)
@@ -555,8 +562,10 @@ def main() -> None:
     if any(s in ROUTED_EMBED_SETUPS for s in setups):  # before Gemma loads, so a missing model or config fails fast
         import embed_router as er
         model_dir = Path(args.embed_model_dir or er.DEFAULT_MODEL_DIR).expanduser()
-        encoder = er.OnnxEncoder(model_dir, args.embed_model_file)
-        routers = {s: er.load_router(model_dir, args.embed_model_file, s, encoder) for s in er.SCORERS}
+        encoder = er.make_encoder(model_dir, args.embed_model_file)
+        wanted = {er.APP_SCORER if s in ("embed_rules", TOOL_ALWAYS) else s.removeprefix("embed_")
+                  for s in setups if s in ROUTED_EMBED_SETUPS}
+        routers = {s: er.load_router(model_dir, args.embed_model_file, s, encoder) for s in wanted}
         route_fns = {s: embed_route_fn(s, routers) for s in setups if s in ROUTED_EMBED_SETUPS}
         for fn in route_fns.values():
             fn("hello")  # warm-up, untimed
@@ -600,7 +609,8 @@ def main() -> None:
             rows = run_setup(setup, cases, args.runs, open_send_cd if is_constrained(setup) else open_send,
                              gates.get(base_setup(setup)), count_tokens, write, route_fns.get(setup), args.app_tools)
         summaries[setup] = {"model": stem, "setup": setup, "runs": args.runs, "constrained": is_constrained(setup),
-                            "app_tools": args.app_tools,
+                            "app_tools": args.app_tools, "seed_offset": args.seed_offset,
+                            "embed_model": encoder.name if route_fns else None,
                             **summarize(rows)}
         print(f"{setup}: pass {summaries[setup]['pass_rate']}, over-call {summaries[setup]['over_call']['rate']}")
         Path(f"{base}.summary.json").write_text(json.dumps(summaries, indent=2) + "\n")
