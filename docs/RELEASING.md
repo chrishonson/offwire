@@ -75,7 +75,7 @@ Four suites live in `scripts/eval`. Three are release evals. One is research.
 
 Add `--app-tools` to R2, R3 and B1 to score Gemma with the tools the Android app gives it today. The app has only save_note: a turn the router sends to ACTION gets the chat prompt with no tools, and SAVE+ACTION gets save_note alone (`turnToolsFor` in `router/TurnRouting.kt`). The flag also skips cases that expect do_action. Without it, ACTION turns get do_action, a prompt the app never uses.
 
-`scripts/release-evals.sh <tag>` runs R1 to R4 and copies the results into `eval/releases/<tag>/`. It takes about 55 minutes on the Mac. It needs the Gemma files in `~/models/gemma4` and the MiniLM model in `~/models/all-MiniLM-L6-v2/onnx`.
+`scripts/release-evals.sh <tag>` runs R1 to R4 and copies the results into `eval/releases/<tag>/`. It takes about 55 minutes on the Mac. It needs the Gemma files in `~/models/gemma4` and the MiniLM model in `~/models/all-MiniLM-L6-v2/onnx`. Run `scripts/fetch-router-model.sh` first: it copies the app's fine-tuned router model there, and the router head is fitted to that model, not the stock one.
 
 The evals run the Python LiteRT-LM build on the Mac with the same prompts and router numbers as the app. `RouterParityTest` holds the app's router to the Python one. They do not measure the phone's speed, speech recognition, speech output or the thinking switch. The acceptance checks cover those.
 
