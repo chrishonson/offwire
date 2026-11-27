@@ -6,6 +6,8 @@
 	<true/>
 	<key>CFBundleDisplayName</key>
 	<string>Offwire</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Offwire listens for your questions and the wake word "Computer".</string>
 </dict>

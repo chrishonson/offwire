@@ -4,12 +4,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.window.ComposeUIViewController
 import com.chrishonson.gemmavoice.bench.IosBenchmarkHost
 import com.chrishonson.gemmavoice.bench.IosBenchmarkScreen
+import com.chrishonson.gemmavoice.devicecheck.IOS_DEVICE_CHECK_CONFIG
 import com.chrishonson.gemmavoice.devicecheck.InMemoryDeviceCheckCompletionStore
 import com.chrishonson.gemmavoice.devicecheck.IosDeviceInfo
 import com.chrishonson.gemmavoice.limits.IosAcknowledgementStore
 import com.chrishonson.gemmavoice.llm.IosLlmEngine
 import com.chrishonson.gemmavoice.llm.LlmBridge
 import com.chrishonson.gemmavoice.model.IosModelRepository
+import com.chrishonson.gemmavoice.model.IosNetworkMonitor
 import com.chrishonson.gemmavoice.net.NetworkActivity
 import com.chrishonson.gemmavoice.notes.IosFileNotesRepository
 import com.chrishonson.gemmavoice.voice.EnergyVad
@@ -46,6 +48,7 @@ fun MainViewController(
     }
     val notes = remember { IosFileNotesRepository() }
     val voiceRoute = remember { IosVoiceRoute() }
+    val network = remember { IosNetworkMonitor() }
     // iOS voice processing leaves enough of the reply in the mic for Silero to call it speech.
     val voiceConfig = remember { VoiceConfig(ignoreMicWhileSpeaking = true) }
     App(
@@ -59,10 +62,12 @@ fun MainViewController(
         vad = vad?.let { IosVad(it) } ?: EnergyVad(),
         config = voiceConfig,
         settings = IosSettingsStore(),
+        network = network,
         notes = notes,
         acknowledgementStore = IosAcknowledgementStore(),
         deviceInfo = IosDeviceInfo(),
         deviceCheckCompletionStore = InMemoryDeviceCheckCompletionStore(),
+        deviceCheckConfig = IOS_DEVICE_CHECK_CONFIG,
         appConfig = AppConfig(clonedVoice = false, renameAssistant = true),
         appVersion = NSBundle.mainBundle.objectForInfoDictionaryKey("CFBundleShortVersionString") as? String ?: "",
         networkActivity = NetworkActivity(now = { (NSDate().timeIntervalSince1970 * MILLIS_PER_SECOND).toLong() }),

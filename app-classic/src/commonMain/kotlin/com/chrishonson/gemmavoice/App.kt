@@ -18,7 +18,9 @@ import com.chrishonson.gemmavoice.chat.ChatIntent
 import com.chrishonson.gemmavoice.chat.ChatScreen
 import com.chrishonson.gemmavoice.chat.ChatStore
 import com.chrishonson.gemmavoice.chat.LivePhase
+import com.chrishonson.gemmavoice.devicecheck.DEFAULT_DEVICE_CHECK_CONFIG
 import com.chrishonson.gemmavoice.devicecheck.DeviceCheckCompletionStore
+import com.chrishonson.gemmavoice.devicecheck.DeviceCheckConfig
 import com.chrishonson.gemmavoice.devicecheck.DeviceCheckScreen
 import com.chrishonson.gemmavoice.devicecheck.DeviceCheckStore
 import com.chrishonson.gemmavoice.devicecheck.DeviceInfo
@@ -76,6 +78,7 @@ fun App(
     acknowledgementStore: AcknowledgementStore = InMemoryAcknowledgementStore(),
     deviceInfo: DeviceInfo = UnknownDeviceInfo,
     deviceCheckCompletionStore: DeviceCheckCompletionStore = InMemoryDeviceCheckCompletionStore(),
+    deviceCheckConfig: DeviceCheckConfig = DEFAULT_DEVICE_CHECK_CONFIG,
     appConfig: AppConfig,
     networkActivity: NetworkActivity = NetworkActivity(now = { 0L }),
     resourceMonitor: ResourceSampler = ResourceMonitor(),
@@ -119,6 +122,7 @@ fun App(
                 deviceInfo = deviceInfo,
                 completionStore = deviceCheckCompletionStore,
                 acknowledgementStore = acknowledgementStore,
+                config = deviceCheckConfig,
                 voiceSpec = if (appConfig.clonedVoice) Models.POCKET_TTS else null
             )
         }

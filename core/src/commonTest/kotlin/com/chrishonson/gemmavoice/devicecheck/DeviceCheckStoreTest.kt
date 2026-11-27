@@ -23,9 +23,19 @@ class DeviceCheckStoreTest {
 
         assertFalse(store.state.value.lowRam)
         assertFalse(store.state.value.storageBlocked)
-        assertContains(store.state.value.verdict, "Tested only on a Pixel 9 Pro")
-        assertContains(store.state.value.verdict, "12.0 GB RAM")
-        assertContains(store.state.value.verdict, "may be slow or fail")
+        assertContains(store.state.value.verdict, "Tested on a Pixel 9 Pro")
+        assertContains(store.state.value.verdict, "Your phone has 12.0 GB RAM")
+        assertContains(store.state.value.verdict, "meets the minimum")
+    }
+
+    @Test
+    fun iosConfigAcceptsATestedThreeGigabyteDevice() = runTest {
+        val store = store(device = device(model = "iPhone", ram = 2_990_000_000L), config = IOS_DEVICE_CHECK_CONFIG)
+
+        assertFalse(store.state.value.lowRam)
+        assertContains(store.state.value.verdict, "Tested on an iPad (9th generation)")
+        assertContains(store.state.value.verdict, "Your device has 3.0 GB RAM")
+        assertFalse(store.state.value.verdict.contains("Pixel"))
     }
 
     @Test
@@ -89,16 +99,17 @@ class DeviceCheckStoreTest {
     private fun store(
         device: DeviceInfo = device(),
         completion: DeviceCheckCompletionStore = InMemoryDeviceCheckCompletionStore(),
-        acknowledgement: InMemoryAcknowledgementStore = InMemoryAcknowledgementStore()
+        acknowledgement: InMemoryAcknowledgementStore = InMemoryAcknowledgementStore(),
+        config: DeviceCheckConfig = DeviceCheckConfig(
+            testedDevices = listOf(TestedDevice("Pixel 9 Pro", "Tensor G4")),
+            minRamBytes = 8_000_000_000L,
+            storageHeadroomBytes = 1_000_000_000L
+        )
     ) = DeviceCheckStore(
         deviceInfo = device,
         completionStore = completion,
         acknowledgementStore = acknowledgement,
-        config = DeviceCheckConfig(
-            testedDevices = listOf(TestedDevice("Pixel 9 Pro", "Tensor G4")),
-            minRamBytes = 8_000_000_000L,
-            storageHeadroomBytes = 1_000_000_000L
-        ),
+        config = config,
         modelSpec = MODEL,
         voiceSpec = null
     )

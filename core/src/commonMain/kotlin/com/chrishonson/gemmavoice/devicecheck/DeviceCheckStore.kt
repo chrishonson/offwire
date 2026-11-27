@@ -66,7 +66,7 @@ class DeviceCheckStore(
             testedDevice = testedDevice,
             lowRam = lowRam,
             storageBlocked = storageBlocked,
-            verdict = verdict(deviceInfo.totalRamBytes, testedDevice, lowRam),
+            verdict = verdict(deviceInfo.totalRamBytes, testedDevice, lowRam, config),
             storageMessage = storageMessage(requiredStorageBytes, deviceInfo.freeStorageBytes, storageBlocked)
         )
     )
@@ -90,12 +90,13 @@ class DeviceCheckStore(
     }
 }
 
-private fun verdict(totalRamBytes: Long, testedDevice: Boolean, lowRam: Boolean): String = when {
-    testedDevice -> "This is a tested device."
-    lowRam -> "Tested only on a Pixel 9 Pro. Your phone has ${formatRam(totalRamBytes)} RAM. " +
-        "It is below the minimum and may be very slow or fail."
-    else -> "Tested only on a Pixel 9 Pro. Your phone has ${formatRam(totalRamBytes)} RAM. " +
-        "It may be slow or fail."
+private fun verdict(totalRamBytes: Long, testedDevice: Boolean, lowRam: Boolean, config: DeviceCheckConfig): String {
+    val ram = "Tested on ${config.testedOn}. Your ${config.deviceNoun} has ${formatRam(totalRamBytes)} RAM."
+    return when {
+        testedDevice -> "This is a tested device."
+        lowRam -> "$ram It is below the minimum and may be very slow or fail."
+        else -> "$ram That meets the minimum, though speed varies by chip."
+    }
 }
 
 private fun storageMessage(requiredBytes: Long, freeBytes: Long, blocked: Boolean): String =
