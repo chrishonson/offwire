@@ -437,3 +437,48 @@ On the 304 test sentences, never looked at:
   on one cloud thread took a median of 74 ms per message and 218 ms for split ones; not measured on a phone.
 - The int8 configs (`embed-all-MiniLM-L6-v2-int8-*.json`) are from Nov 10 and were not refitted; the app does not
   use them.
+
+## Long messages got save_note (Nov 27)
+
+On the phone, a long spoken message that asked for nothing often came back with a note saved. The router splits a
+long message into sentences and clauses (`segments()`), scores each piece, and fires a tool when any piece clears the
+threshold. Trained only on short sentences, the layer read a plain clause of a story ("and the inspector mentioned
+the outlets in the bedrooms are two prong") as something to save. The more pieces, the more chances: on the 601
+held-out sentences the shipped router sent 2.5% of one-piece no-tool messages to SAVE and 24% of split ones, and the
+held-out set had no no-tool message over 60 words.
+
+**R5, `eval/router/long.jsonl`:** 210 spoken messages of 45 to 160 words, from two writers who never saw the repo:
+120 that ask for nothing (stories, venting, thinking aloud, long questions, brainstorms, talk about remembering or
+notes, recall questions, unsupported asks, chit-chat) and 90 with a real request buried at the start, middle or end
+(45 SAVE, 25 ACTION, 20 SAVE+ACTION). A third agent labeled all 210 blind and agreed with the writers on every one.
+Split in half by id; only dev was looked at. `router_heldout.py --file eval/router/long.jsonl` scores it, with counts
+by length. **R6, `eval/fixtures/tool-eval-long.json`:** the 105 test messages for `router_eval.py`, so Gemma's own
+save_note calls are counted.
+
+**Fix:** `eval/router/train-stories.jsonl` holds 100 more long no-request messages from a separate writer. Their
+pieces join the training pool as NONE examples (`load_story_pieces`), at most three per story, chosen with a fixed
+seed. The procedure is unchanged: `embed_router.py fit --scorers mlp` picked head_words 3 and l2 0.01 again, with
+thresholds SAVE 1.15 and ACTION 0.75. No app code changed; the app ships the refitted config.
+
+What did not work, all on dev: subtracting a fixed or log-scaled offset from every piece's margin (it cut false saves
+only by missing about as many real buried requests, and cost R1), adding the long messages whole (worse on both), and
+adding every piece of every story (665 NONE pieces: false saves fell further, but the head began missing short real
+saves). Three seeds per setting, since one fit can be lucky: the shipped setting's R1 dev ran 249 to 257.
+
+Test halves, the shipped config against the fix, with the fix's spread over head seeds 0 to 4 (seed 0 ships):
+
+| | shipped | fix (seed 0) | fix, seeds 0 to 4 |
+|---|---|---|---|
+| R5 right intent (of 105) | 60 | 78 | 74 to 78 |
+| R5 save_note on a long message that asks for nothing (of 64) | 22 | 2 | 2 to 9 |
+| R5 save request that got no save (of 34) | 5 | 10 | 8 to 10 |
+| R1 right intent (of 304) | 270 | 265 | 265 to 269 |
+| R1 save_note on a no-tool message (of 125) | 4 | 1 | 1 to 5 |
+| R1 save request that got no save (of 101) | 7 | 13 | 7 to 13 |
+
+- R1 stays inside the spread of refitting the shipped setting itself (263 to 269 right, 6 to 15 missed saves over
+  the same seeds), so by docs/RELEASING.md it does not get worse beyond run-to-run spread.
+- The cost is on long messages: 3 to 5 more buried save requests go unsaved, against 13 to 20 fewer long chats that
+  get save_note. The shipped router missed few buried saves because it offered save_note to a third of all long
+  messages.
+- Writers and labeler are the same model family, so real phone speech is still the better test.

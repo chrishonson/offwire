@@ -214,7 +214,11 @@ def test_training_sentences_are_not_eval_cases_or_held_out_sentences():
     pool = {_key(i["text"]) for i in er.load_pool()}
     cases = {_key(c["user"]) for c in list(CASES.values()) + HOLDOUT + SAVE_DECISION}
     heldout = {_key(json.loads(line)["text"]) for line in (er.ROUTER_DIR / "heldout.jsonl").read_text().splitlines()}
+    long_ = {_key(json.loads(line)["text"]) for line in (er.ROUTER_DIR / "long.jsonl").read_text().splitlines()}
+    stories = [_key(i["text"]) for i in er.load_train(er.STORIES)]
     assert not pool & cases and not heldout & cases
+    assert not pool & long_ and not heldout & long_ and not set(stories) & long_
+    assert not any(s in t or t in s for s in stories for t in long_)
     # Three held-out sentences match training sentences once spoken lead-ins ("uh", "okay", "um can you") are dropped.
     # They were near-duplicates from the start; kept so the held-out counts stay comparable across releases.
     assert pool & heldout == {"hello", "got it", "send my notes to my email address"}
@@ -312,3 +316,18 @@ def test_only_e4b_chat_turns_get_the_shorter_on_ask_sentence():
         assert re_.NO_FLATTERY not in re_.routed_prompt([], None)
     finally:
         re_.is_e4b("")
+
+
+def test_story_pieces_are_capped_none_examples():
+    pieces = er.load_story_pieces()
+    stories = er.load_train(er.STORIES)
+    assert {p["intent"] for p in pieces} == {r.NONE} and {s["intent"] for s in stories} == {r.NONE}
+    assert len(stories) >= 100 and len(pieces) <= er.STORY_PIECES * len(stories)
+    assert pieces == er.load_story_pieces()  # the same pieces every time
+
+
+def test_long_set_is_split_and_labeled():
+    rows = [json.loads(line) for line in (er.ROUTER_DIR / "long.jsonl").read_text().splitlines() if line.strip()]
+    assert {row["split"] for row in rows} == {"dev", "test"} and len({row["id"] for row in rows}) == len(rows)
+    assert {row["intent"] for row in rows} == {r.SAVE, r.ACTION, r.NONE, "SAVE+ACTION"}
+    assert min(len(row["text"].split()) for row in rows) >= 40

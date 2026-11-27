@@ -15,10 +15,10 @@ import kotlin.test.assertTrue
 
 /**
  * Holds the Kotlin router to the Python one (scripts/eval/embed_router.py), case by case, on every message in both
- * eval fixtures, the training sentences and the held-out set: eval/router/parity-all-MiniLM-L6-v2-mlp.json,
- * written by scripts/eval/export_router_parity.py. The ONNX model itself is not run here (no JVM ONNX Runtime in
- * unit tests); this checks the tokenizer and the split into pieces exactly, and the scoring from Python's own
- * embeddings.
+ * eval fixtures, the training sentences, the held-out set and the long messages:
+ * eval/router/parity-all-MiniLM-L6-v2-mlp.json, written by scripts/eval/export_router_parity.py. The ONNX model
+ * itself is not run here (no JVM ONNX Runtime in unit tests); this checks the tokenizer and the split into pieces
+ * exactly, and the scoring from Python's own embeddings.
  */
 class RouterParityTest {
     private val root = generateSequence(File(".").canonicalFile) { it.parentFile }
@@ -80,7 +80,7 @@ class RouterParityTest {
     fun scoresAndRoutesPythonsEmbeddingsTheSame() {
         val router = EmbeddingIntentRouter(config, { error("not used") })
         val withVectors = cases.filter { it.containsKey("vector") }
-        assertEquals(72 + 40, withVectors.size)
+        assertEquals(72 + 40 + 10, withVectors.size)  // both fixtures, 40 split held-out rows, 10 long messages
         var splitCases = 0
         for (case in withVectors) {
             val whole = router.margins(case.getValue("vector").jsonArray.doubles())

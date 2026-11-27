@@ -64,6 +64,9 @@ def main(argv=None) -> None:
     split_rows = [row["id"] for row in heldout if er.segments(row["text"])][:HELDOUT_VECTORS]
     cases += [{"source": "heldout.jsonl", "id": row["id"], "text": row["text"], "vector": row["id"] in split_rows}
               for row in heldout]
+    long_ = [json.loads(line) for line in (er.ROUTER_DIR / "long.jsonl").read_text().splitlines() if line.strip()]
+    cases += [{"source": "long.jsonl", "id": row["id"], "text": row["text"], "vector": i < HELDOUT_VECTORS // 4}
+              for i, row in enumerate(long_)]
 
     out = []
     for case in cases:

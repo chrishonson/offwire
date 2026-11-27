@@ -49,6 +49,8 @@ ROUTER_DIR = REPO / "eval" / "router"
 ROUTES = ROUTER_DIR / "routes.json"
 FIT = ROUTER_DIR / "fit.json"
 TRAIN = ROUTER_DIR / "train.jsonl"
+STORIES = ROUTER_DIR / "train-stories.jsonl"
+STORY_PIECES = 3  # NONE pieces taken from each story (load_story_pieces)
 FIXTURES = [REPO / "eval" / "fixtures" / "tool-eval.json", REPO / "eval" / "fixtures" / "tool-eval-holdout.json"]
 DEFAULT_MODEL_DIR = Path(os.environ.get("EMBED_MODEL_DIR", str(Path.home() / "models" / "all-MiniLM-L6-v2" / "onnx")))
 LABELS = (router.SAVE, router.ACTION, router.NONE)
@@ -158,11 +160,30 @@ def load_train(path: Path = TRAIN) -> list[dict]:
     return [json.loads(line) for line in Path(path).read_text().splitlines() if line.strip()]
 
 
+def load_story_pieces(path: Path = STORIES, per_story: int = STORY_PIECES) -> list[dict]:
+    """NONE examples cut from long spoken messages that ask for nothing (train-stories.jsonl: stories, venting,
+    thinking aloud), split with segments() as a message is at routing time, at most [per_story] from each.
+
+    A long message is scored whole and piece by piece, and any piece can fire a tool. Trained only on short
+    sentences, the layer took a plain clause of a story ("the inspector said the outlets are two prong") for
+    something to save, so long chats got save_note. Each of these pieces is, by construction, not a request. All
+    665 pieces tipped the layer toward missing real saves; three per story (chosen with a fixed seed) kept those
+    level on the held-out dev half while cutting saves on long chats.
+    """
+    pieces = []
+    for i, item in enumerate(load_train(path)):
+        parts = segments(item["text"])
+        if len(parts) > per_story:
+            parts = [parts[j] for j in sorted(np.random.default_rng(i).choice(len(parts), per_story, replace=False))]
+        pieces += [{"text": p, "intent": router.NONE} for p in parts]
+    return pieces
+
+
 def load_pool() -> list[dict]:
-    """Every labeled training sentence: the route examples, fit.json and train.jsonl. Nothing from eval/fixtures or
-    heldout.jsonl is in it (test_embed_router checks)."""
+    """Every labeled training sentence: the route examples, fit.json, train.jsonl and the story pieces. Nothing from
+    eval/fixtures, heldout.jsonl or long.jsonl is in it (test_embed_router checks)."""
     pool = [{"text": t, "intent": label} for label, texts in load_routes().items() for t in texts]
-    return pool + load_fit() + load_train()
+    return pool + load_fit() + load_train() + load_story_pieces()
 
 
 def routes_from(items: list[dict]) -> dict[str, list[str]]:
