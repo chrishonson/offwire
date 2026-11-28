@@ -486,3 +486,25 @@ Test halves, the shipped config against the fix:
 - The cost is on long messages: 2 more buried save requests go unsaved, against 14 fewer long chats offered
   save_note.
 - Writers and labeler are the same model family, so real phone speech is still the better test.
+
+End to end with Gemma on the Mac (R6 one run per case, R2 and R3 three; the shipped column is the same day's run;
+Gemma seeds 1-3 against 4-6 moved R2 and R3 rows by 0 to 2):
+
+| | E4B shipped | E4B fix | E2B shipped | E2B fix |
+|---|---|---|---|---|
+| R6 Gemma called save_note on a long message that asks for nothing (of 64) | 20 | 8 | 21 | 8 |
+| R6 any tool on those (of 64) | 25 | 12 | 29 | 14 |
+| R6 buried save requests saved (of 22) | 16 | 17 | 20 | 20 |
+| R6 pass (of 105) | 67 | 77 | 65 | 78 |
+| R2 pass (of 144) | 139 | 139 | 141 | 138 |
+| R3 pass (of 72) | 59 | 59 | 57 | 54 |
+| R3 tool on a no-tool turn (of 30) | 3 | 3 | 3 | 6 |
+
+- Against docs/RELEASING.md this does not pass on E2B, by one case each, three rows each:
+  - R3 ho-remember-movie, "Remember that movie with the talking dog? What was it called?": the question mark splits
+    it, the piece layer reads "remember that movie with the talking dog" as a save, and E2B calls save_note. E4B
+    does not.
+  - R2 multi-save-and-timer now routes to SAVE instead of SAVE+ACTION, so the three-tool eval never offers do_action.
+    The app has no do_action and gives SAVE+ACTION turns save_note alone, so in the app this case is unchanged.
+- The one-layer refit (the earlier commits) was worse on short messages: R2 E2B 132 of 144, with "Text Sam" and
+  "Call the pharmacy" saved as notes.
