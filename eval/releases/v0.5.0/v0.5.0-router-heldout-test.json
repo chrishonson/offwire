@@ -1,0 +1,130 @@
+{
+  "embed_mlp": {
+    "n": 304,
+    "right": 284,
+    "right_95": [
+      275,
+      292
+    ],
+    "over_call": 4,
+    "no_call_n": 125,
+    "over_call_95": [
+      1,
+      8
+    ],
+    "missed": 10,
+    "call_n": 179,
+    "missed_95": [
+      4,
+      16
+    ],
+    "by": {
+      "kind": {
+        "action-calendar": [
+          16,
+          19
+        ],
+        "action-email": [
+          14,
+          20
+        ],
+        "action-nav": [
+          13,
+          17
+        ],
+        "action-timer": [
+          21,
+          22
+        ],
+        "multi": [
+          28,
+          29
+        ],
+        "none-brainstorm": [
+          12,
+          12
+        ],
+        "none-chat": [
+          14,
+          14
+        ],
+        "none-knowledge": [
+          20,
+          20
+        ],
+        "none-nearmiss-question": [
+          17,
+          18
+        ],
+        "none-nearmiss-statement": [
+          16,
+          16
+        ],
+        "none-recall": [
+          22,
+          22
+        ],
+        "none-unsupported": [
+          20,
+          23
+        ],
+        "save-casual": [
+          10,
+          10
+        ],
+        "save-indirect": [
+          15,
+          15
+        ],
+        "save-plain": [
+          13,
+          13
+        ],
+        "save-question": [
+          13,
+          13
+        ],
+        "save-ramble": [
+          9,
+          10
+        ],
+        "save-terse": [
+          11,
+          11
+        ]
+      },
+      "style": {
+        "clean": [
+          183,
+          190
+        ],
+        "ramble": [
+          30,
+          39
+        ],
+        "stt": [
+          71,
+          75
+        ]
+      },
+      "intent": {
+        "ACTION": [
+          64,
+          78
+        ],
+        "NONE": [
+          121,
+          125
+        ],
+        "SAVE": [
+          71,
+          72
+        ],
+        "SAVE+ACTION": [
+          28,
+          29
+        ]
+      }
+    }
+  }
+}

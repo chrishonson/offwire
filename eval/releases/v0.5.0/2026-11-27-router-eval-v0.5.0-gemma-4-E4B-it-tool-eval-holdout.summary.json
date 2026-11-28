@@ -1,0 +1,108 @@
+{
+  "embed_mlp": {
+    "model": "gemma-4-E4B-it",
+    "setup": "embed_mlp",
+    "runs": 3,
+    "constrained": false,
+    "app_tools": false,
+    "rows": 72,
+    "pass_rate": 0.986,
+    "call_precision": 1.0,
+    "call_recall": 1.0,
+    "over_call": {
+      "n": 30,
+      "rate": 0.0
+    },
+    "wrong_tool": {
+      "n": 42,
+      "rate": 0.0
+    },
+    "bad_args": {
+      "n": 42,
+      "rate": 0.0
+    },
+    "repeat_call": {
+      "n": 42,
+      "rate": 0.024
+    },
+    "false_claim": {
+      "n": 30,
+      "rate": 0.0
+    },
+    "double_confirm_raw": {
+      "n": 36,
+      "rate": 0.472
+    },
+    "double_confirm_guarded": {
+      "n": 36,
+      "rate": 0.0
+    },
+    "spoke_both_sides": {
+      "n": 36,
+      "rate": 0.583
+    },
+    "parse_error": {
+      "n": 72,
+      "count": 0
+    },
+    "ttft_s_median": 3.879,
+    "decode_tok_s_median": 19.75,
+    "by_category": {
+      "action": "21/21",
+      "no_call": "9/9",
+      "over_call": "21/21",
+      "save": "20/21"
+    },
+    "intent_table": {
+      "ACTION": {
+        "ACTION": 21
+      },
+      "NONE": {
+        "NONE": 30
+      },
+      "SAVE": {
+        "SAVE": 21
+      }
+    },
+    "intent_match": 1.0,
+    "route_sources": {
+      "embed": 72
+    },
+    "gate": {
+      "calls": 0,
+      "parse_errors": 0,
+      "prompt_tokens_median": null,
+      "router_s_median": null
+    },
+    "timing": {
+      "tool_turns": {
+        "n": 42,
+        "router_s_median": 0.0066,
+        "response_ttft_s_median": 4.5469,
+        "total_s_median": 4.5552,
+        "prompt_tokens_median": 513.5
+      },
+      "no_tool_turns": {
+        "n": 30,
+        "router_s_median": 0.007,
+        "response_ttft_s_median": 2.9827,
+        "total_s_median": 2.9897,
+        "prompt_tokens_median": 497.0
+      }
+    },
+    "save_decision": {
+      "false_saves": {
+        "n": 51,
+        "count": 0
+      },
+      "missed_saves": {
+        "n": 21,
+        "count": 0
+      },
+      "capability_honest": {
+        "n": 0,
+        "count": 0
+      }
+    }
+  }
+}

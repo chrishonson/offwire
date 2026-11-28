@@ -88,8 +88,8 @@ android {
         applicationId = "app.offwire.classic"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 401
-        versionName = "0.4.1-dev"
+        versionCode = 500
+        versionName = "0.5.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     androidResources {

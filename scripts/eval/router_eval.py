@@ -556,7 +556,10 @@ def main() -> None:
         import embed_router as er
         model_dir = Path(args.embed_model_dir or er.DEFAULT_MODEL_DIR).expanduser()
         encoder = er.OnnxEncoder(model_dir, args.embed_model_file)
-        routers = {s: er.load_router(model_dir, args.embed_model_file, s, encoder) for s in er.SCORERS}
+        # Only the scorers these setups use: the shipped fine-tuned model has just the app's mlp config.
+        wanted = {er.APP_SCORER if s in ("embed_rules", TOOL_ALWAYS) else s.removeprefix("embed_")
+                  for s in setups if s in ROUTED_EMBED_SETUPS}
+        routers = {s: er.load_router(model_dir, args.embed_model_file, s, encoder) for s in wanted}
         route_fns = {s: embed_route_fn(s, routers) for s in setups if s in ROUTED_EMBED_SETUPS}
         for fn in route_fns.values():
             fn("hello")  # warm-up, untimed
