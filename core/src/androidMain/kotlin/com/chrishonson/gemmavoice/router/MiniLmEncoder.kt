@@ -10,13 +10,14 @@ import java.text.Normalizer
 import kotlin.math.sqrt
 
 /**
- * The router's files in the core assets: the MiniLM ONNX model (LFS; scripts/fetch-router-model.sh puts it in
- * place), its WordPiece vocab and the fitted layer.
+ * The router's files in the core assets: all-MiniLM-L6-v2 fine-tuned on the router's training sentences
+ * (scripts/eval/finetune_router.py; LFS, and scripts/fetch-router-model.sh puts it in place), its WordPiece vocab
+ * (the same as the stock model's) and the fitted layer.
  */
 const val ROUTER_ASSET_DIR = "router"
-const val ROUTER_MODEL_ASSET = "$ROUTER_ASSET_DIR/all-MiniLM-L6-v2.onnx"
+const val ROUTER_MODEL_ASSET = "$ROUTER_ASSET_DIR/all-MiniLM-L6-v2-router.onnx"
 const val ROUTER_VOCAB_ASSET = "$ROUTER_ASSET_DIR/vocab.txt"
-const val ROUTER_CONFIG_ASSET = "$ROUTER_ASSET_DIR/embed-all-MiniLM-L6-v2-mlp.json"
+const val ROUTER_CONFIG_ASSET = "$ROUTER_ASSET_DIR/embed-all-MiniLM-L6-v2-router-mlp.json"
 
 private const val INTRA_OP_THREADS = 1
 private const val INPUT_IDS = "input_ids"

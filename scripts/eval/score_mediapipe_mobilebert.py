@@ -22,7 +22,7 @@ HIDDEN = "tfl.add315"
 
 
 class MediapipeMobileBertEncoder:
-    def __init__(self, path: Path, tokenizer_dir: Path = er.DEFAULT_MODEL_DIR):
+    def __init__(self, path: Path, tokenizer_dir: Path = er.STOCK_MODEL_DIR):
         from ai_edge_litert.interpreter import Interpreter
         from tokenizers import Tokenizer
         self.name = "mediapipe-mobilebert-sst2"

@@ -50,7 +50,10 @@ ROUTES = ROUTER_DIR / "routes.json"
 FIT = ROUTER_DIR / "fit.json"
 TRAIN = ROUTER_DIR / "train.jsonl"
 FIXTURES = [REPO / "eval" / "fixtures" / "tool-eval.json", REPO / "eval" / "fixtures" / "tool-eval-holdout.json"]
-DEFAULT_MODEL_DIR = Path(os.environ.get("EMBED_MODEL_DIR", str(Path.home() / "models" / "all-MiniLM-L6-v2" / "onnx")))
+# The model the app ships (fine-tuned by finetune_router.py) and the stock one it was fine-tuned from; both put in
+# place by scripts/fetch-router-model.sh.
+DEFAULT_MODEL_DIR = Path(os.environ.get("EMBED_MODEL_DIR", str(Path.home() / "models" / "all-MiniLM-L6-v2-router")))
+STOCK_MODEL_DIR = Path(os.environ.get("STOCK_MODEL_DIR", str(Path.home() / "models" / "all-MiniLM-L6-v2" / "onnx")))
 LABELS = (router.SAVE, router.ACTION, router.NONE)
 TOOL_INTENTS = (router.SAVE, router.ACTION)
 SCORERS = ("knn", "linear", "mlp")
@@ -594,12 +597,12 @@ def main(argv: list[str] | None = None) -> None:
         return
 
     timing = make_encoder(model_dir, args.model_file)  # uncached, for honest per-transcript times
-    routers = {s: load_router(model_dir, args.model_file, s, encoder) for s in SCORERS}
+    # The fine-tuned model has only the app's scorer fitted.
+    routers = {s: load_router(model_dir, args.model_file, s, encoder) for s in SCORERS
+               if s == APP_SCORER or config_path(encoder.name, s).is_file()}
     timed = load_router(model_dir, args.model_file, APP_SCORER, timing)
     setups = {"rules": lambda t: router.route(t).intent,
-              "embed_knn": lambda t: routers["knn"].decide(t).intent,
-              "embed_linear": lambda t: routers["linear"].decide(t).intent,
-              "embed_mlp": lambda t: routers["mlp"].decide(t).intent,
+              **{f"embed_{s}": (lambda r: lambda t: r.decide(t).intent)(r) for s, r in routers.items()},
               "embed_rules": lambda t: route_with_rules(routers[APP_SCORER], t).intent}
     print(f"model {encoder.name}; " + "; ".join(
         f"{s}: head_words {r.head_words}, thresholds {r.thresholds}" for s, r in routers.items()))

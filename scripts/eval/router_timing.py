@@ -14,7 +14,7 @@ import numpy as np
 import embed_router as er
 import router_heldout as rh
 
-MINILM = er.DEFAULT_MODEL_DIR
+MINILM = er.STOCK_MODEL_DIR  # the study compares encoders built from the stock model
 ENCODERS = [  # label, model dir, model file
     ("A MiniLM fp32 ONNX", MINILM, "model.onnx"),
     ("B MiniLM int8 ONNX", MINILM, "model_int8.onnx"),

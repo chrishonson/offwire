@@ -222,7 +222,7 @@ def main() -> None:
     parser.add_argument("--fixture", default=str(te.FIXTURE), help="a tool_eval fixture, or heldout .jsonl rows")
     parser.add_argument("--toolsets", default=",".join(TOOLSETS))
     parser.add_argument("--embed-model-dir", help="all-MiniLM-L6-v2 ONNX folder (default: EMBED_MODEL_DIR or "
-                                                  "~/models/all-MiniLM-L6-v2/onnx)")
+                                                  "~/models/all-MiniLM-L6-v2-router)")
     parser.add_argument("--embed-model-file", default="model.onnx")
     parser.add_argument("--tag", default="")
     args = parser.parse_args()

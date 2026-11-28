@@ -44,7 +44,7 @@ def spread(encoder: er.Encoder, seeds: list[int], split: str = "test") -> dict:
 
 def main(argv=None) -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--model-dir", default=str(er.DEFAULT_MODEL_DIR))
+    parser.add_argument("--model-dir", default=str(er.STOCK_MODEL_DIR))
     parser.add_argument("--model-file", default="model.onnx")
     parser.add_argument("--seeds", default="0,1,2,3,4")
     parser.add_argument("--split", default="test", choices=["test", "dev", "all"])
