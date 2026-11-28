@@ -225,8 +225,8 @@ def test_training_sentences_are_not_eval_cases_or_held_out_sentences():
 
 
 def test_committed_configs_are_complete():
-    for scorer in er.SCORERS:
-        data = json.loads(er.config_path("all-MiniLM-L6-v2", scorer).read_text())
+    for model, scorer in [("all-MiniLM-L6-v2", s) for s in er.SCORERS] + [("all-MiniLM-L6-v2-router", "mlp")]:
+        data = json.loads(er.config_path(model, scorer).read_text())
         assert set(data["thresholds"]) == {r.SAVE, r.ACTION} and data["head_words"] in er.SWEEP["head_words"]
         assert data["split"] is True
         if scorer == "linear":
@@ -312,3 +312,10 @@ def test_only_e4b_chat_turns_get_the_shorter_on_ask_sentence():
         assert re_.NO_FLATTERY not in re_.routed_prompt([], None)
     finally:
         re_.is_e4b("")
+
+
+def test_the_app_ships_the_fine_tuned_router():
+    assets = er.REPO / "core" / "src" / "androidMain" / "assets" / "router"
+    shipped = assets / "embed-all-MiniLM-L6-v2-router-mlp.json"
+    assert shipped.read_text() == er.config_path("all-MiniLM-L6-v2-router", "mlp").read_text()
+    assert json.loads(shipped.read_text())["model"] == "all-MiniLM-L6-v2-router"

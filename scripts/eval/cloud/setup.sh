@@ -38,12 +38,5 @@ if [ ! -f "$GGUF" ]; then
   "$LLAMA/build/bin/llama-quantize" --allow-requantize "$MODELS/$NAME-Q8_0.gguf" "$GGUF" Q4_K_M "$(nproc)"
 fi
 
-EMBED=$HOME/models/all-MiniLM-L6-v2/onnx
-if [ ! -f "$EMBED/tokenizer.json" ]; then
-  mkdir -p "$EMBED"
-  git -C "$REPO" lfs pull --include="core/src/androidMain/assets/router/*"
-  cp "$REPO/core/src/androidMain/assets/router/all-MiniLM-L6-v2.onnx" "$EMBED/model.onnx"
-  gsutil -q cp gs://vertex-model-garden-public-us/sentence-transformers/all-MiniLM-L6-v2/tokenizer.json "$EMBED/"
-  echo '{"_name_or_path": "sentence-transformers/all-MiniLM-L6-v2"}' > "$EMBED/config.json"
-fi
+"$REPO/scripts/fetch-router-model.sh"
 echo "ready: $GGUF"

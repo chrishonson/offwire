@@ -506,7 +506,7 @@ def main() -> None:
     parser.add_argument("--functiongemma", help="FunctionGemma 270M Mobile Actions .litertlm, for rules_fg_gate")
     parser.add_argument("--setups", default=",".join(SETUPS))
     parser.add_argument("--embed-model-dir", help="all-MiniLM-L6-v2 ONNX folder (default: EMBED_MODEL_DIR or "
-                                                  "~/models/all-MiniLM-L6-v2/onnx)")
+                                                  "~/models/all-MiniLM-L6-v2-router)")
     parser.add_argument("--embed-model-file", default="model.onnx", help="model.onnx or model_int8.onnx")
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--fixture", default=str(te.FIXTURE))
