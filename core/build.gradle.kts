@@ -111,3 +111,10 @@ tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
         sarif.required.set(false)
     }
 }
+
+// RouterParityTest reads the router's fitted config and parity cases straight from disk; declaring them as inputs
+// makes a refit rerun the test instead of restoring a cached pass.
+tasks.withType<Test>().configureEach {
+    inputs.dir(rootProject.file("eval/router")).withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.dir(file("src/androidMain/assets/router")).withPathSensitivity(PathSensitivity.RELATIVE)
+}

@@ -68,6 +68,8 @@ Four suites live in `scripts/eval`. Three are release evals. One is research.
 | R2 | Router and Gemma, main set | `router_eval.py --setups embed_mlp` | Tool calls, over-calls, what is spoken, time to first token | Yes, E4B and E2B |
 | R3 | Router and Gemma, holdout set | the same with `--fixture eval/fixtures/tool-eval-holdout.json` | The same on cases no prompt was tuned on | Yes, E4B and E2B |
 | R4 | No-tools prompt | `notes.py --no-tools` | Honest replies when there is no tool. Every iOS turn and every Android chat turn | Yes, E4B and E2B |
+| R5 | Router alone, long messages | `router_heldout.py --file eval/router/long.jsonl --split test` | The router's label on 105 spoken messages of 45 to 160 words: save_note offered on a long chat that asks for nothing, and requests buried in a long message | Yes |
+| R6 | Router and Gemma, long messages | `router_eval.py --setups embed_mlp --runs 1 --fixture eval/fixtures/tool-eval-long.json` | The same 105 messages end to end: whether Gemma calls save_note on a long chat | Yes, E4B and E2B |
 | B1 | Router and Gemma, brainstorm set | the same with `--fixture eval/fixtures/brainstorm.json` | Brainstorm replies stay under 120 words with at most one real question (offers like "How about X?" don't count), talk about notes saves nothing, and "save the second one" saves the right idea | No. Run with any chat prompt change |
 | X1 | Gemma alone | `tool_eval.py` | Gemma choosing tools with no router | No. Comparison only |
 | X2 | FunctionGemma | `fg_caller_eval.py` | The 270M model writing phone-action calls | No. Not in the app |
@@ -75,7 +77,7 @@ Four suites live in `scripts/eval`. Three are release evals. One is research.
 
 Add `--app-tools` to R2, R3 and B1 to score Gemma with the tools the Android app gives it today. The app has only save_note: a turn the router sends to ACTION gets the chat prompt with no tools, and SAVE+ACTION gets save_note alone (`turnToolsFor` in `router/TurnRouting.kt`). The flag also skips cases that expect do_action. Without it, ACTION turns get do_action, a prompt the app never uses.
 
-`scripts/release-evals.sh <tag>` runs R1 to R4 and copies the results into `eval/releases/<tag>/`. It takes about 55 minutes on the Mac. It needs the Gemma files in `~/models/gemma4` and the router models from `scripts/fetch-router-model.sh` (the shipped fine-tuned MiniLM in `~/models/all-MiniLM-L6-v2-router`, the stock one in `~/models/all-MiniLM-L6-v2/onnx`).
+`scripts/release-evals.sh <tag>` runs R1 to R6 and copies the results into `eval/releases/<tag>/`. It took about 55 minutes on the Mac before R6, which adds roughly 25 more. It needs the Gemma files in `~/models/gemma4` and the router models from `scripts/fetch-router-model.sh` (the shipped fine-tuned MiniLM in `~/models/all-MiniLM-L6-v2-router`, the stock one in `~/models/all-MiniLM-L6-v2/onnx`).
 
 The evals run the Python LiteRT-LM build on the Mac with the same prompts and router numbers as the app. `RouterParityTest` holds the app's router to the Python one. They do not measure the phone's speed, speech recognition, speech output or the thinking switch. The acceptance checks cover those.
 
@@ -86,7 +88,7 @@ The evals run the Python LiteRT-LM build on the Mac with the same prompts and ro
 3. Compare with the last release's table. A change merges when its target number improves and no release eval row gets worse by more than run-to-run spread.
 4. Record the before and after in the commit message. The release notes are built from these.
 
-A prompt change runs R2, R3 and R4. A router change runs R1, then R2 and R3. A model, sampler or library version change runs all four.
+A prompt change runs R2, R3 and R4. A router change runs R1 and R5, then R2, R3 and R6. A model, sampler or library version change runs all six.
 
 ## Cutting a release
 
