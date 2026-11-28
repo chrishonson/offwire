@@ -9,8 +9,9 @@ Setups, all on one warm Gemma engine with the same seeds:
   rules_fg_gate   rules, then FunctionGemma 270M Mobile Actions labels near-misses (needs --functiongemma)
   embed_knn       embedding router (embed_router.py), nearest route examples with fitted thresholds; no rules
   embed_linear    embedding router, small linear head on the same embeddings with fitted thresholds; no rules
-  embed_mlp       embedding router with the one-hidden-layer head the app ships; no rules
+  embed_mlp       embedding router with the one-hidden-layer head (the app's router before mobilebert); no rules
   embed_rules     rules first, embed_mlp instead of a gate, and embed_mlp can veto a rule hit on a question
+  mobilebert      the MobileBERT classifier router (mobilebert_router.py) instead of the embedding router; no rules
   <setup>_cd      the same setup with LiteRT-LM constrained decoding on for every reply conversation that has tools,
                   as Google AI Edge Gallery runs it. shipped_cd and rules_e2b_gate_cd run by default.
 The embed setups need the MiniLM ONNX model (--embed-model-dir) and `python embed_router.py fit` run once.
@@ -58,7 +59,10 @@ EMBED_SETUPS = ("embed_knn", "embed_linear", "embed_mlp", "embed_rules")
 # embed_mlp for ACTION only: save_note is on every turn and Gemma decides whether the message asks for a save.
 TOOL_ALWAYS = "tool_always"
 ROUTED_EMBED_SETUPS = EMBED_SETUPS + (TOOL_ALWAYS,)
-VALID_SETUPS = BASE_SETUPS + tuple(s + CONSTRAINED for s in BASE_SETUPS) + ALONE_SETUPS + ROUTED_EMBED_SETUPS
+# The MobileBERT classifier router (mobilebert_router.py) in place of the embedding router, Gemma as in embed_mlp.
+MOBILEBERT = "mobilebert"
+VALID_SETUPS = (BASE_SETUPS + tuple(s + CONSTRAINED for s in BASE_SETUPS) + ALONE_SETUPS + ROUTED_EMBED_SETUPS
+                + (MOBILEBERT,))
 SETUPS = BASE_SETUPS + ("shipped_cd", "rules_e2b_gate_cd") + ALONE_SETUPS + EMBED_SETUPS  # the default run
 TOOLS = {router.SAVE: "save_note", router.ACTION: "do_action"}
 FG_SYSTEM = "You are a model that can do function calling with the following functions"
@@ -470,6 +474,18 @@ def embed_route_fn(setup: str, routers: dict):
     return route
 
 
+def mobilebert_route_fn():
+    """(transcript) -> (router.Route, info) for the MobileBERT classifier router. info logs its four logits."""
+    import embed_router as er
+    import mobilebert_router
+    classifier = mobilebert_router.MobileBertRouter()
+
+    def route(transcript: str):
+        d = classifier.decide(transcript)
+        return er.embed_route(d), {"intent": d.intent, "scores": d.scores, "embed_s": round(d.seconds, 4)}
+    return route
+
+
 def output_base(out_dir: Path, day: str, stem: str, fixture: str) -> Path:
     """The default fixture keeps the original names; another fixture gets its stem added, so it cannot overwrite."""
     name = f"{day}-router-eval-{stem}"
@@ -558,8 +574,10 @@ def main() -> None:
         encoder = er.OnnxEncoder(model_dir, args.embed_model_file)
         routers = {s: er.load_router(model_dir, args.embed_model_file, s, encoder) for s in er.SCORERS}
         route_fns = {s: embed_route_fn(s, routers) for s in setups if s in ROUTED_EMBED_SETUPS}
-        for fn in route_fns.values():
-            fn("hello")  # warm-up, untimed
+    if MOBILEBERT in setups:
+        route_fns[MOBILEBERT] = mobilebert_route_fn()
+    for fn in route_fns.values():
+        fn("hello")  # warm-up, untimed
     if args.endpoint:
         import hosted
         open_send = open_send_cd = hosted.openai_open_send(

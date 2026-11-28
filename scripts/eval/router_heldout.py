@@ -10,6 +10,8 @@ No Gemma: this measures the router alone, so it runs in seconds.
 Usage (from the repo root):
   python scripts/eval/router_heldout.py [--split test|dev|all] [--setups rules,embed_mlp] [--misses]
       [--model-dir DIR] [--model-file model.onnx] [--json PATH]
+Setup mobilebert is the MobileBERT classifier router (mobilebert_router.py); it reads its own model from the app's
+assets and needs no MiniLM.
 """
 import argparse
 import json
@@ -20,6 +22,8 @@ import numpy as np
 
 import embed_router as er
 import router
+
+MOBILEBERT = "mobilebert"
 
 HELDOUT = er.ROUTER_DIR / "heldout.jsonl"
 BOOTSTRAP = 2000
@@ -62,6 +66,8 @@ def score(rows: list[dict], routed: list[str]) -> dict:
 def route_all(setup: str, texts: list[str], routers: dict) -> list[str]:
     if setup == "rules":
         return [router.route(t).intent for t in texts]
+    if setup == MOBILEBERT:
+        return [routers[MOBILEBERT].decide(t).intent for t in texts]
     if setup == "embed_rules":
         return [er.route_with_rules(routers[er.APP_SCORER], t).intent for t in texts]
     return [routers[setup.removeprefix("embed_")].decide(t).intent for t in texts]
@@ -89,10 +95,14 @@ def main(argv=None) -> None:
     rows = load_heldout(split=args.split)
     setups = [s for s in args.setups.split(",") if s]
     routers = {}
-    if any(s != "rules" for s in setups):
+    if MOBILEBERT in setups:
+        import mobilebert_router
+        routers[MOBILEBERT] = mobilebert_router.MobileBertRouter()
+    if any(s not in ("rules", MOBILEBERT) for s in setups):
         encoder = er.CachedEncoder(er.OnnxEncoder(Path(args.model_dir).expanduser(), args.model_file))
-        wanted = {er.APP_SCORER if s == "embed_rules" else s.removeprefix("embed_") for s in setups if s != "rules"}
-        routers = {s: er.load_router(Path(args.model_dir), args.model_file, s, encoder) for s in wanted}
+        wanted = {er.APP_SCORER if s == "embed_rules" else s.removeprefix("embed_") for s in setups
+                  if s not in ("rules", MOBILEBERT)}
+        routers.update({s: er.load_router(Path(args.model_dir), args.model_file, s, encoder) for s in wanted})
     print(f"held-out split {args.split}: {len(rows)} sentences")
     out = {}
     for setup in setups:

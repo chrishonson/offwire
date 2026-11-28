@@ -7,8 +7,8 @@ cd "$(dirname "$0")/.."
 PY=.venv/bin/python
 GEMMA_DIR=${GEMMA_DIR:-$HOME/models/gemma4}
 HOLDOUT=eval/fixtures/tool-eval-holdout.json
-# The setup that matches the app: the embedding router, then Gemma with one tool or none.
-SETUP=embed_mlp
+# The setup that matches the app: the MobileBERT classifier router, then Gemma with one tool or none.
+SETUP=mobilebert
 
 # R1: the router alone on the held-out test half. No Gemma, runs in seconds.
 $PY scripts/eval/router_heldout.py --split test --setups $SETUP --json "eval/results/$VERSION-router-heldout-test.json"

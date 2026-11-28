@@ -22,7 +22,7 @@ import com.chrishonson.gemmavoice.net.FileNetworkLogSink
 import com.chrishonson.gemmavoice.net.NetworkActivity
 import com.chrishonson.gemmavoice.net.NetworkClient
 import com.chrishonson.gemmavoice.resource.ResourceMonitor
-import com.chrishonson.gemmavoice.router.AndroidIntentRouter
+import com.chrishonson.gemmavoice.router.AndroidMobileBertRouter
 import com.chrishonson.gemmavoice.voice.ActivityMicPermission
 import com.chrishonson.gemmavoice.voice.AndroidAudioStream
 import com.chrishonson.gemmavoice.voice.AndroidSettingsStore
@@ -82,8 +82,9 @@ class VoiceResources(application: Application, private val appConfig: AppConfig)
     val audioStream = AndroidAudioStream(callAudio = callAudio, onStarted = replyVolume::matchCallToMedia)
     val notes: NotesRepository =
         EncryptedFileNotesRepository(File(application.filesDir, "notes.bin"), KeystoreVaultCipher())
-    // Loaded with Gemma, off the main thread; AppConfig.intentRouter = false keeps save_note on every turn.
-    private val intentRouter = if (appConfig.intentRouter) AndroidIntentRouter(application) else null
+    // Loaded with Gemma, off the main thread; AppConfig.intentRouter = false keeps save_note on every turn. The
+    // MobileBERT classifier router; AndroidIntentRouter is the MiniLM embedding router it replaces.
+    private val intentRouter = if (appConfig.intentRouter) AndroidMobileBertRouter(application) else null
     val engine = LiteRtLlmEngine(
         application.cacheDir.path,
         config.assistantName,
