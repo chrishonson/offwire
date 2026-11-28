@@ -1,0 +1,55 @@
+{
+  "A MiniLM fp32 ONNX": {
+    "file": "model.onnx",
+    "mb": 90.4,
+    "median_ms": 7.58,
+    "p90_ms": 26.88,
+    "max_ms": 51.15,
+    "one_encoder_run_median_ms": 5.2
+  },
+  "B MiniLM int8 ONNX": {
+    "file": "model_int8.onnx",
+    "mb": 22.9,
+    "median_ms": 3.07,
+    "p90_ms": 10.66,
+    "max_ms": 21.85,
+    "one_encoder_run_median_ms": 2.01
+  },
+  "C MobileBERT int8 ONNX": {
+    "file": "model_int8.onnx",
+    "mb": 26.4,
+    "median_ms": 4.05,
+    "p90_ms": 14.69,
+    "max_ms": 29.69,
+    "one_encoder_run_median_ms": 4.58
+  },
+  "MiniLM fp32 LiteRT": {
+    "file": "model_tflite.tflite",
+    "mb": 91.2,
+    "median_ms": 12.48,
+    "p90_ms": 45.74,
+    "max_ms": 87.55,
+    "one_encoder_run_median_ms": 6.27
+  },
+  "D MiniLM int8 LiteRT": {
+    "file": "model_tflite_int8.tflite",
+    "mb": 26.6,
+    "median_ms": 2.91,
+    "p90_ms": 11.05,
+    "max_ms": 21.65,
+    "one_encoder_run_median_ms": 1.43
+  },
+  "MiniLM int8 LiteRT-LM EmbeddingEngine": {
+    "file": "minilm-router-int8.litertlm",
+    "mb": 25.1,
+    "median_ms": 3.0,
+    "p90_ms": 11.11,
+    "max_ms": 20.53,
+    "one_encoder_run_median_ms": 1.49
+  },
+  "MediaPipe MobileBERT int8 LiteRT": {
+    "mb": 25.7,
+    "one_encoder_run_median_ms": 33.01,
+    "note": "128 tokens fixed; experimental_preserve_all_tensors"
+  }
+}

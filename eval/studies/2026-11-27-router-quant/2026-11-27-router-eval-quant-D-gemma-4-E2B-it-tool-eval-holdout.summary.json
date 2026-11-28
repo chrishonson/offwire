@@ -1,0 +1,112 @@
+{
+  "embed_mlp": {
+    "model": "gemma-4-E2B-it",
+    "setup": "embed_mlp",
+    "runs": 3,
+    "constrained": false,
+    "app_tools": false,
+    "seed_offset": 0,
+    "embed_model": "all-MiniLM-L6-v2-tflite_int8",
+    "rows": 72,
+    "pass_rate": 0.792,
+    "call_precision": 1.0,
+    "call_recall": 0.643,
+    "over_call": {
+      "n": 30,
+      "rate": 0.0
+    },
+    "wrong_tool": {
+      "n": 42,
+      "rate": 0.0
+    },
+    "bad_args": {
+      "n": 27,
+      "rate": 0.0
+    },
+    "repeat_call": {
+      "n": 27,
+      "rate": 0.0
+    },
+    "false_claim": {
+      "n": 45,
+      "rate": 0.067
+    },
+    "double_confirm_raw": {
+      "n": 24,
+      "rate": 0.0
+    },
+    "double_confirm_guarded": {
+      "n": 24,
+      "rate": 0.0
+    },
+    "spoke_both_sides": {
+      "n": 24,
+      "rate": 0.0
+    },
+    "parse_error": {
+      "n": 72,
+      "count": 0
+    },
+    "ttft_s_median": 1.181,
+    "decode_tok_s_median": 30.45,
+    "by_category": {
+      "action": "9/21",
+      "no_call": "9/9",
+      "over_call": "21/21",
+      "save": "18/21"
+    },
+    "intent_table": {
+      "ACTION": {
+        "NONE": 9,
+        "ACTION": 12
+      },
+      "NONE": {
+        "NONE": 30
+      },
+      "SAVE": {
+        "SAVE": 18,
+        "NONE": 3
+      }
+    },
+    "intent_match": 0.833,
+    "route_sources": {
+      "embed": 72
+    },
+    "gate": {
+      "calls": 0,
+      "parse_errors": 0,
+      "prompt_tokens_median": null,
+      "router_s_median": null
+    },
+    "timing": {
+      "tool_turns": {
+        "n": 30,
+        "router_s_median": 0.0028,
+        "response_ttft_s_median": 1.872,
+        "total_s_median": 1.8748,
+        "prompt_tokens_median": 429.0
+      },
+      "no_tool_turns": {
+        "n": 42,
+        "router_s_median": 0.0028,
+        "response_ttft_s_median": 1.1663,
+        "total_s_median": 1.1691,
+        "prompt_tokens_median": 396.0
+      }
+    },
+    "save_decision": {
+      "false_saves": {
+        "n": 51,
+        "count": 0
+      },
+      "missed_saves": {
+        "n": 21,
+        "count": 3
+      },
+      "capability_honest": {
+        "n": 0,
+        "count": 0
+      }
+    }
+  }
+}

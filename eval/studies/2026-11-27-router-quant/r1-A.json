@@ -1,0 +1,136 @@
+{
+  "embed_mlp": {
+    "n": 304,
+    "right": 270,
+    "right_95": [
+      259,
+      280
+    ],
+    "over_call": 6,
+    "no_call_n": 125,
+    "over_call_95": [
+      2,
+      11
+    ],
+    "missed": 20,
+    "call_n": 179,
+    "missed_95": [
+      12,
+      28
+    ],
+    "missed_save": 7,
+    "save_n": 101,
+    "missed_save_95": [
+      3,
+      12
+    ],
+    "by": {
+      "kind": {
+        "action-calendar": [
+          16,
+          19
+        ],
+        "action-email": [
+          13,
+          20
+        ],
+        "action-nav": [
+          11,
+          17
+        ],
+        "action-timer": [
+          19,
+          22
+        ],
+        "multi": [
+          25,
+          29
+        ],
+        "none-brainstorm": [
+          12,
+          12
+        ],
+        "none-chat": [
+          13,
+          14
+        ],
+        "none-knowledge": [
+          19,
+          20
+        ],
+        "none-nearmiss-question": [
+          17,
+          18
+        ],
+        "none-nearmiss-statement": [
+          15,
+          16
+        ],
+        "none-recall": [
+          22,
+          22
+        ],
+        "none-unsupported": [
+          21,
+          23
+        ],
+        "save-casual": [
+          9,
+          10
+        ],
+        "save-indirect": [
+          14,
+          15
+        ],
+        "save-plain": [
+          12,
+          13
+        ],
+        "save-question": [
+          13,
+          13
+        ],
+        "save-ramble": [
+          10,
+          10
+        ],
+        "save-terse": [
+          9,
+          11
+        ]
+      },
+      "style": {
+        "clean": [
+          176,
+          190
+        ],
+        "ramble": [
+          26,
+          39
+        ],
+        "stt": [
+          68,
+          75
+        ]
+      },
+      "intent": {
+        "ACTION": [
+          59,
+          78
+        ],
+        "NONE": [
+          119,
+          125
+        ],
+        "SAVE": [
+          67,
+          72
+        ],
+        "SAVE+ACTION": [
+          25,
+          29
+        ]
+      }
+    }
+  }
+}

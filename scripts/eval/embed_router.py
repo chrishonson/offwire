@@ -112,6 +112,7 @@ class OnnxEncoder:
             raise SystemExit(f"embedding model not found: {path} (see docs/spikes/2026-11-10-tool-calling-eval.md)")
         self.tokenizer = Tokenizer.from_file(str(model_dir / "tokenizer.json"))
         self.tokenizer.enable_truncation(max_length=128)
+        self.tokenizer.no_padding()  # the Chroma tokenizer.json pads to 128; the app does not
         options = ort.SessionOptions()
         options.intra_op_num_threads = threads  # one thread: closer to one phone core than the Mac's whole CPU
         self.session = ort.InferenceSession(str(path), options, providers=["CPUExecutionProvider"])
@@ -133,6 +134,65 @@ class OnnxEncoder:
             pooled = (hidden * mask[0][:, None]).sum(axis=0) / max(int(mask.sum()), 1)
             rows.append(pooled / np.linalg.norm(pooled))
         return np.array(rows)
+
+
+class TfliteEncoder:
+    """The same vectors from a LiteRT file written by export_tflite.py: one signature per fixed length (len16 ...
+    len128), each taking input_ids and attention_mask padded with 0 and returning the pooled, normalized vector.
+    Each message runs on the shortest signature that fits. Needs ai-edge-litert (not in requirements.txt)."""
+
+    def __init__(self, model_dir: Path | str, model_file: str, threads: int = 1):
+        from ai_edge_litert.interpreter import Interpreter
+        from tokenizers import Tokenizer
+        model_dir = Path(model_dir).expanduser()
+        path = model_dir / model_file
+        if not path.is_file():
+            raise SystemExit(f"LiteRT model not found: {path} (scripts/eval/export_tflite.py writes it)")
+        self.tokenizer = Tokenizer.from_file(str(model_dir / "tokenizer.json"))
+        self.tokenizer.enable_truncation(max_length=128)
+        self.tokenizer.no_padding()
+        self.interpreter = Interpreter(model_path=str(path), num_threads=threads)
+        self.runners = sorted((int(k.removeprefix("len")), self.interpreter.get_signature_runner(k))
+                              for k in self.interpreter.get_signature_list())
+        config = model_dir / "config.json"
+        base = json.loads(config.read_text()).get("_name_or_path", model_dir.name) if config.is_file() else model_dir.name
+        self.name = base.split("/")[-1] + "-" + Path(model_file).stem.removeprefix("model").strip("_-")
+
+    def encode(self, texts: list[str]) -> np.ndarray:
+        rows = []
+        for text in texts:
+            ids = self.tokenizer.encode(text).ids
+            length, run = next((n, r) for n, r in self.runners if n >= len(ids))
+            feed = np.zeros((1, length), dtype=np.int32)
+            mask = np.zeros((1, length), dtype=np.int32)
+            feed[0, :len(ids)], mask[0, :len(ids)] = ids, 1
+            rows.append(next(iter(run(input_ids=feed, attention_mask=mask).values()))[0])
+        return np.array(rows)
+
+
+class LitertlmEncoder:
+    """The same vectors through LiteRT-LM's EmbeddingEngine, from a .litertlm written by export_litertlm.py: the
+    library that already runs Gemma in the app tokenizes, looks up and encodes. Named all-MiniLM-L6-v2-<file stem>."""
+
+    def __init__(self, model_dir: Path | str, model_file: str, threads: int = 1):
+        from litert_lm import embedding_engine as ee
+        path = Path(model_dir).expanduser() / model_file
+        if not path.is_file():
+            raise SystemExit(f"LiteRT-LM model not found: {path} (scripts/eval/export_litertlm.py writes it)")
+        self.engine = ee.EmbeddingEngine(str(path), backend=ee.interfaces.Backend.CPU(thread_count=threads))
+        self.options = ee.EmbeddingOptions(normalize=True, insert_special_tokens=True,
+                                           input_overflow_strategy=ee.InputOverflowStrategy.TRUNCATE)
+        self.name = "all-MiniLM-L6-v2-" + Path(model_file).stem
+
+    def encode(self, texts: list[str]) -> np.ndarray:
+        return np.array([self.engine.compute_embedding(t, self.options).embedding for t in texts])
+
+
+def make_encoder(model_dir: Path | str = DEFAULT_MODEL_DIR, model_file: str = "model.onnx", threads: int = 1):
+    """OnnxEncoder for .onnx, TfliteEncoder for .tflite, LitertlmEncoder for .litertlm."""
+    name = str(model_file)
+    cls = TfliteEncoder if name.endswith(".tflite") else LitertlmEncoder if name.endswith(".litertlm") else OnnxEncoder
+    return cls(model_dir, model_file, threads)
 
 
 class CachedEncoder:
@@ -463,7 +523,7 @@ def sweep(encoder: Encoder, scorer: str, items: list[dict], log=print) -> Embedd
 
 def load_router(model_dir: Path, model_file: str = "model.onnx", scorer: str = "linear",
                 encoder: Encoder | None = None) -> EmbeddingRouter:
-    encoder = encoder or OnnxEncoder(model_dir, model_file)
+    encoder = encoder or make_encoder(model_dir, model_file)
     path = config_path(encoder.name, scorer)
     if not path.is_file():
         raise SystemExit(f"no router config at {path}: run `python embed_router.py fit` first")
@@ -512,7 +572,7 @@ def main(argv: list[str] | None = None) -> None:
         print(f"wrote {out} ({out.stat().st_size / 1e6:.1f} MB)")
         return
 
-    encoder = CachedEncoder(OnnxEncoder(model_dir, args.model_file))
+    encoder = CachedEncoder(make_encoder(model_dir, args.model_file))
     if args.command == "fit":
         items = load_pool()
         for scorer in args.scorers.split(","):
@@ -536,7 +596,7 @@ def main(argv: list[str] | None = None) -> None:
                 print(f"  {row.max():.2f}  {c['user'][:60]!r:64} ~ {texts[int(row.argmax())][:50]!r}")
         return
 
-    timing = OnnxEncoder(model_dir, args.model_file)  # uncached, for honest per-transcript times
+    timing = make_encoder(model_dir, args.model_file)  # uncached, for honest per-transcript times
     # The fine-tuned model has only the app's scorer fitted.
     routers = {s: load_router(model_dir, args.model_file, s, encoder) for s in SCORERS
                if s == APP_SCORER or config_path(encoder.name, s).is_file()}
