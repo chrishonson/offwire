@@ -12,12 +12,18 @@ SETUP=embed_mlp
 
 # R1: the router alone on the held-out test half. No Gemma, runs in seconds.
 $PY scripts/eval/router_heldout.py --split test --setups $SETUP --json "eval/results/$VERSION-router-heldout-test.json"
+# R5: the router alone on long spoken messages, where a long chat used to get save_note.
+$PY scripts/eval/router_heldout.py --file eval/router/long.jsonl --split test --setups $SETUP \
+    --json "eval/results/$VERSION-router-long-test.json"
 
 for MODEL in gemma-4-E4B-it gemma-4-E2B-it; do
     PATH_TO_MODEL="$GEMMA_DIR/$MODEL.litertlm"
     # R2 and R3: the router and Gemma together, on the main set and the holdout set.
     $PY scripts/eval/router_eval.py --setups $SETUP --model "$PATH_TO_MODEL" --runs 3 --tag "$VERSION"
     $PY scripts/eval/router_eval.py --setups $SETUP --model "$PATH_TO_MODEL" --runs 3 --tag "$VERSION" --fixture $HOLDOUT
+    # R6: long messages end to end, one run each (105 long cases cost what three runs of the holdout set do).
+    $PY scripts/eval/router_eval.py --setups $SETUP --model "$PATH_TO_MODEL" --runs 1 --tag "$VERSION" \
+        --fixture eval/fixtures/tool-eval-long.json
     # R4: the prompt with no tools, which every iOS turn and every Android chat turn uses.
     GEMMA_MODEL="$PATH_TO_MODEL" $PY scripts/eval/notes.py --no-tools --runs 3
 done

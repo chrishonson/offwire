@@ -214,7 +214,9 @@ def test_training_sentences_are_not_eval_cases_or_held_out_sentences():
     pool = {_key(i["text"]) for i in er.load_pool()}
     cases = {_key(c["user"]) for c in list(CASES.values()) + HOLDOUT + SAVE_DECISION}
     heldout = {_key(json.loads(line)["text"]) for line in (er.ROUTER_DIR / "heldout.jsonl").read_text().splitlines()}
+    long_ = {_key(json.loads(line)["text"]) for line in (er.ROUTER_DIR / "long.jsonl").read_text().splitlines()}
     assert not pool & cases and not heldout & cases
+    assert not pool & long_ and not heldout & long_
     # Three held-out sentences match training sentences once spoken lead-ins ("uh", "okay", "um can you") are dropped.
     # They were near-duplicates from the start; kept so the held-out counts stay comparable across releases.
     assert pool & heldout == {"hello", "got it", "send my notes to my email address"}
@@ -319,3 +321,10 @@ def test_the_app_ships_the_fine_tuned_router():
     shipped = assets / "embed-all-MiniLM-L6-v2-router-mlp.json"
     assert shipped.read_text() == er.config_path("all-MiniLM-L6-v2-router", "mlp").read_text()
     assert json.loads(shipped.read_text())["model"] == "all-MiniLM-L6-v2-router"
+
+
+def test_long_set_is_split_and_labeled():
+    rows = [json.loads(line) for line in (er.ROUTER_DIR / "long.jsonl").read_text().splitlines() if line.strip()]
+    assert {row["split"] for row in rows} == {"dev", "test"} and len({row["id"] for row in rows}) == len(rows)
+    assert {row["intent"] for row in rows} == {r.SAVE, r.ACTION, r.NONE, "SAVE+ACTION"}
+    assert min(len(row["text"].split()) for row in rows) >= 40
