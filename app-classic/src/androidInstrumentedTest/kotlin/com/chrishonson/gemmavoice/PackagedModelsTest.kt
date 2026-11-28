@@ -3,6 +3,7 @@ package com.chrishonson.gemmavoice
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.chrishonson.gemmavoice.router.AndroidIntentRouter
+import com.chrishonson.gemmavoice.router.AndroidMobileBertRouter
 import com.chrishonson.gemmavoice.router.ToolIntent
 import com.chrishonson.gemmavoice.voice.ParakeetSpeechToText
 import kotlin.test.assertEquals
@@ -27,6 +28,13 @@ class PackagedModelsTest {
     @Test
     fun routerLoadsItsModelAndRoutesASaveRequest() {
         AndroidIntentRouter(context).use { router ->
+            assertEquals(listOf(ToolIntent.SAVE), router.decide("save a note that the garage door is open").intents)
+        }
+    }
+
+    @Test
+    fun mobileBertRouterLoadsItsModelAndRoutesASaveRequest() {
+        AndroidMobileBertRouter(context).use { router ->
             assertEquals(listOf(ToolIntent.SAVE), router.decide("save a note that the garage door is open").intents)
         }
     }
