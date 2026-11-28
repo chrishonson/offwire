@@ -351,12 +351,12 @@ fell to 37.5% on the held-out phrasings; constrained decoding made no difference
 
 The app now runs that router before Gemma on every typed or transcribed turn (core `router/`):
 
-- **Model:** the same fp32 `all-MiniLM-L6-v2` ONNX file the Mac scored with (SHA-256 `4f148ba8...393e6`), as an
-  LFS asset at `core/src/androidMain/assets/router/all-MiniLM-L6-v2.onnx`, beside its `vocab.txt` and the fitted
-  `embed-all-MiniLM-L6-v2-mlp.json` since Nov 11 (a test keeps that file equal to `eval/router/`). The cloud session could
-  not upload LFS objects (GitHub's LFS verify call is refused through its proxy), so the model is not committed
-  yet: `scripts/fetch-router-model.sh` puts it in place from `~/models/all-MiniLM-L6-v2/onnx` or the Chroma
-  tarball, checking both hashes, and a commit from the Mac adds it to LFS. Without it the app still runs: the
+- **Model:** since Nov 27, `all-MiniLM-L6-v2` fine-tuned on the router's training sentences (see "The fine-tuned
+  encoder, retrained" below), fp32, 90 MB, SHA-256 `d5c52622...f7108`, as an LFS asset at
+  `core/src/androidMain/assets/router/all-MiniLM-L6-v2-router.onnx`, beside the stock model's `vocab.txt` and the
+  fitted `embed-all-MiniLM-L6-v2-router-mlp.json` (tests keep that file equal to `eval/router/`). Before that the app
+  shipped the stock fp32 file (SHA-256 `4f148ba8...393e6`) with `embed-all-MiniLM-L6-v2-mlp.json`.
+  `scripts/fetch-router-model.sh` pulls the asset from LFS and checks its hash. Without it the app still runs: the
   router fails to load, logs a warning, and every turn keeps save_note. int8 is 23 MB instead of 90 MB, but here
   it over-called 5 of 29 on the main fixture against 3 for fp32, so fp32 ships.
 - **Routes:** NONE is a conversation with no tool schemas; SAVE (and SAVE+ACTION) has save_note alone. The app has
@@ -437,3 +437,88 @@ On the 304 test sentences, never looked at:
   on one cloud thread took a median of 74 ms per message and 218 ms for split ones; not measured on a phone.
 - The int8 configs (`embed-all-MiniLM-L6-v2-int8-*.json`) are from Nov 10 and were not refitted; the app does not
   use them.
+
+## The fine-tuned encoder, retrained (Nov 27)
+
+`scripts/eval/finetune_router.py` (ported from gemma-voice `0a2ed52`, Nov 11) trains the encoder's own 22 million
+weights together with a 64-unit layer like the app's, starting from the stock ONNX file, exports it back to ONNX
+with the same inputs and output, and refits the app's layer on the new vectors with `train_mlp` (head_words 3,
+l2 0.01, as the frozen sweep picked). The Nov 11 model was trained on gemma-voice's pool and never reached this repo,
+so it was retrained here on the current pool. Nothing from the fixtures or `heldout.jsonl` is used.
+
+Data (offwire main `a160499`), SHA-256:
+
+| file | SHA-256 |
+|---|---|
+| `eval/router/routes.json` | `b7ff8416d74688b045f2c7183e48c4fafd3a6b2001abf366f05a8ee9eb36146a` |
+| `eval/router/fit.json` | `042a3161eb493e5e4d2305deb335e6d2db1230966dd86e7cbaf36f6e12017a86` |
+| `eval/router/train.jsonl` (1035 lines; gemma-voice `0a2ed52` had 878) | `8df1d177b3bf0bf240bdaa489c4f7297f249f30cd95568927dca7d83ba7accbb` |
+| `eval/router/heldout.jsonl` (601: 297 dev, 304 test) | `dbcbb6619680a6e6161dc5c1e6ec041050891c4b1d97125000a4fcda9544a1a1` |
+| stock model, `~/models/all-MiniLM-L6-v2/onnx/model.onnx` | `4f148ba8ae9c2c7fbee4af2b132db8d06c6a6545b47fc83bbb98c3d22b8393e6` |
+| stock head, `eval/router/embed-all-MiniLM-L6-v2-mlp.json` | `539113d0e4ac6229543eddf71b98a086451b853df0f29b9953e4a5f5ca6345ac` |
+| fine-tuned model, `all-MiniLM-L6-v2-router.onnx` (90,419,576 bytes) | `d5c526227774791a77f8f6e9860835e25d880662983b33f3688f97e2a12f7108` |
+| fine-tuned head, `eval/router/embed-all-MiniLM-L6-v2-router-mlp.json` | `596b08d243972b1d119cd1783c9cb00f6677131e234feb9c78989a95b9101ac1` |
+
+Commands (from `scripts/eval`, on the Mac, Python 3.12 with torch 2.15.0, transformers 5.24.1, onnx 1.23.2,
+onnxruntime 1.31.1, tokenizers 0.23.3, numpy 2.5.5):
+
+```
+python finetune_router.py check      # rebuilt encoder vs the ONNX model: 1.92e-07
+python finetune_router.py cv --grid 1e-4:4,2e-4:4,2e-4:8,3e-4:4
+python finetune_router.py train --lr 3e-4 --epochs 4 --thresholds 1.0,1.3 --out ~/models/all-MiniLM-L6-v2-router
+python router_heldout.py --split test --setups embed_mlp --model-dir ~/models/all-MiniLM-L6-v2/onnx   # stock
+python router_heldout.py --split test --setups embed_mlp --model-dir ~/models/all-MiniLM-L6-v2-router # fine-tuned
+python export_router_parity.py --model-dir ~/models/all-MiniLM-L6-v2-router
+```
+
+- **Choosing the setting:** five out-of-fold fine-tunes per setting over the 1284-sentence pool. Costs (lower is
+  better; the frozen encoder's `mlp` is 193): lr 1e-4 for 4 epochs 133, 2e-4 for 4 129, 2e-4 for 8 113, 3e-4 for 4
+  110. Picked 3e-4 for 4 epochs, out-of-fold thresholds SAVE 1.0, ACTION 1.3. About four minutes per setting.
+- The exported ONNX matches the fine-tuned torch model to 1.5e-7.
+
+Same harness (`router_heldout.py`), same 304 test sentences:
+
+| | stock encoder + stock head | fine-tuned encoder + its head (ships) |
+|---|---|---|
+| right intent | 270 (259-280) | 284 (275-292) |
+| tool on a no-tool message (of 125) | 6 | 4 |
+| request with no tool (of 179) | 20 | 10 |
+| ACTION / NONE / SAVE / SAVE+ACTION | 59/78, 119/125, 67/72, 25/29 | 64/78, 121/125, 71/72, 28/29 |
+| clean / ramble / stt | 176/190, 26/39, 68/75 | 183/190, 30/39, 71/75 |
+| dev half (of 297) | 257 | 272 |
+
+Per kind, test:
+
+| kind | stock | fine-tuned |
+|---|---|---|
+| action-calendar | 16/19 | 16/19 |
+| action-email | 13/20 | 14/20 |
+| action-nav (directions) | 11/17 | 13/17 |
+| action-timer | 19/22 | 21/22 |
+| multi | 25/29 | 28/29 |
+| none-brainstorm | 12/12 | 12/12 |
+| none-chat | 13/14 | 14/14 |
+| none-knowledge | 19/20 | 20/20 |
+| none-nearmiss-question | 17/18 | 17/18 |
+| none-nearmiss-statement | 15/16 | 16/16 |
+| none-recall | 22/22 | 22/22 |
+| none-unsupported | 21/23 | 20/23 |
+| save-casual | 9/10 | 10/10 |
+| save-indirect | 14/15 | 15/15 |
+| save-plain | 12/13 | 13/13 |
+| save-question | 13/13 | 13/13 |
+| save-ramble | 10/10 | 9/10 |
+| save-terse | 9/11 | 11/11 |
+
+- Against the stock encoder on test, the fine-tuned one fixed 21 sentences and broke 7. The Nov 27 cloud reference
+  (PR #12's table: the Nov 11 model with the head fitted on stock embeddings) had 289 and directions 13 of 17. This
+  model is trained on the current pool and chose its setting and thresholds out-of-fold only.
+- Older fixtures (`embed_router.py score`): tool-eval 48 of 48 for both; holdout 24 of 24 with no over-calls
+  (stock 20 of 24, 1 over-call).
+- Time: with an unpadded tokenizer (as the app runs), a median of 6.7 ms per message on one Mac thread, the same
+  model size as the stock one.
+- The evals now score the shipped model by default: `EMBED_MODEL_DIR` defaults to `~/models/all-MiniLM-L6-v2-router`,
+  and the stock model (the fine-tune's starting point) stays in `~/models/all-MiniLM-L6-v2/onnx` (`STOCK_MODEL_DIR`).
+  `scripts/fetch-router-model.sh` puts both in place by hash.
+- The writers and labelers of the training and held-out sentences are the same model family, so real phone speech
+  may show a smaller gain. R2 and R3 (Gemma) were not rerun.

@@ -91,7 +91,8 @@ def main(argv=None) -> None:
     routers = {}
     if any(s != "rules" for s in setups):
         encoder = er.CachedEncoder(er.OnnxEncoder(Path(args.model_dir).expanduser(), args.model_file))
-        routers = {s: er.load_router(Path(args.model_dir), args.model_file, s, encoder) for s in er.SCORERS}
+        wanted = {er.APP_SCORER if s == "embed_rules" else s.removeprefix("embed_") for s in setups if s != "rules"}
+        routers = {s: er.load_router(Path(args.model_dir), args.model_file, s, encoder) for s in wanted}
     print(f"held-out split {args.split}: {len(rows)} sentences")
     out = {}
     for setup in setups:

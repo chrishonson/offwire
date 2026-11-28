@@ -15,7 +15,7 @@ import kotlin.test.assertTrue
 
 /**
  * Holds the Kotlin router to the Python one (scripts/eval/embed_router.py), case by case, on every message in both
- * eval fixtures, the training sentences and the held-out set: eval/router/parity-all-MiniLM-L6-v2-mlp.json,
+ * eval fixtures, the training sentences and the held-out set: eval/router/parity-all-MiniLM-L6-v2-router-mlp.json,
  * written by scripts/eval/export_router_parity.py. The ONNX model itself is not run here (no JVM ONNX Runtime in
  * unit tests); this checks the tokenizer and the split into pieces exactly, and the scoring from Python's own
  * embeddings.
@@ -25,7 +25,7 @@ class RouterParityTest {
         .first { File(it, "THIRD_PARTY_NOTICES.md").exists() }
     private val assets = File(root, "core/src/androidMain/assets")
     private val parity = Json.parseToJsonElement(
-        File(root, "eval/router/parity-all-MiniLM-L6-v2-mlp.json").readText()
+        File(root, "eval/router/parity-all-MiniLM-L6-v2-router-mlp.json").readText()
     ).jsonObject
     private val cases = parity.getValue("cases").jsonArray.map { it.jsonObject }
     private val vocab = parseVocab(File(assets, ROUTER_VOCAB_ASSET).readText())
@@ -39,10 +39,10 @@ class RouterParityTest {
     @Test
     fun theAppShipsTheFittedConfigAndModel() {
         assertEquals(
-            File(root, "eval/router/embed-all-MiniLM-L6-v2-mlp.json").readText(),
+            File(root, "eval/router/embed-all-MiniLM-L6-v2-router-mlp.json").readText(),
             File(assets, ROUTER_CONFIG_ASSET).readText()
         )
-        assertEquals("all-MiniLM-L6-v2", config.model)
+        assertEquals("all-MiniLM-L6-v2-router", config.model)
         assertEquals(parity.getValue("head_words").jsonPrimitive.int, config.headWords)
         assertEquals(parity.getValue("split").jsonPrimitive.content.toBoolean(), config.split)
         assertEquals(30522, vocab.size)
