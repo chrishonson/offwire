@@ -45,6 +45,7 @@ class RouterParityTest {
         assertEquals("all-MiniLM-L6-v2", config.model)
         assertEquals(parity.getValue("head_words").jsonPrimitive.int, config.headWords)
         assertEquals(parity.getValue("split").jsonPrimitive.content.toBoolean(), config.split)
+        assertEquals(config.headWords, config.pieceHead?.headWords)  // the piece head scores the long messages' pieces
         assertEquals(30522, vocab.size)
         assertTrue(File(assets, ROUTER_MODEL_ASSET).exists())
     }
@@ -84,7 +85,7 @@ class RouterParityTest {
         var splitCases = 0
         for (case in withVectors) {
             val whole = router.margins(case.getValue("vector").jsonArray.doubles())
-            val pieces = case.getValue("segment_vectors").jsonArray.map { router.margins(it.jsonArray.doubles()) }
+            val pieces = case.getValue("segment_vectors").jsonArray.map { router.pieceMargins(it.jsonArray.doubles()) }
             if (pieces.isNotEmpty()) splitCases++
             val decision = combine(whole, pieces, case.str("text"), config.thresholds)
             val expected = case.getValue("margins").jsonObject

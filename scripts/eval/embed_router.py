@@ -25,6 +25,7 @@ could run on its existing ONNX Runtime dependency. The encoder is injected, so t
 
 Usage (from scripts/eval, with onnxruntime, tokenizers and numpy installed):
   python embed_router.py fit      [--model-dir DIR] [--model-file F] [--scorers mlp]   fit, write the configs
+  python embed_router.py fit-pieces [--model-dir DIR]                  add the piece head to the mlp config
   python embed_router.py score    [--model-dir DIR] [--model-file F] [--fixture PATH ...] [--verbose]
                                   routing-only intent accuracy beside the rules, no Gemma
   python embed_router.py quantize [--model-dir DIR]                    writes DIR/model_int8.onnx
@@ -183,10 +184,10 @@ def load_story_pieces(path: Path = STORIES, per_story: int = STORY_PIECES) -> li
 
 
 def load_pool() -> list[dict]:
-    """Every labeled training sentence: the route examples, fit.json, train.jsonl and the story pieces. Nothing from
-    eval/fixtures, heldout.jsonl or long.jsonl is in it (test_embed_router checks)."""
+    """Every labeled training sentence: the route examples, fit.json and train.jsonl. Nothing from eval/fixtures,
+    heldout.jsonl or long.jsonl is in it (test_embed_router checks). The piece head adds load_story_pieces()."""
     pool = [{"text": t, "intent": label} for label, texts in load_routes().items() for t in texts]
-    return pool + load_fit() + load_train() + load_story_pieces()
+    return pool + load_fit() + load_train()
 
 
 def routes_from(items: list[dict]) -> dict[str, list[str]]:
@@ -267,6 +268,7 @@ class EmbeddingRouter:
     weights: tuple | None = None       # linear (W 384x3, b 3), mlp (W1, b1, W2, b2); trained from the routes when None
     split: bool = True                 # also score each sentence or clause of a longer message (segments())
     seed: int = 0                      # the mlp's starting weights (MLP_SEEDS)
+    piece_head: "EmbeddingRouter | None" = None  # scores the pieces of a split message instead of this head
     clock: Callable[[], float] = time.perf_counter
 
     def __post_init__(self):
@@ -329,7 +331,7 @@ class EmbeddingRouter:
         pieces = [segments(t) if self.split else [] for t in transcripts]
         flat = [p for ps in pieces for p in ps]
         if flat:
-            _, piece_margins = self.margins(flat)
+            piece_margins = self.piece_margins(self.embed(flat))
             j = 0
             for i, ps in enumerate(pieces):
                 for k in range(len(ps)):
@@ -340,6 +342,13 @@ class EmbeddingRouter:
         two = np.array([bool(TWO_REQUESTS.search(t)) or best_piece[router.SAVE][i] != best_piece[router.ACTION][i]
                         for i, t in enumerate(transcripts)])
         return scores, margins, two
+
+    def piece_margins(self, vectors: np.ndarray) -> dict[str, np.ndarray]:
+        """Each piece's tool margins. With a piece head, its margins are moved onto this head's scale (how far each
+        clears the piece head's own threshold, plus this head's), so one threshold check covers both."""
+        head = self.piece_head or self
+        scores = head.route_scores(vectors)
+        return {r: scores[r] - scores[router.NONE] - head.thresholds[r] + self.thresholds[r] for r in TOOL_INTENTS}
 
     def decide(self, transcript: str) -> EmbedDecision:
         start = self.clock()
@@ -360,6 +369,8 @@ class EmbeddingRouter:
         data.update(l2=self.l2, scale=LINEAR_SCALE, labels=list(LABELS))
         if self.scorer == "mlp":
             data["seed"] = self.seed
+        if self.piece_head is not None:
+            data["piece_head"] = {k: v for k, v in self.piece_head.config().items() if k not in ("model", "split")}
         if self.scorer == "mlp":
             w1, b1 = self.weights[:2]
             data.update(hidden_weights=np.round(np.asarray(w1), 6).tolist(),
@@ -468,13 +479,14 @@ def cross_fit(encoder: Encoder, scorer: str, items: list[dict], folds: int = FOL
     return thresholds, cost, round(float((predict(margins, thresholds, two) == gold).mean()), 3)
 
 
-def sweep(encoder: Encoder, scorer: str, items: list[dict], log=print) -> EmbeddingRouter:
+def sweep(encoder: Encoder, scorer: str, items: list[dict], log=print,
+          head_words_options: tuple = SWEEP["head_words"]) -> EmbeddingRouter:
     """Every head_words x (top_k or l2), and for the mlp every seed in MLP_SEEDS, scored by cross-fitting on the
     training pool alone. The lowest cost wins; the router is then trained on the whole pool with that setting and its
     out-of-fold thresholds."""
     best, best_cost = None, None
     (param, values), = SWEEP[scorer].items()
-    for head_words in SWEEP["head_words"]:
+    for head_words in head_words_options:
         for value in values:
             for seed in MLP_SEEDS if scorer == "mlp" else (0,):
                 params = {"head_words": head_words, param: value} | ({"seed": seed} if scorer == "mlp" else {})
@@ -493,14 +505,21 @@ def load_router(model_dir: Path, model_file: str = "model.onnx", scorer: str = "
     path = config_path(encoder.name, scorer)
     if not path.is_file():
         raise SystemExit(f"no router config at {path}: run `python embed_router.py fit` first")
-    data = json.loads(path.read_text())
-    weights = None
+    return router_from_config(json.loads(path.read_text()), encoder)
+
+
+def router_from_config(data: dict, encoder: Encoder) -> EmbeddingRouter:
+    """An EmbeddingRouter from a config dict as config() writes it, piece head included."""
+    scorer, weights = data["scorer"], None
     if scorer != "knn":
         weights = (np.array(data["weights"]), np.array(data["bias"]))
         if scorer == "mlp":
             weights = (np.array(data["hidden_weights"]), np.array(data["hidden_bias"])) + weights
+    piece = data.get("piece_head")
+    piece_head = router_from_config({**piece, "split": False}, encoder) if piece else None
     return EmbeddingRouter(encoder, routes_from(load_pool()), scorer, data["thresholds"], data["head_words"],
-                           data.get("top_k", 3), data.get("l2", 0.01), weights, data.get("split", False))
+                           data.get("top_k", 3), data.get("l2", 0.01), weights, data.get("split", False),
+                           piece_head=piece_head)
 
 
 # ---- Routing-only scoring -------------------------------------------------------------------------------------
@@ -522,7 +541,7 @@ def score_cases(cases: list[dict], decide: Callable[[str], str], expected=expect
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("command", choices=["fit", "score", "quantize", "overlap"])
+    parser.add_argument("command", choices=["fit", "fit-pieces", "score", "quantize", "overlap"])
     parser.add_argument("--model-dir", default=str(DEFAULT_MODEL_DIR))
     parser.add_argument("--model-file", default="model.onnx", help="model.onnx, or model_int8.onnx after quantize")
     parser.add_argument("--fixture", action="append", help="default: both tool-eval fixtures")
@@ -549,6 +568,18 @@ def main(argv: list[str] | None = None) -> None:
                   f"{'top_k=' + str(best.top_k) if scorer == 'knn' else 'l2=' + str(best.l2)}, "
                   f"{'seed=' + str(best.seed) + ', ' if scorer == 'mlp' else ''}"
                   f"thresholds {best.thresholds}; wrote {out.name}")
+        return
+
+    if args.command == "fit-pieces":
+        # The whole-message head stays as it is; a second mlp, fitted with the story pieces as NONE examples and the
+        # same head_words (so each piece is embedded once), scores the pieces of a split message.
+        whole = load_router(model_dir, args.model_file, APP_SCORER, encoder)
+        whole.piece_head = sweep(encoder, APP_SCORER, load_pool() + load_story_pieces(),
+                                 head_words_options=(whole.head_words,))
+        out = config_path(encoder.name, APP_SCORER)
+        out.write_text(json.dumps(whole.config()) + "\n")
+        ph = whole.piece_head
+        print(f"piece head: l2={ph.l2}, seed={ph.seed}, thresholds {ph.thresholds}; wrote {out.name}")
         return
 
     fixtures = [Path(f) for f in (args.fixture or FIXTURES)]

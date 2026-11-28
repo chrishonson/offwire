@@ -24,8 +24,10 @@ import kotlin.math.sqrt
  *     tool intent fires when its score beats NONE's by at least its fitted threshold.
  *  4. A longer message is also split into its sentences and clauses ([segments]), each scored the same way, and each
  *     tool takes its best score across the whole message and the pieces: a request buried at the end of a story
- *     still fires. Both tools fire only when the message holds two requests: joined by "and", "then" and the like,
- *     or with SAVE and ACTION each winning in a different piece.
+ *     still fires. When the config has a [RouterConfig.pieceHead], that second layer scores the pieces: it was
+ *     fitted with plain clauses of long stories as NONE, so a story's statements stop reading as things to save.
+ *     Both tools fire only when the message holds two requests: joined by "and", "then" and the like, or with SAVE
+ *     and ACTION each winning in a different piece.
  * Nothing firing is NONE: plain chat, and Gemma sees no tool schemas at all.
  *
  * Measured on 601 held-out sentences from writers who never saw the training sentences (eval/router/heldout.jsonl,
@@ -50,7 +52,9 @@ class RouterConfig(
     val hiddenWeights: Array<DoubleArray>? = null,
     val hiddenBias: DoubleArray? = null,
     /** Also score each sentence or clause of a longer message. */
-    val split: Boolean = false
+    val split: Boolean = false,
+    /** Scores the pieces of a split message in place of this layer; same head words, its own thresholds. */
+    val pieceHead: RouterConfig? = null
 )
 
 private val LABELS = listOf("SAVE", "ACTION", "NONE")
@@ -84,9 +88,18 @@ fun parseRouterConfig(text: String): RouterConfig {
         bias = root.getValue("bias").jsonArray.doubles(),
         hiddenWeights = hidden,
         hiddenBias = hiddenBias,
-        split = root["split"]?.jsonPrimitive?.boolean ?: false
+        split = root["split"]?.jsonPrimitive?.boolean ?: false,
+        pieceHead = root["piece_head"]?.let { piece ->
+            parseRouterConfig(JsonObject(piece.jsonObject + ("model" to root.getValue("model")))).also {
+                require(it.headWords == root.getValue("head_words").jsonPrimitive.int) {
+                    "the piece head must use the same head words, so each piece is embedded once"
+                }
+            }
+        }
     )
 }
+
+private fun parseRouterConfig(root: JsonObject): RouterConfig = parseRouterConfig(root.toString())
 
 private fun JsonElement.matrix() = jsonArray.map { row -> (row as JsonArray).doubles() }.toTypedArray()
 
@@ -112,7 +125,7 @@ class EmbeddingIntentRouter(
     fun decide(transcript: String): RouteDecision {
         val start = clockMs()
         val whole = margins(embed(transcript))
-        val pieces = if (config.split) segments(transcript).map { margins(embed(it)) } else emptyList()
+        val pieces = if (config.split) segments(transcript).map { pieceMargins(embed(it)) } else emptyList()
         return combine(whole, pieces, transcript, config.thresholds).copy(millis = clockMs() - start)
     }
 
@@ -126,21 +139,34 @@ class EmbeddingIntentRouter(
         return unit(DoubleArray(full.size) { full[it].toDouble() + headVector[it].toDouble() })
     }
 
-    fun margins(vector: DoubleArray): Map<ToolIntent, Double> {
-        val hidden = config.hiddenWeights
-        val hiddenBias = config.hiddenBias
-        val z = if (hidden == null || hiddenBias == null) {
-            layer(vector, config.weights, config.bias, config.scale)
-        } else {
-            val h = layer(vector, hidden, hiddenBias, config.scale)
-            for (j in h.indices) h[j] = maxOf(0.0, h[j])
-            layer(h, config.weights, config.bias, 1.0)
+    fun margins(vector: DoubleArray): Map<ToolIntent, Double> = scoreMargins(config, vector)
+
+    /**
+     * A piece's margins. With a piece head, they are moved onto this layer's scale (how far each clears the piece
+     * head's own threshold, plus this layer's), so [combine] checks one set of thresholds for both.
+     */
+    fun pieceMargins(vector: DoubleArray): Map<ToolIntent, Double> {
+        val head = config.pieceHead ?: return margins(vector)
+        return scoreMargins(head, vector).mapValues { (intent, margin) ->
+            margin - head.thresholds.getValue(intent) + config.thresholds.getValue(intent)
         }
-        return mapOf(
-            ToolIntent.SAVE to z[SAVE_COLUMN] - z[NONE_COLUMN],
-            ToolIntent.ACTION to z[ACTION_COLUMN] - z[NONE_COLUMN]
-        )
     }
+}
+
+private fun scoreMargins(config: RouterConfig, vector: DoubleArray): Map<ToolIntent, Double> {
+    val hidden = config.hiddenWeights
+    val hiddenBias = config.hiddenBias
+    val z = if (hidden == null || hiddenBias == null) {
+        layer(vector, config.weights, config.bias, config.scale)
+    } else {
+        val h = layer(vector, hidden, hiddenBias, config.scale)
+        for (j in h.indices) h[j] = maxOf(0.0, h[j])
+        layer(h, config.weights, config.bias, 1.0)
+    }
+    return mapOf(
+        ToolIntent.SAVE to z[SAVE_COLUMN] - z[NONE_COLUMN],
+        ToolIntent.ACTION to z[ACTION_COLUMN] - z[NONE_COLUMN]
+    )
 }
 
 // Said before the request itself: spoken lead-ins, the wake word and politeness. router.py's _FILLERS and _PREFIX,

@@ -455,32 +455,34 @@ Split in half by id; only dev was looked at. `router_heldout.py --file eval/rout
 by length. **R6, `eval/fixtures/tool-eval-long.json`:** the 105 test messages for `router_eval.py`, so Gemma's own
 save_note calls are counted.
 
-**Fix:** `eval/router/train-stories.jsonl` holds 100 more long no-request messages from a separate writer. Their
-pieces join the training pool as NONE examples (`load_story_pieces`), at most three per story, chosen with a fixed
-seed. `embed_router.py fit` now also tries the mlp's starting seed (0 to 4) and keeps the lowest out-of-fold cost,
-as it already did for head_words and l2: at seed 0 alone the fit missed "Write down that the brake pads have three
-millimeters left", a seed the training data alone ranks worse. It picked head_words 3, l2 0.01 and seed 2, with
-thresholds SAVE 0.3 and ACTION 0.95. No app code changed; the app ships the refitted config.
+**Fix: a second layer for the pieces.** The whole message is still scored by the shipped layer, unchanged, so a
+message that does not split routes exactly as before. The pieces of a split message are scored by a second 64-unit
+layer on the same embedding (`piece_head` in the config, `embed_router.py fit-pieces`), fitted on the training pool
+plus NONE pieces cut from `eval/router/train-stories.jsonl`: 100 more long no-request messages from a separate
+writer, at most three pieces each (`load_story_pieces`). A piece's margin is put on the whole layer's scale (how far
+it clears the piece layer's own threshold), so one threshold check covers both. `fit` now also tries the mlp's
+starting seed 0 to 4 and keeps the lowest out-of-fold cost; the piece layer got seed 2, thresholds SAVE 0.3 and
+ACTION 0.95. The Kotlin router reads the piece layer from the same config (`RouterConfig.pieceHead`).
 
-What did not work, all on dev: subtracting a fixed or log-scaled offset from every piece's margin (it cut false saves
-only by missing about as many real buried requests, and cost R1), adding the long messages whole (worse on both), and
-adding every piece of every story (665 NONE pieces: false saves fell further, but the head began missing short real
-saves). Three seeds per setting, since one fit can be lucky: the shipped setting's R1 dev ran 249 to 257.
+What did not work, all chosen on dev: subtracting a fixed or log-scaled offset from every piece's margin (it cut
+false saves only by missing about as many real buried requests), adding the long messages whole (worse on both),
+and refitting the one layer with the story pieces. That last one fixed R5 but moved short messages too: with all
+665 pieces it missed real short saves, and even with three per story it sent "Text Sam that I'm running late" and
+"Call the pharmacy" to SAVE, which cost 6 R2 rows on E2B. Splitting the work between two layers keeps the short
+messages where they were.
 
-Test halves, the shipped config against the fix, with the fix's spread over head seeds 0 to 4:
+Test halves, the shipped config against the fix:
 
-| | shipped | fix (seed 2, ships) | fix, seeds 0 to 4 |
-|---|---|---|---|
-| R5 right intent (of 105) | 60 | 76 | 74 to 78 |
-| R5 save_note on a long message that asks for nothing (of 64) | 22 | 6 | 2 to 9 |
-| R5 save request that got no save (of 34) | 5 | 8 | 8 to 10 |
-| R1 right intent (of 304) | 270 | 265 | 265 to 269 |
-| R1 save_note on a no-tool message (of 125) | 4 | 3 | 1 to 5 |
-| R1 save request that got no save (of 101) | 7 | 8 | 7 to 13 |
+| | shipped | fix |
+|---|---|---|
+| R5 right intent (of 105) | 60 | 73 |
+| R5 save_note on a long message that asks for nothing (of 64) | 22 | 8 |
+| R5 save request that got no save (of 34) | 5 | 7 |
+| R1 right intent (of 304) | 270 | 270 |
+| R1 save_note on a no-tool message (of 125) | 4 | 1 |
+| R1 save request that got no save (of 101) | 7 | 8 |
 
-- R1 stays inside the spread of refitting the shipped setting itself (263 to 269 right, 6 to 15 missed saves over
-  the same seeds), so by docs/RELEASING.md it does not get worse beyond run-to-run spread.
-- The cost is on long messages: 3 to 5 more buried save requests go unsaved, against 13 to 20 fewer long chats that
-  get save_note. The shipped router missed few buried saves because it offered save_note to a third of all long
-  messages.
+- R1 holds at 270; the rows that move are the ones that split.
+- The cost is on long messages: 2 more buried save requests go unsaved, against 14 fewer long chats offered
+  save_note.
 - Writers and labeler are the same model family, so real phone speech is still the better test.
