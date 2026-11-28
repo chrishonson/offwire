@@ -41,7 +41,9 @@ fi
 
 # 2. The fine-tuned model the app ships.
 if ! has "$DEST" "$ROUTER_SHA256"; then
-  git -C "$REPO" lfs pull --include="$ASSET_PATH" || true
+  # Not fatal: the model can still come from PATH or $ROUTER_DIR below.
+  git -C "$REPO" lfs pull --include="$ASSET_PATH" ||
+    echo "could not pull $ASSET_PATH from LFS (is it pushed, and is git-lfs installed?); trying PATH and $ROUTER_DIR" >&2
 fi
 if ! has "$DEST" "$ROUTER_SHA256"; then
   for candidate in "${1:-}" "$ROUTER_DIR/model.onnx"; do

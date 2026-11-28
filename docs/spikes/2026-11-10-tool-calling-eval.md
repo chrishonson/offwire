@@ -352,7 +352,7 @@ fell to 37.5% on the held-out phrasings; constrained decoding made no difference
 The app now runs that router before Gemma on every typed or transcribed turn (core `router/`):
 
 - **Model:** since Nov 27, `all-MiniLM-L6-v2` fine-tuned on the router's training sentences (see "The fine-tuned
-  encoder, retrained" below), fp32, 90 MB, SHA-256 `d5c52622...3799e`, as an LFS asset at
+  encoder, retrained" below), fp32, 90 MB, SHA-256 `d5c52622...f7108`, as an LFS asset at
   `core/src/androidMain/assets/router/all-MiniLM-L6-v2-router.onnx`, beside the stock model's `vocab.txt` and the
   fitted `embed-all-MiniLM-L6-v2-router-mlp.json` (tests keep that file equal to `eval/router/`). Before that the app
   shipped the stock fp32 file (SHA-256 `4f148ba8...393e6`) with `embed-all-MiniLM-L6-v2-mlp.json`.
