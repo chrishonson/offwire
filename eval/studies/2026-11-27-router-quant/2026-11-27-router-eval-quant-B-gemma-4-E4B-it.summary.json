@@ -1,0 +1,117 @@
+{
+  "embed_mlp": {
+    "model": "gemma-4-E4B-it",
+    "setup": "embed_mlp",
+    "runs": 3,
+    "constrained": false,
+    "app_tools": false,
+    "seed_offset": 0,
+    "embed_model": "all-MiniLM-L6-v2-int8",
+    "rows": 144,
+    "pass_rate": 0.924,
+    "call_precision": 1.0,
+    "call_recall": 0.8,
+    "over_call": {
+      "n": 87,
+      "rate": 0.0
+    },
+    "wrong_tool": {
+      "n": 57,
+      "rate": 0.0
+    },
+    "bad_args": {
+      "n": 48,
+      "rate": 0.0
+    },
+    "repeat_call": {
+      "n": 48,
+      "rate": 0.0
+    },
+    "false_claim": {
+      "n": 96,
+      "rate": 0.0
+    },
+    "double_confirm_raw": {
+      "n": 42,
+      "rate": 0.405
+    },
+    "double_confirm_guarded": {
+      "n": 42,
+      "rate": 0.0
+    },
+    "spoke_both_sides": {
+      "n": 42,
+      "rate": 0.452
+    },
+    "parse_error": {
+      "n": 144,
+      "count": 3
+    },
+    "ttft_s_median": 3.821,
+    "decode_tok_s_median": 18.26,
+    "by_category": {
+      "action": "25/27",
+      "cannot": "12/12",
+      "multi": "0/3",
+      "no_call": "36/36",
+      "over_call": "27/27",
+      "recall": "12/12",
+      "save": "21/27"
+    },
+    "intent_table": {
+      "ACTION": {
+        "ACTION": 27
+      },
+      "NONE": {
+        "NONE": 87
+      },
+      "SAVE": {
+        "SAVE": 21,
+        "NONE": 6
+      },
+      "SAVE+ACTION": {
+        "SAVE+ACTION": 3
+      }
+    },
+    "intent_match": 0.958,
+    "route_sources": {
+      "embed": 144
+    },
+    "gate": {
+      "calls": 0,
+      "parse_errors": 0,
+      "prompt_tokens_median": null,
+      "router_s_median": null
+    },
+    "timing": {
+      "tool_turns": {
+        "n": 51,
+        "router_s_median": 0.0028,
+        "response_ttft_s_median": 5.0518,
+        "total_s_median": 5.0545,
+        "prompt_tokens_median": 561
+      },
+      "no_tool_turns": {
+        "n": 93,
+        "router_s_median": 0.0029,
+        "response_ttft_s_median": 3.7444,
+        "total_s_median": 3.7459,
+        "prompt_tokens_median": 499
+      }
+    },
+    "save_decision": {
+      "false_saves": {
+        "n": 114,
+        "count": 0
+      },
+      "missed_saves": {
+        "n": 30,
+        "count": 9
+      },
+      "capability_honest": {
+        "n": 0,
+        "count": 0
+      }
+    }
+  }
+}

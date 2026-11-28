@@ -1,0 +1,172 @@
+[
+  {
+    "file": "2026-11-27-router-eval-quant-A-gemma-4-E2B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 141,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 27
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-gemma-4-E2B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 57,
+    "no_tool": 30,
+    "tool_on_no_tool": 3,
+    "save_note_on_no_tool": 3,
+    "save_cases": 21,
+    "save_pass": 18
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-gemma-4-E4B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 139,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 27
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-gemma-4-E4B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 59,
+    "no_tool": 30,
+    "tool_on_no_tool": 3,
+    "save_note_on_no_tool": 3,
+    "save_cases": 21,
+    "save_pass": 17
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-s4-gemma-4-E2B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 143,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 27
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-s4-gemma-4-E2B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 57,
+    "no_tool": 30,
+    "tool_on_no_tool": 3,
+    "save_note_on_no_tool": 3,
+    "save_cases": 21,
+    "save_pass": 18
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-s4-gemma-4-E4B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 141,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 26
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-s4-gemma-4-E4B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 58,
+    "no_tool": 30,
+    "tool_on_no_tool": 3,
+    "save_note_on_no_tool": 3,
+    "save_cases": 21,
+    "save_pass": 16
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-A-rerun-gemma-4-E2B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 57,
+    "no_tool": 30,
+    "tool_on_no_tool": 3,
+    "save_note_on_no_tool": 3,
+    "save_cases": 21,
+    "save_pass": 18
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-B-gemma-4-E2B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 135,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 21
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-B-gemma-4-E2B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 60,
+    "no_tool": 30,
+    "tool_on_no_tool": 3,
+    "save_note_on_no_tool": 3,
+    "save_cases": 21,
+    "save_pass": 21
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-B-gemma-4-E4B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 133,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 21
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-B-gemma-4-E4B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 62,
+    "no_tool": 30,
+    "tool_on_no_tool": 3,
+    "save_note_on_no_tool": 0,
+    "save_cases": 21,
+    "save_pass": 20
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-D-gemma-4-E2B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 138,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 24
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-D-gemma-4-E2B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 57,
+    "no_tool": 30,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 21,
+    "save_pass": 18
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-D-gemma-4-E4B-it-embed_mlp.jsonl",
+    "rows": 144,
+    "pass": 136,
+    "no_tool": 87,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 27,
+    "save_pass": 24
+  },
+  {
+    "file": "2026-11-27-router-eval-quant-D-gemma-4-E4B-it-tool-eval-holdout-embed_mlp.jsonl",
+    "rows": 72,
+    "pass": 59,
+    "no_tool": 30,
+    "tool_on_no_tool": 0,
+    "save_note_on_no_tool": 0,
+    "save_cases": 21,
+    "save_pass": 17
+  }
+]
